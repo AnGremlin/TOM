@@ -1,7 +1,7 @@
 {
-  "name": "Residence Gudul",
-  "description": "Gudul Team's Global Game Jam 2015",
+  "name": "Fuckfiction - Gudul Engine",
+  "description": "Conversion",
   "id": "jSrV",
-  "formatVersion": 3,
-  "system": "supGame"
+  "formatVersion": 5,
+  "systemId": "game"
 }
