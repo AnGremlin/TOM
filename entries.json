@@ -223,11 +223,6 @@
         "type": "scene"
       },
       {
-        "id": "62",
-        "name": "Text Data Fr",
-        "type": "script"
-      },
-      {
         "id": "308",
         "name": "Text Data En",
         "type": "script"
@@ -1182,6 +1177,50 @@
                 ]
               }
             ]
+          },
+          {
+            "id": "364",
+            "name": "FruitRoom",
+            "type": null,
+            "children": [
+              {
+                "id": "366",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
+                "id": "365",
+                "name": "Background",
+                "type": "sprite"
+              },
+              {
+                "id": "368",
+                "name": "Table",
+                "type": "sprite"
+              },
+              {
+                "id": "369",
+                "name": "Fruits",
+                "type": null,
+                "children": [
+                  {
+                    "id": "370",
+                    "name": "fruit1",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "371",
+                    "name": "fruit2",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "372",
+                    "name": "fruit3",
+                    "type": "sprite"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -1335,6 +1374,11 @@
             "type": "sprite"
           }
         ]
+      },
+      {
+        "id": "367",
+        "name": "MusicBehavior",
+        "type": "script"
       }
     ]
   },

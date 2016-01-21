@@ -20,7 +20,7 @@ class LanguageBehavior extends Sup.Behavior {
       
       if (Sup.Input.wasMouseButtonJustReleased(0)) {
         Sup.Audio.playSound("SFX/Select");
-        Game.TextData = TextDataFr;
+        Game.TextData = TextDataEn;
         Sup.loadScene(Sup.get("Menu/Scene", Sup.Scene));
       }
     } else {

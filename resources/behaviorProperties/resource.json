@@ -37,11 +37,16 @@
     },
     "ItemBehavior": {
       "scriptId": "16",
+      "line": 0,
       "parentBehavior": null,
       "properties": [
         {
           "name": "isHovered",
           "type": "boolean"
+        },
+        {
+          "name": "position",
+          "type": "Sup.Math.Vector3"
         },
         {
           "name": "type",
@@ -550,6 +555,17 @@
       "scriptId": "337",
       "parentBehavior": null,
       "properties": []
+    },
+    "MusicBehavior": {
+      "scriptId": "367",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "musicName",
+          "type": "string"
+        }
+      ]
     }
   }
 }

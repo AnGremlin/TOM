@@ -1,4 +1,16 @@
 module TextDataEn {
+  /************************************************
+   *                 FUCKFICTION                  *
+   ************************************************/
+  // Fruit test
+  export var Table = "Says here this is a table, looks more like a solid block of wood to me.";
+  export var Fruit1 = "One weird trick to good health. Doctors hate it!";
+  export var Fruit2 = "Are floating blueberries even in season right now?";
+  export var Fruit3 = "Nice try, but that's a grain.";
+        
+  /************************************************
+   *                    GUDUL                     *
+   ************************************************/
   // Menus
   export var Menu = "- Click to play -";
   export var Intro = "Just like he always does, Dowie sits down for a long night of delightful, unadultered consumerism in front of the Distritube, the masterpiece of modern technology.";

@@ -54,7 +54,7 @@ module Game {
     Game.selectSound = Sup.get("SFX/Select", Sup.Sound);
   
     if (Game.TextData == null) {
-      let textData = TextDataFr;
+      let textData = TextDataEn;
       Game.TextData = textData;
     }
   }
@@ -67,20 +67,25 @@ module Game {
       Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
     }
     
-    Game.switchToScene("In-Game/Scenery/Floor 3/Dowie/Prefab", "Start");
+    Game.switchToScene("In-Game/Scenery/FruitRoom/Prefab", "Start");
   }
   
   export function switchToScene(sceneName: string, target: string) {
     Game.itemBehaviors.length = 0;
     
-    // Play correct music
-    let musicName = sceneName.substring(16, sceneName.length - 7);
-    if (musicName === "Floor 3/Dowie") {
-      musicName = "Floor 3/Hall";
-    } else if (musicName === "Floor 0/Janitor/Bathroom") {
-      musicName = "Floor 0/Janitor";
-    }
+    let sceneRoot = Sup.appendScene(Sup.get(sceneName , Sup.Scene))[0];
+    Game.playerBehavior.leftLimit = sceneRoot.getChild("Limits").getChild("Left").getLocalPosition().x;
+    Game.playerBehavior.rightLimit = sceneRoot.getChild("Limits").getChild("Right").getLocalPosition().x;
     
+    // Play correct music
+    let musicActor = sceneRoot.getChild("Music");
+    let musicName = "Intro";
+    if(musicActor != null)
+    {
+      Sup.log("got music actor.");
+      musicName = (musicActor["musicName"]);
+    }
+    Sup.log("Music name: " + musicName);
     let newMusic = Sup.get("Music/" + musicName);
     if (newMusic == null) {
       Sup.log("NO MUSIC SET FOR: " + sceneName)
@@ -103,10 +108,6 @@ module Game {
         }
       }
     }
-    
-    let sceneRoot = Sup.appendScene(Sup.get(sceneName , Sup.Scene))[0];
-    Game.playerBehavior.leftLimit = sceneRoot.getChild("Limits").getChild("Left").getLocalPosition().x;
-    Game.playerBehavior.rightLimit = sceneRoot.getChild("Limits").getChild("Right").getLocalPosition().x;
     
     let targetActor = sceneRoot.getChild(target);
     if (targetActor == null) {
