@@ -1219,6 +1219,33 @@
                     "type": "sprite"
                   }
                 ]
+              },
+              {
+                "id": "375",
+                "name": "SpencersDoor",
+                "type": "sprite"
+              },
+              {
+                "id": "376",
+                "name": "Spencers Door Behavior",
+                "type": "script"
+              }
+            ]
+          },
+          {
+            "id": "374",
+            "name": "Spencers",
+            "type": null,
+            "children": [
+              {
+                "id": "377",
+                "name": "Spencers Exit Behavior",
+                "type": "script"
+              },
+              {
+                "id": "378",
+                "name": "Prefab",
+                "type": "scene"
               }
             ]
           }
@@ -1357,6 +1384,11 @@
               {
                 "id": "341",
                 "name": "Selfiboy",
+                "type": "sprite"
+              },
+              {
+                "id": "373",
+                "name": "Tom",
                 "type": "sprite"
               }
             ]

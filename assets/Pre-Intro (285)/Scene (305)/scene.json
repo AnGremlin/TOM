@@ -10,15 +10,22 @@
             {
               "type": "SpriteRenderer",
               "config": {
-                "spriteAssetId": 137,
-                "animationId": null
+                "spriteAssetId": "137",
+                "animationId": null,
+                "overrideOpacity": false,
+                "color": "ffffff",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "materialType": "basic"
               },
-              "id": 0
+              "id": "0"
             }
           ],
           "position": {
             "x": 0,
-            "y": 0,
+            "y": -0.010482179000973701,
             "z": -5
           },
           "orientation": {
@@ -32,7 +39,9 @@
             "y": 1,
             "z": 1
           },
-          "id": 2
+          "id": "2",
+          "visible": true,
+          "layer": 0
         },
         {
           "name": "Cursor",
@@ -41,17 +50,25 @@
             {
               "type": "SpriteRenderer",
               "config": {
-                "spriteAssetId": 280,
-                "animationId": null
+                "spriteAssetId": "280",
+                "animationId": null,
+                "overrideOpacity": false,
+                "color": "ffffff",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "materialType": "basic"
               },
-              "id": 0
+              "id": "0"
             },
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "CursorBehavior"
+                "behaviorName": "CursorBehavior",
+                "propertyValues": {}
               },
-              "id": 1
+              "id": "1"
             }
           ],
           "position": {
@@ -70,7 +87,9 @@
             "y": 0.6,
             "z": 1
           },
-          "id": 5
+          "id": "5",
+          "visible": true,
+          "layer": 0
         }
       ],
       "components": [
@@ -85,16 +104,20 @@
               "y": 0,
               "width": 1,
               "height": 1
-            }
+            },
+            "depth": 0,
+            "nearClippingPlane": 0.1,
+            "farClippingPlane": 1000
           },
-          "id": 0
+          "id": "0"
         },
         {
           "type": "Behavior",
           "config": {
-            "behaviorName": "PreIntroBehavior"
+            "behaviorName": "PreIntroBehavior",
+            "propertyValues": {}
           },
-          "id": 1
+          "id": "1"
         }
       ],
       "position": {
@@ -113,7 +136,9 @@
         "y": 1,
         "z": 1
       },
-      "id": 0
+      "id": "0",
+      "visible": true,
+      "layer": 0
     },
     {
       "name": "Background",
@@ -122,10 +147,17 @@
         {
           "type": "SpriteRenderer",
           "config": {
-            "spriteAssetId": 283,
-            "animationId": null
+            "spriteAssetId": "283",
+            "animationId": null,
+            "overrideOpacity": false,
+            "color": "ffffff",
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "materialType": "basic"
           },
-          "id": 0
+          "id": "0"
         }
       ],
       "position": {
@@ -144,7 +176,9 @@
         "y": 1,
         "z": 1
       },
-      "id": 1
+      "id": "1",
+      "visible": true,
+      "layer": 0
     }
   ],
   "formatVersion": 1

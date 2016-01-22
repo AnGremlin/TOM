@@ -8,7 +8,7 @@ class SimplePhraseBehavior extends Sup.Behavior {
   }
   
   activate() {
-    Game.dialogBehavior.show("Dowie", this.actor.getName(), null);
+    Game.dialogBehavior.show("Tom", this.actor.getName(), null);
   }
 }
 Sup.registerBehavior(SimplePhraseBehavior);

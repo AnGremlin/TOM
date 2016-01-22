@@ -1,7 +1,7 @@
 {
   "filtering": "pixelated",
   "pixelsPerUnit": 20,
-  "framesPerSecond": 7,
+  "framesPerSecond": 10,
   "alphaTest": 0.1,
   "grid": {
     "width": 64,
@@ -15,57 +15,15 @@
     {
       "name": "Idle",
       "startFrameIndex": 0,
-      "endFrameIndex": 18,
+      "endFrameIndex": 3,
       "id": "0",
       "speed": 1
     },
     {
+      "id": "8",
       "name": "Walk",
-      "startFrameIndex": 20,
-      "endFrameIndex": 25,
-      "id": "1",
-      "speed": 1
-    },
-    {
-      "name": "DingDong",
-      "startFrameIndex": 40,
-      "endFrameIndex": 49,
-      "id": "2",
-      "speed": 1
-    },
-    {
-      "name": "Talk",
-      "startFrameIndex": 60,
-      "endFrameIndex": 68,
-      "id": "7",
-      "speed": 1
-    },
-    {
-      "name": "Blabla1",
-      "startFrameIndex": 60,
-      "endFrameIndex": 62,
-      "id": "3",
-      "speed": 1
-    },
-    {
-      "name": "Blabla2",
-      "startFrameIndex": 63,
-      "endFrameIndex": 65,
-      "id": "4",
-      "speed": 1
-    },
-    {
-      "name": "Blabla3",
-      "startFrameIndex": 66,
-      "endFrameIndex": 68,
-      "id": "5",
-      "speed": 1
-    },
-    {
-      "name": "Shoked",
-      "startFrameIndex": 80,
-      "endFrameIndex": 95,
-      "id": "6",
+      "startFrameIndex": 4,
+      "endFrameIndex": 11,
       "speed": 1
     }
   ],

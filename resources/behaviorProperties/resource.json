@@ -56,6 +56,7 @@
     },
     "SimplePhraseBehavior": {
       "scriptId": "174",
+      "line": 0,
       "parentBehavior": null,
       "properties": []
     },
@@ -566,6 +567,18 @@
           "type": "string"
         }
       ]
+    },
+    "SpencersDoorBehavior": {
+      "scriptId": "376",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "SpencersExitBehavior": {
+      "scriptId": "377",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

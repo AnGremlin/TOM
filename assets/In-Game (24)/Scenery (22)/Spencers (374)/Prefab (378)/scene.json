@@ -87,7 +87,7 @@
                 "animationId": null,
                 "overrideOpacity": false,
                 "color": "ffffff",
-                "horizontalFlip": false,
+                "horizontalFlip": true,
                 "verticalFlip": false,
                 "castShadow": false,
                 "receiveShadow": false,
@@ -268,9 +268,9 @@
             }
           ],
           "position": {
-            "x": -4.665,
-            "y": -1.169,
-            "z": -0.2
+            "x": 4.768962383270264,
+            "y": -1.1690000295639038,
+            "z": -0.20000000298023224
           },
           "orientation": {
             "x": 0,
@@ -376,7 +376,7 @@
             }
           ],
           "position": {
-            "x": -5.463132858276367,
+            "x": 5.456678867340088,
             "y": -0.4309999942779541,
             "z": -0.5
           },
@@ -484,8 +484,8 @@
             }
           ],
           "position": {
-            "x": -4.73,
-            "y": -0.613,
+            "x": 4.71230936050415,
+            "y": -0.6129999756813049,
             "z": -0.5
           },
           "orientation": {
@@ -592,7 +592,7 @@
             }
           ],
           "position": {
-            "x": -3.939126968383789,
+            "x": 4.041549205780029,
             "y": -0.42740097641944885,
             "z": -0.5
           },
@@ -665,7 +665,7 @@
               "config": {
                 "spriteAssetId": "375",
                 "animationId": "",
-                "horizontalFlip": false,
+                "horizontalFlip": true,
                 "verticalFlip": false,
                 "castShadow": false,
                 "receiveShadow": false,
@@ -680,7 +680,7 @@
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "SpencersDoorBehavior",
+                "behaviorName": "SpencersExitBehavior",
                 "propertyValues": {}
               },
               "id": "1"
@@ -695,9 +695,9 @@
             }
           ],
           "position": {
-            "x": 4.513,
-            "y": 1.1,
-            "z": -0.1
+            "x": -4.873794078826904,
+            "y": 1.100000023841858,
+            "z": -0.10000000149011612
           },
           "orientation": {
             "x": 0,
