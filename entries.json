@@ -238,6 +238,11 @@
         "type": "script"
       },
       {
+        "id": "392",
+        "name": "Fullscreen Dialog Behavior",
+        "type": "script"
+      },
+      {
         "id": "376",
         "name": "Generic Door Behavior",
         "type": "script"

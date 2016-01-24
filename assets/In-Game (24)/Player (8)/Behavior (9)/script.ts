@@ -145,7 +145,7 @@ class PlayerBehavior extends Sup.Behavior {
       new Sup.Audio.SoundPlayer(Game.hoverSound).play();
     }
     
-    if (Game.dialogBehavior.closedTimer > 2) {
+    if (Game.dialogBehavior.closedTimer > 2 && Game.fsdialogBehavior.closedTimer > 2) {
       if ((Sup.Input.isMouseButtonDown(0) || Sup.Input.wasMouseButtonJustReleased(0))
           && (this.hoveredItem == null || Math.abs(this.position.x - this.hoveredItem.getBehavior(ItemBehavior).position.x) > this.activateDistance)) {
         if (Math.abs(this.position.x - this.mousePosition.x) >= 0.1) {

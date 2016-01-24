@@ -39,6 +39,9 @@ module TextDataEn {
   export var Sec_okay = "Oh, yeah.";
   export var Sec_after = "Have a nice day, man.";
         
+  //
+  export var lorem_ = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet ipsum et eros fermentum, id cursus lacus blandit. Suspendisse eleifend nisl eu felis faucibus consectetur. Aliquam sodales elit ut ullamcorper tempus. Phasellus tempus aliquet neque, et cursus orci tincidunt in. Donec in ante augue. Vivamus euismod arcu nisl, sollicitudin tempor augue auctor vel. Mauris a metus neque. Donec eget nunc semper, ornare diam nec, venenatis metus. Nunc a egestas quam. Nam eget diam in ipsum luctus venenatis eget vel massa. Curabitur non varius eros. Etiam dictum pulvinar risus sed placerat.";
+        
   /************************************************
    *                    GUDUL                     *
    ************************************************/

@@ -19,11 +19,17 @@ class SecurityBehavior extends Sup.Behavior {
       textId = "Sec_warn";
     }
     else {
-      textId = "Sec_greet";
+      textId = "lorem_";//"Sec_greet";
     }
     
-    Game.playerBehavior.actor.spriteRenderer.setAnimation("Talk");
-    Game.dialogBehavior.show("Security", textId, choiceIds, this);
+    if(textId !== "lorem_") {
+      Game.playerBehavior.actor.spriteRenderer.setAnimation("Talk");
+      Game.dialogBehavior.show("Security", textId, choiceIds, this);
+    }
+    else
+    {
+      Game.fsdialogBehavior.show(textId, this);
+    }
   }
   
   update()

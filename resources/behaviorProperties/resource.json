@@ -354,8 +354,14 @@
     },
     "CursorBehavior": {
       "scriptId": "288",
+      "line": 0,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "position",
+          "type": "Sup.Math.Vector3"
+        }
+      ]
     },
     "OldWomanDoorInBehavior": {
       "scriptId": "295",
@@ -473,6 +479,37 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "FSDialogBehavior": {
+      "scriptId": "392",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "isVisible",
+          "type": "boolean"
+        },
+        {
+          "name": "blackedOut",
+          "type": "boolean"
+        },
+        {
+          "name": "closedTimer",
+          "type": "number"
+        },
+        {
+          "name": "textId",
+          "type": "string"
+        },
+        {
+          "name": "blackscreenTargetOpacity",
+          "type": "number"
+        },
+        {
+          "name": "blackscreenOpacity",
+          "type": "number"
+        }
+      ]
     }
   }
 }

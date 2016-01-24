@@ -3,7 +3,9 @@ module Game {
   export let cameraBehavior: CameraBehavior;
   
   export let mainDialog: Sup.Actor;
+  export let fullscreenDialog: Sup.Actor;
   export let dialogBehavior: DialogBehavior;
+  export let fsdialogBehavior: FSDialogBehavior;
   
   export let inventory = { "Sucker": false, "Oil": false, "Card": false, "Flower": false, "Skin": false };
   export let state = {
