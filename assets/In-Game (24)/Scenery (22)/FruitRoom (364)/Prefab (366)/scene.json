@@ -680,8 +680,17 @@
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "SpencersDoorBehavior",
-                "propertyValues": {}
+                "behaviorName": "GenericDoorBehavior",
+                "propertyValues": {
+                  "targetScene": {
+                    "type": "string",
+                    "value": "In-Game/Scenery/Spencers/Prefab"
+                  },
+                  "targetActor": {
+                    "type": "string",
+                    "value": "Spencers Door"
+                  }
+                }
               },
               "id": "1"
             },

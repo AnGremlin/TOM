@@ -138,6 +138,7 @@
     },
     "PlayerBehavior": {
       "scriptId": "9",
+      "line": 0,
       "parentBehavior": null,
       "properties": [
         {
@@ -145,8 +146,20 @@
           "type": "number"
         },
         {
+          "name": "position",
+          "type": "Sup.Math.Vector3"
+        },
+        {
+          "name": "moveOffset",
+          "type": "Sup.Math.Vector3"
+        },
+        {
           "name": "moveTargetX",
           "type": "number"
+        },
+        {
+          "name": "scale",
+          "type": "Sup.Math.Vector3"
         },
         {
           "name": "canMove",
@@ -163,6 +176,10 @@
         {
           "name": "rightLimit",
           "type": "number"
+        },
+        {
+          "name": "mousePosition",
+          "type": "Sup.Math.Vector3"
         },
         {
           "name": "activateDistance",
@@ -228,66 +245,8 @@
       "parentBehavior": null,
       "properties": []
     },
-    "JanitorDoorBehavior": {
-      "scriptId": "97",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "activated",
-          "type": "boolean"
-        },
-        {
-          "name": "finishedOpening",
-          "type": "boolean"
-        },
-        {
-          "name": "isKnocking",
-          "type": "boolean"
-        }
-      ]
-    },
-    "JanitorHallDoorBehavior": {
-      "scriptId": "100",
-      "parentBehavior": null,
-      "properties": []
-    },
     "FamilyHallDoorBehavior": {
       "scriptId": "102",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "BathroomExitDoorBehavior": {
-      "scriptId": "109",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "BathroomDoorBehavior": {
-      "scriptId": "110",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "SuckerBehavior": {
-      "scriptId": "112",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "PlayerHallDoorBehavior": {
-      "scriptId": "117",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "PlayerDoorBehavior": {
-      "scriptId": "118",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "CaveDoorBehavior": {
-      "scriptId": "139",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "CaveHallDoorBehavior": {
-      "scriptId": "141",
       "parentBehavior": null,
       "properties": []
     },
@@ -378,16 +337,6 @@
       "parentBehavior": null,
       "properties": []
     },
-    "JanitorWireBehavior": {
-      "scriptId": "239",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "electroTimer",
-          "type": "number"
-        }
-      ]
-    },
     "OuafbarfMomBehavior": {
       "scriptId": "346",
       "parentBehavior": null,
@@ -402,78 +351,6 @@
       "scriptId": "342",
       "parentBehavior": null,
       "properties": []
-    },
-    "DowieOutroBehavior": {
-      "scriptId": "340",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "DowieIntroBehavior": {
-      "scriptId": "339",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "BeautyBehavior": {
-      "scriptId": "215",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "JanitorPortraitBehavior": {
-      "scriptId": "223",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "MaidBehavior": {
-      "scriptId": "225",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "BeautyDoorBehavior": {
-      "scriptId": "234",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "JanitorFakeBehavior": {
-      "scriptId": "243",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "JanitorRealBehavior": {
-      "scriptId": "255",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "CopBehavior": {
-      "scriptId": "264",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "triggered",
-          "type": "boolean"
-        },
-        {
-          "name": "playerAttacking",
-          "type": "boolean"
-        },
-        {
-          "name": "runLeft",
-          "type": "boolean"
-        },
-        {
-          "name": "runRight",
-          "type": "boolean"
-        }
-      ]
-    },
-    "MammothBehavior": {
-      "scriptId": "267",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "escaping",
-          "type": "boolean"
-        }
-      ]
     },
     "CursorBehavior": {
       "scriptId": "288",
@@ -492,11 +369,6 @@
     },
     "OldWomanDoorBehavior": {
       "scriptId": "297",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "FatsexHallDoorBehavior": {
-      "scriptId": "317",
       "parentBehavior": null,
       "properties": []
     },
@@ -547,11 +419,6 @@
         }
       ]
     },
-    "OilBehavior": {
-      "scriptId": "336",
-      "parentBehavior": null,
-      "properties": []
-    },
     "ChiomeBehavior": {
       "scriptId": "337",
       "parentBehavior": null,
@@ -568,14 +435,41 @@
         }
       ]
     },
-    "SpencersDoorBehavior": {
-      "scriptId": "376",
+    "FrankBehavior": {
+      "scriptId": "382",
       "line": 0,
       "parentBehavior": null,
       "properties": []
     },
-    "SpencersExitBehavior": {
-      "scriptId": "377",
+    "GenericDoorBehavior": {
+      "scriptId": "376",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "targetScene",
+          "type": "string"
+        },
+        {
+          "name": "targetActor",
+          "type": "string"
+        }
+      ]
+    },
+    "AndyBehavior": {
+      "scriptId": "385",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "CashierBehavior": {
+      "scriptId": "386",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "SecurityBehavior": {
+      "scriptId": "391",
       "line": 0,
       "parentBehavior": null,
       "properties": []

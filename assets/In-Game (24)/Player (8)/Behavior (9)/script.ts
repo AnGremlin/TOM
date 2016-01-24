@@ -14,7 +14,7 @@ class PlayerBehavior extends Sup.Behavior {
   mousePosition = new Sup.Math.Vector3(0,0,0);
   hoveredItem: Sup.Actor;
   targetItem: Sup.Actor;
-  activateDistance = 1.5;
+  activateDistance = 1;
 
   awake() {
     Game.playerBehavior = this;
@@ -103,6 +103,7 @@ class PlayerBehavior extends Sup.Behavior {
     this.moveTargetX = null;
     this.moveOffset.x = 0;
     this.targetItem = null;
+    this.autoPilot = false;
   }
     
   interaction() {

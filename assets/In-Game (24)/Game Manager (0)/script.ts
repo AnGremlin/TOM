@@ -15,6 +15,16 @@ module Game {
     activeQuest: "intro",
     currentFloor: 3,
     
+    //Fruit Room
+    hasMoney: true,
+    
+    //Spencers
+    frankTalkedTo: false,
+    dildoAcquired: false,
+    andyTalkedTo: false,
+    lubeAcquired: false,
+    receiptAcquired: false,
+    
     // Floor 0
     janitorDoorKnocked: false,
     janitorCalledForHelp: false,
@@ -66,6 +76,8 @@ module Game {
     for (let item in Game.inventory) {
       Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
     }
+    
+    getItem("Flower");
     
     Game.switchToScene("In-Game/Scenery/FruitRoom/Prefab", "Start");
   }
@@ -146,6 +158,10 @@ module Game {
     }
     
     return textActor;
+  }
+  
+  export function hasItem(item: string) {
+    return Game.inventory[item];
   }
   
   export function getItem(item: string) {

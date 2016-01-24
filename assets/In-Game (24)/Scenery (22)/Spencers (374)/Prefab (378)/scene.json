@@ -11,7 +11,7 @@
               "children": [],
               "components": [],
               "position": {
-                "x": -7,
+                "x": -7.071090221405029,
                 "y": 0,
                 "z": 0
               },
@@ -35,7 +35,7 @@
               "children": [],
               "components": [],
               "position": {
-                "x": 6.816037654876709,
+                "x": 7.242578029632568,
                 "y": 0,
                 "z": 0
               },
@@ -182,51 +182,7 @@
         {
           "id": "13",
           "name": "Table",
-          "children": [
-            {
-              "id": "17",
-              "name": "Rectangle",
-              "children": [],
-              "components": [
-                {
-                  "type": "SpriteRenderer",
-                  "config": {
-                    "spriteAssetId": "38",
-                    "animationId": null,
-                    "horizontalFlip": false,
-                    "verticalFlip": false,
-                    "castShadow": false,
-                    "receiveShadow": false,
-                    "color": "ffffff",
-                    "overrideOpacity": false,
-                    "opacity": null,
-                    "materialType": "basic",
-                    "shaderAssetId": null
-                  },
-                  "id": "0"
-                }
-              ],
-              "position": {
-                "x": 0.00015211105346679688,
-                "y": -0.003328561782836914,
-                "z": 0.10000002384185791
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 2,
-                "y": 1,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0,
-              "prefab": null
-            }
-          ],
+          "children": [],
           "components": [
             {
               "type": "SpriteRenderer",
@@ -268,9 +224,9 @@
             }
           ],
           "position": {
-            "x": 4.768962383270264,
-            "y": -1.1690000295639038,
-            "z": -0.20000000298023224
+            "x": 6,
+            "y": -1.299,
+            "z": -0.2
           },
           "orientation": {
             "x": 0,
@@ -281,330 +237,6 @@
           "scale": {
             "x": 1,
             "y": 1,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
-          "id": "14",
-          "name": "Fruit1",
-          "children": [
-            {
-              "id": "18",
-              "name": "Rectangle",
-              "children": [],
-              "components": [
-                {
-                  "type": "SpriteRenderer",
-                  "config": {
-                    "spriteAssetId": "38",
-                    "animationId": null,
-                    "horizontalFlip": false,
-                    "verticalFlip": false,
-                    "castShadow": false,
-                    "receiveShadow": false,
-                    "color": "ffffff",
-                    "overrideOpacity": false,
-                    "opacity": null,
-                    "materialType": "basic",
-                    "shaderAssetId": null
-                  },
-                  "id": "0"
-                }
-              ],
-              "position": {
-                "x": 0.00004291534423828125,
-                "y": -0.010825693607330322,
-                "z": 0.09999999403953552
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0,
-              "prefab": null
-            }
-          ],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "spriteAssetId": "370",
-                "animationId": null,
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
-                "materialType": "basic",
-                "shaderAssetId": null
-              },
-              "id": "0"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "SimplePhraseBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ItemBehavior",
-                "propertyValues": {
-                  "type": {
-                    "type": "string",
-                    "value": "bubble"
-                  }
-                }
-              },
-              "id": "3"
-            }
-          ],
-          "position": {
-            "x": 5.456678867340088,
-            "y": -0.4309999942779541,
-            "z": -0.5
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 0.5,
-            "y": 0.5,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
-          "id": "15",
-          "name": "Fruit2",
-          "children": [
-            {
-              "id": "19",
-              "name": "Rectangle",
-              "children": [],
-              "components": [
-                {
-                  "type": "SpriteRenderer",
-                  "config": {
-                    "spriteAssetId": "38",
-                    "animationId": null,
-                    "horizontalFlip": false,
-                    "verticalFlip": false,
-                    "castShadow": false,
-                    "receiveShadow": false,
-                    "color": "ffffff",
-                    "overrideOpacity": false,
-                    "opacity": null,
-                    "materialType": "basic",
-                    "shaderAssetId": null
-                  },
-                  "id": "0"
-                }
-              ],
-              "position": {
-                "x": 0.40460676696000275,
-                "y": -0.03260445912501275,
-                "z": 0.10000143252822352
-              },
-              "orientation": {
-                "x": -0.00001139323991743051,
-                "y": 0.00012350454902044795,
-                "z": -0.7016557939456177,
-                "w": 0.7125160569695009
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0,
-              "prefab": null
-            }
-          ],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "spriteAssetId": "371",
-                "animationId": null,
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
-                "materialType": "basic",
-                "shaderAssetId": null
-              },
-              "id": "0"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "SimplePhraseBehavior",
-                "propertyValues": {}
-              },
-              "id": "1"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ItemBehavior",
-                "propertyValues": {
-                  "type": {
-                    "type": "string",
-                    "value": "bubble"
-                  }
-                }
-              },
-              "id": "2"
-            }
-          ],
-          "position": {
-            "x": 4.71230936050415,
-            "y": -0.6129999756813049,
-            "z": -0.5
-          },
-          "orientation": {
-            "x": 0.00007667530470957431,
-            "y": 0.00003588935585797086,
-            "z": 0.701654357466516,
-            "w": 0.7125174754231185
-          },
-          "scale": {
-            "x": 0.5,
-            "y": 0.5,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
-          "id": "16",
-          "name": "Fruit3",
-          "children": [
-            {
-              "id": "20",
-              "name": "Rectangle",
-              "children": [],
-              "components": [
-                {
-                  "type": "SpriteRenderer",
-                  "config": {
-                    "spriteAssetId": "38",
-                    "animationId": null,
-                    "horizontalFlip": false,
-                    "verticalFlip": false,
-                    "castShadow": false,
-                    "receiveShadow": false,
-                    "color": "ffffff",
-                    "overrideOpacity": false,
-                    "opacity": null,
-                    "materialType": "basic",
-                    "shaderAssetId": null
-                  },
-                  "id": "0"
-                }
-              ],
-              "position": {
-                "x": 0.0031561851501464844,
-                "y": 0.0034009218215942383,
-                "z": 0.09999999403953552
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0,
-              "prefab": null
-            }
-          ],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "spriteAssetId": "372",
-                "animationId": null,
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
-                "materialType": "basic",
-                "shaderAssetId": null
-              },
-              "id": "0"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "SimplePhraseBehavior",
-                "propertyValues": {}
-              },
-              "id": "1"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ItemBehavior",
-                "propertyValues": {
-                  "type": {
-                    "type": "string",
-                    "value": "bubble"
-                  }
-                }
-              },
-              "id": "2"
-            }
-          ],
-          "position": {
-            "x": 4.041549205780029,
-            "y": -0.42740097641944885,
-            "z": -0.5
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 0.5,
-            "y": 0.5,
             "z": 1
           },
           "visible": true,
@@ -640,7 +272,7 @@
               ],
               "position": {
                 "x": 0,
-                "y": -1,
+                "y": -0.9099098294973373,
                 "z": 0
               },
               "orientation": {
@@ -680,8 +312,17 @@
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "SpencersExitBehavior",
-                "propertyValues": {}
+                "behaviorName": "GenericDoorBehavior",
+                "propertyValues": {
+                  "targetScene": {
+                    "type": "string",
+                    "value": "In-Game/Scenery/FruitRoom/Prefab"
+                  },
+                  "targetActor": {
+                    "type": "string",
+                    "value": "Spencers Door"
+                  }
+                }
               },
               "id": "1"
             },
@@ -695,9 +336,265 @@
             }
           ],
           "position": {
-            "x": -4.873794078826904,
-            "y": 1.100000023841858,
-            "z": -0.10000000149011612
+            "x": -4.468,
+            "y": 1.1,
+            "z": -0.5
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "23",
+          "name": "Frank",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "spriteAssetId": "381",
+                "animationId": "0",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "1"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "ItemBehavior",
+                "propertyValues": {
+                  "type": {
+                    "type": "string",
+                    "value": "bubble"
+                  }
+                }
+              },
+              "id": "2"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "FrankBehavior",
+                "propertyValues": {}
+              },
+              "id": "3"
+            }
+          ],
+          "position": {
+            "x": 1.8184843063354492,
+            "y": -0.36094748973846436,
+            "z": -0.20000000298023224
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "25",
+          "name": "Andy",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "spriteAssetId": "383",
+                "animationId": "0",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "1"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "ItemBehavior",
+                "propertyValues": {
+                  "type": {
+                    "type": "string",
+                    "value": "bubble"
+                  }
+                }
+              },
+              "id": "2"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "AndyBehavior",
+                "propertyValues": {}
+              },
+              "id": "3"
+            }
+          ],
+          "position": {
+            "x": 3.074408769607544,
+            "y": -0.36094748973846436,
+            "z": -0.20000000298023224
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "26",
+          "name": "RexMaid",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "spriteAssetId": "387",
+                "animationId": "0",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "1"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "ItemBehavior",
+                "propertyValues": {
+                  "type": {
+                    "type": "string",
+                    "value": "bubble"
+                  }
+                }
+              },
+              "id": "2"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "CashierBehavior",
+                "propertyValues": {}
+              },
+              "id": "3"
+            }
+          ],
+          "position": {
+            "x": 6,
+            "y": -0.361,
+            "z": -0.3
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "27",
+          "name": "Security",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "spriteAssetId": "390",
+                "animationId": "0",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "1"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "ItemBehavior",
+                "propertyValues": {
+                  "type": {
+                    "type": "string",
+                    "value": "bubble"
+                  }
+                }
+              },
+              "id": "2"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "SecurityBehavior",
+                "propertyValues": {}
+              },
+              "id": "3"
+            }
+          ],
+          "position": {
+            "x": -1.3080569505691528,
+            "y": -0.3610000014305115,
+            "z": -0.20000000298023224
           },
           "orientation": {
             "x": 0,
