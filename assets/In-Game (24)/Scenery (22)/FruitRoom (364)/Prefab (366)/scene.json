@@ -83,7 +83,7 @@
             {
               "type": "SpriteRenderer",
               "config": {
-                "spriteAssetId": "365",
+                "spriteAssetId": "393",
                 "animationId": null,
                 "overrideOpacity": false,
                 "color": "ffffff",
