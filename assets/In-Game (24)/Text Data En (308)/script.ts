@@ -9,7 +9,7 @@ module TextDataEn {
   export var Outlet = "An outlet. Everything needs electricity, even you."
   export var Poster = "'Hang in there!' Ha, ha."
   export var ChargeBox = "Your chargebox. This is where you 'sleep'."
-  export var Dresser = "This dresser is yours. It used to be his. How thoughtful."
+  export var Dresser = "_This_ dresser is _yours_. It _used_ to be _his_. How thoughtful."
   
   // Fruit test
   export var Table = "Says here this is a table, but it looks more like a solid block of wood to me.";

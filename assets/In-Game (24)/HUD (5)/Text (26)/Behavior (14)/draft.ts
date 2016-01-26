@@ -22,7 +22,7 @@ class TextBehavior extends Sup.Behavior {
     this.italicsInidces = [];
     
     //remove italics chars and save the toggle positions
-    var pos = this.text.indexOf('_');
+    var pos = this.text.indexOf('`_`');
 
     while (pos !== -1) {
       this.italicsInidces.push(pos);

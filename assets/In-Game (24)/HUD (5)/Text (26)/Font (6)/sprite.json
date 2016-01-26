@@ -18,6 +18,20 @@
       "endFrameIndex": 284,
       "id": "0",
       "speed": 1
+    },
+    {
+      "id": "1",
+      "name": "Normal A",
+      "startFrameIndex": 33,
+      "endFrameIndex": 33,
+      "speed": 1
+    },
+    {
+      "id": "2",
+      "name": "Italics A",
+      "startFrameIndex": 183,
+      "endFrameIndex": 183,
+      "speed": 1
     }
   ],
   "opacity": 1,

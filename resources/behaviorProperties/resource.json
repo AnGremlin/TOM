@@ -210,6 +210,14 @@
           "type": "number"
         },
         {
+          "name": "italicsOn",
+          "type": "boolean"
+        },
+        {
+          "name": "italicsOffset",
+          "type": "number"
+        },
+        {
           "name": "timer",
           "type": "number"
         },
