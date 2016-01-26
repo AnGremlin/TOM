@@ -53,7 +53,7 @@ module TextDataEn {
   export var Gen_yeah = "Yeah";
         
   //
-  export var lorem_ = "your gay";
+  export var lorem_ = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt id leo nec ultricies. Etiam ultricies ipsum orci, eget dictum neque consequat vel. Suspendisse ac libero fermentum libero varius molestie. Nam ac nisi eget sem vulputate ultrices nec at elit. Sed urna risus, rhoncus eget tincidunt sit amet, cursus laoreet turpis. Integer ultricies nibh id lacus pretium auctor. Cras semper, sem et porttitor tristique, odio dolor consequat purus, sit amet volutpat lacus nisl quis augue. Sed bibendum in sapien in volutpat. Sed imperdiet id ex quis scelerisque. Nullam at arcu turpis. Suspendisse tellus orci, convallis ut tempor a, consectetur at lectus. In aliquam et nulla a viverra. Etiam lorem lectus, tincidunt in bibendum quis, sagittis hendrerit est. Morbi id congue turpis.";
         
   /************************************************
    *                    GUDUL                     *

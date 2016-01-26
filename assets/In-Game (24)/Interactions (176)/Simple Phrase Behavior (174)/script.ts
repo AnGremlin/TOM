@@ -3,23 +3,27 @@ class SimplePhraseBehavior extends Sup.Behavior {
   isArray = false;
   index = 0;
   text = null;
+
+  overrideTextId = "";
+  overrideText = "";
+  overrideFaceset = "";
   
   awake() {
     this.actor["actionBehavior"] = this;
-    this.text = Game.TextData[this.actor.getName()];
+    this.text = this.overrideText != "" ? this.overrideText : Game.TextData[this.overrideTextId ? this.overrideTextId : this.actor.getName()];
     this.isArray = Array.isArray(this.text);
     
-    if (Game.TextData[this.actor.getName()] == null) {
+    if (this.text == null) {
       Sup.log(`WARNING: no text set for - ${this.actor.getName()} - item`);
     }
   }
   
   activate() {
     if(!this.isArray) {
-      Game.dialogBehavior.show("Tom", this.actor.getName(), null);  
+      Game.dialogBehavior.showRaw(this.overrideFaceset != "" ? this.overrideFaceset : "Tom", this.text, null);  
     } else {
       this.index = 1;
-      Game.dialogBehavior.showIdx("Tom", this.actor.getName(), 0, this);  
+      Game.dialogBehavior.showIdx(this.overrideFaceset != "" ? this.overrideFaceset : "Tom", this.overrideTextId != "" ? this.overrideTextId : this.actor.getName(), 0, this);  
     }
   }
 

@@ -21,14 +21,8 @@ class CursorBehavior extends Sup.Behavior {
     var newSprite = this.normalSprite;
     
     if (Game.dialogBehavior != null) {
-      if (this.position.y < -2.5) {
-        newSprite = this.interactionSprite;
-      } else if (Game.dialogBehavior.isVisible || Game.fsdialogBehavior.isVisible) {
-        if (Game.dialogBehavior.choiceIds != null || Game.fsdialogBehavior.choiceIds != null) {
-          newSprite = this.noFastForwardSprite;
-        } else {
-          newSprite = this.fastForwardSprite;
-        }
+      if (Game.dialogBehavior.isVisible || Game.fsdialogBehavior.isVisible) {
+        newSprite = this.normalSprite;
       }
 
       else if (Game.playerBehavior.hoveredItem != null) {

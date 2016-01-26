@@ -75,6 +75,18 @@
         {
           "name": "text",
           "type": "any"
+        },
+        {
+          "name": "overrideTextId",
+          "type": "string"
+        },
+        {
+          "name": "overrideText",
+          "type": "string"
+        },
+        {
+          "name": "overrideFaceset",
+          "type": "string"
         }
       ]
     },

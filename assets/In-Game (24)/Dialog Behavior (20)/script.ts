@@ -92,8 +92,14 @@ class DialogBehavior extends Sup.Behavior {
   }
   
   show(characterId: string, textId: string, choiceIds: string[], dialogFinishBehavior?) {
+    let text = Game.TextData[textId];
+    if (text == null) text = textId;
+    
+    this.showRaw(characterId, text, choiceIds, dialogFinishBehavior, textId)
+  }
+  
+  showRaw(characterId: string, text: string, choiceIds: string[], dialogFinishBehavior?, textId?) {
     this.textId = textId;
-    // this.textId is used in close()
     
     if (characterId === "Dowie_Thought") {
       characterId = "Dowie";
@@ -113,23 +119,6 @@ class DialogBehavior extends Sup.Behavior {
     Game.playerBehavior.canMove = false;
     this.faceSetSpriteRenderer.setSprite(Sup.get("In-Game/Pnj/Face Sets/"+characterId, Sup.Sprite))
     
-    let text = Game.TextData[textId];
-    if (text == null) text = textId;
-    
-    if (Array.isArray(text)) {
-      let randomTextIndex = Sup.Math.Random.integer(0, text.length - 1);
-      
-      // Ensure we don't pick the same text twice in a row
-      while (text.length > 1 && this.previousTextId === textId && this.previousRandomTextIndex === randomTextIndex) {
-        randomTextIndex = Sup.Math.Random.integer(0, text.length - 1);
-      }
-      
-      this.previousRandomTextIndex = randomTextIndex;
-      this.previousTextId = textId;
-      
-      text = text[randomTextIndex];
-    }
-      
     this.mainTextBehavior.setText(text, 45);
     
     if (choiceIds != null) {
