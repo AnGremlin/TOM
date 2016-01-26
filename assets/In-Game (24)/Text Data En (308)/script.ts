@@ -1,7 +1,16 @@
 module TextDataEn {
   /************************************************
-   *                 FUCKFICTION                  *
+   *                     TOM                      *
    ************************************************/
+  //Science Room
+  export var Door = "Locked."
+  export var Blanket = "It’s a blanket. Makes the whole 'sleeping in a box’ thing a little more cozy."
+  export var HandScanner = "One way out, and it's with the biometrics scanner."
+  export var Outlet = "An outlet. Everything needs electricity, even you."
+  export var Poster = "'Hang in there!' Ha, ha."
+  export var ChargeBox = "Your chargebox. This is where you 'sleep'."
+  export var Dresser = "This dresser is yours. It used to be his. How thoughtful."
+  
   // Fruit test
   export var Table = "Says here this is a table, but it looks more like a solid block of wood to me.";
   export var Fruit1 = "One weird trick to good health. Doctors hate it!";

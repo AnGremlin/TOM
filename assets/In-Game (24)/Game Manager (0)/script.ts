@@ -79,9 +79,7 @@ module Game {
       Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
     }
     
-    getItem("Flower");
-    
-    Game.switchToScene("In-Game/Scenery/FruitRoom/Prefab", "Start");
+    Game.switchToScene("In-Game/Scenery/ScienceRoom/Prefab", "Start");
   }
   
   export function switchToScene(sceneName: string, target: string) {
@@ -129,14 +127,8 @@ module Game {
     }
     
     Game.playerBehavior.position.x = targetActor.getLocalPosition().x;
-    Game.cameraBehavior.position.x = Game.playerBehavior.position.x;
-    
-    if (sceneName == "In-Game/Scenery/Elevator/Prefab") {
-      Game.playerBehavior.position.y = targetActor.getLocalPosition().y;
-      Game.cameraBehavior.position.x -= 2;
-    } else {
-      Game.playerBehavior.position.y = -1.2;
-    }
+    //Game.cameraBehavior.position.x = Game.playerBehavior.position.x;
+    //Game.playerBehavior.position.y = -1.2;
     
     Game.playerBehavior.actor.setLocalPosition(Game.playerBehavior.position);
   }

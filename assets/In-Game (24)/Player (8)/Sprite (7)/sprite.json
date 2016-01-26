@@ -9,28 +9,28 @@
   },
   "origin": {
     "x": 0.5,
-    "y": 0.4
+    "y": 0.5
   },
   "animations": [
     {
       "name": "Idle",
       "startFrameIndex": 0,
-      "endFrameIndex": 3,
+      "endFrameIndex": 0,
       "id": "0",
       "speed": 1
     },
     {
       "id": "8",
       "name": "Walk",
-      "startFrameIndex": 4,
-      "endFrameIndex": 11,
+      "startFrameIndex": 0,
+      "endFrameIndex": 0,
       "speed": 1
     },
     {
       "id": "9",
       "name": "Talk",
       "startFrameIndex": 0,
-      "endFrameIndex": 3,
+      "endFrameIndex": 0,
       "speed": 1
     }
   ],

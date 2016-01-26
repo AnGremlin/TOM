@@ -845,6 +845,11 @@
             "type": null,
             "children": [
               {
+                "id": "408",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
                 "id": "407",
                 "name": "Background",
                 "type": "sprite"
@@ -938,6 +943,11 @@
               {
                 "id": "373",
                 "name": "Tom",
+                "type": "sprite"
+              },
+              {
+                "id": "409",
+                "name": "TomBlank",
                 "type": "sprite"
               },
               {

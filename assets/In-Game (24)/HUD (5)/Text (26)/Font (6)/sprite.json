@@ -1,11 +1,11 @@
 {
   "filtering": "pixelated",
-  "pixelsPerUnit": 11,
-  "framesPerSecond": 1,
+  "pixelsPerUnit": 22,
+  "framesPerSecond": 2,
   "alphaTest": 0.1,
   "grid": {
-    "width": 10,
-    "height": 12
+    "width": 20,
+    "height": 20
   },
   "origin": {
     "x": 0.5,
@@ -15,7 +15,7 @@
     {
       "name": "Animation",
       "startFrameIndex": 0,
-      "endFrameIndex": 119,
+      "endFrameIndex": 284,
       "id": "0",
       "speed": 1
     }

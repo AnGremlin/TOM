@@ -36,7 +36,7 @@ class SecurityBehavior extends Sup.Behavior {
   {
     if((Game.hasItem("Oil") || Game.hasItem("Sucker")) && !Game.hasItem("Card")) {
       //you got the goods, but haven't paid
-      if(Game.playerBehavior.canMove && Game.playerBehavior.position.x <= this.actor.getPosition().x && Game.playerBehavior.moveTargetX <= this.actor.getPosition().x) {
+      if(Game.playerBehavior.canMove && Game.playerBehavior.position.x <= this.actor.getPosition().x/* && Game.playerBehavior.moveTargetX <= this.actor.getPosition().x*/) {
         this.actor.spriteRenderer.setAnimation("Talk");
         Game.dialogBehavior.show("Security", "Sec_stop", ["Sec_okay"], this);
       }

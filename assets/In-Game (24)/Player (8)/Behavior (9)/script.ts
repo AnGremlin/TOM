@@ -1,5 +1,5 @@
 class PlayerBehavior extends Sup.Behavior {
-  baseSpeed = 0.05;
+  baseSpeed = 20;//0.05;
   footstepsSound = new Sup.Audio.SoundPlayer(Sup.get("In-Game/Player/Footsteps", Sup.Sound));
 
   position = this.actor.getLocalPosition();
@@ -54,12 +54,13 @@ class PlayerBehavior extends Sup.Behavior {
       return;
     }
     
-    this.move();
     this.interaction();
+    this.move();
+    //this.interaction(); //moving after interact should allow actors to intercept despite effectively infinite speed
   }
   
   move() {
-    if (this.moveTargetX != null) {
+    /*if (this.moveTargetX != null) {
       if (this.moveTargetX < this.position.x) {
         this.moveOffset.x = -this.baseSpeed;
       } else if (this.moveTargetX > this.position.x) {
@@ -69,16 +70,18 @@ class PlayerBehavior extends Sup.Behavior {
     
     if (this.position.x + this.moveOffset.x <= this.leftLimit || this.position.x + this.moveOffset.x >= this.rightLimit) {
       this.clearMovement()
-    }
+    }*/
     
-    this.position.add(this.moveOffset);
+    //this.position.add(this.moveOffset);
+    if(this.targetItem != null) this.moveTargetX = this.targetItem.getPosition().x;
+    if(this.moveTargetX != null) this.position.x = this.moveTargetX;
     this.actor.setLocalPosition(this.position);
     
     if (this.moveTargetX != null && Math.abs(this.position.x - this.moveTargetX) < 0.1) {
       this.clearMovement();
     }
     
-    if (this.moveOffset.x === 0) {
+    /*if (this.moveOffset.x === 0) {
       let anim = this.actor.spriteRenderer.getAnimation();
       if (anim !== "Walk" || this.actor.spriteRenderer.getAnimationFrameTime() > 2) {
         this.actor.spriteRenderer.setAnimation("Idle");
@@ -97,6 +100,7 @@ class PlayerBehavior extends Sup.Behavior {
     }
 
     this.actor.setLocalScale(this.scale);
+    */
   }
   
   clearMovement() {
@@ -146,25 +150,28 @@ class PlayerBehavior extends Sup.Behavior {
     }
     
     if (Game.dialogBehavior.closedTimer > 2 && Game.fsdialogBehavior.closedTimer > 2) {
+      
       if ((Sup.Input.isMouseButtonDown(0) || Sup.Input.wasMouseButtonJustReleased(0))
-          && (this.hoveredItem == null || Math.abs(this.position.x - this.hoveredItem.getBehavior(ItemBehavior).position.x) > this.activateDistance)) {
-        if (Math.abs(this.position.x - this.mousePosition.x) >= 0.1) {
-          this.moveTargetX = this.mousePosition.x;
-          
-          if (Sup.Input.wasMouseButtonJustReleased(0)) {
-            this.targetItem = this.hoveredItem;
-            if (this.targetItem != null) {
-              new Sup.Audio.SoundPlayer(Game.selectSound).play();
-            }
+          && (this.hoveredItem == null || Math.abs(this.position.x - this.hoveredItem.getBehavior(ItemBehavior).position.x) > 0)) {
+        
+        this.moveTargetX = this.mousePosition.x;
+
+        if (Sup.Input.wasMouseButtonJustReleased(0)) {
+          this.targetItem = this.hoveredItem;
+          if (this.targetItem != null) {
+            this.moveTargetX = this.targetItem.getPosition().x;
+            new Sup.Audio.SoundPlayer(Game.selectSound).play();
           }
         }
       }
+      
       
       if (this.hoveredItem != null && Sup.Input.wasMouseButtonJustReleased(0)
           && Math.abs(this.position.x - this.hoveredItem.getBehavior(ItemBehavior).position.x) <= this.activateDistance) {
         this.activateItem(this.hoveredItem);
         new Sup.Audio.SoundPlayer(Game.selectSound).play()
       }
+      
     }
   }
   

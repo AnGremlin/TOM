@@ -38,7 +38,7 @@ class ItemBehavior extends Sup.Behavior {
     
     if (this.actor.spriteRenderer != null) {
       if (this.isHovered) {
-        this.actor.spriteRenderer.setColor(1.5, 1.5, 1.5);
+        this.actor.spriteRenderer.setColor(1.2, 1.4, 1.1);
       } else {
         this.actor.spriteRenderer.setColor(1, 1, 1);
       }

@@ -1,8 +1,8 @@
 class CameraBehavior extends Sup.Behavior {
 
-  position = this.actor.getLocalPosition();
+  position = new Sup.Math.Vector3(0,0,10);
 
-  offset = 2;
+  offset = 1000000;
 
   blackscreenActor: Sup.Actor;
   blackscreenOpacity = 1;
@@ -22,13 +22,13 @@ class CameraBehavior extends Sup.Behavior {
 
   update() {
     // Position
-    if (Game.playerBehavior.position.x - this.offset > this.position.x) {
-      this.position.x = Sup.Math.lerp(this.position.x, Game.playerBehavior.position.x - this.offset, 0.1);
-    } else if (Game.playerBehavior.position.x + this.offset < this.position.x) {
-      this.position.x = Sup.Math.lerp(this.position.x, Game.playerBehavior.position.x + this.offset, 0.1);
-    }
-    
-    this.actor.setLocalPosition(this.position);
+    //if (Game.playerBehavior.position.x - this.offset > this.position.x) {
+    //  this.position.x = Sup.Math.lerp(this.position.x, Game.playerBehavior.position.x - this.offset, 0.1);
+    //} else if (Game.playerBehavior.position.x + this.offset < this.position.x) {
+    //  this.position.x = Sup.Math.lerp(this.position.x, Game.playerBehavior.position.x + this.offset, 0.1);
+    //}
+    //
+    //this.actor.setLocalPosition(this.position);
     
     // Fading
     if (this.blackscreenOpacity != this.blackscreenTargetOpacity) {
@@ -44,7 +44,7 @@ class CameraBehavior extends Sup.Behavior {
           this.blackscreenTargetOpacity = 0;
         
         } else if (this.blackscreenOpacity === 0) {
-          if (!Game.dialogBehavior.isVisible) {
+          if (!Game.dialogBehavior.isVisible && !Game.fsdialogBehavior.isVisible) {
             Game.playerBehavior.canMove = true;
           }
         }
@@ -62,15 +62,11 @@ class CameraBehavior extends Sup.Behavior {
     // Keys shortcut
     if (false) {
       if (Sup.Input.wasKeyJustPressed("L")) {
-        Game.music.stop()
-        Game.music = null;
-        Game.musicAsset = null;
-        Sup.loadScene(Sup.get("Language/Scene", Sup.Scene));
+        this.transitionToScene("In-Game/Scenery/FruitRoom/Prefab", "Start");
       }
 
       if (Sup.Input.wasKeyJustPressed("F")) {
-        Game.state.activeQuest = "finish";
-        this.transitionToScene("In-Game/Scenery/Floor 3/Hall/Prefab", "Player Door");
+        this.transitionToScene("In-Game/Scenery/ScienceRoom/Prefab", "Background");
       }
     }
   }
