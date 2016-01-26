@@ -588,7 +588,71 @@
               ],
               "position": {
                 "x": -4.823757171630859,
-                "y": 3.415000021457672,
+                "y": 3.4149999618530273,
+                "z": 0
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0
+            },
+            {
+              "id": "36",
+              "name": "Select Choice",
+              "children": [],
+              "components": [
+                {
+                  "type": "SpriteRenderer",
+                  "config": {
+                    "spriteAssetId": "101",
+                    "animationId": null,
+                    "overrideOpacity": false,
+                    "color": "ffffff",
+                    "horizontalFlip": false,
+                    "verticalFlip": false,
+                    "castShadow": false,
+                    "receiveShadow": false,
+                    "materialType": "basic"
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -5.25,
+                "y": -4.682000160217285,
+                "z": 0
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 0.30000001192092896,
+                "y": 0.30000001192092896,
+                "z": 0.30000001192092896
+              },
+              "visible": true,
+              "layer": 0
+            },
+            {
+              "id": "37",
+              "name": "Choices",
+              "children": [],
+              "components": [],
+              "position": {
+                "x": -5.25,
+                "y": -4.682,
                 "z": 0
               },
               "orientation": {

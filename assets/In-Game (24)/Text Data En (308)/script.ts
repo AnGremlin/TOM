@@ -3,13 +3,13 @@ module TextDataEn {
    *                     TOM                      *
    ************************************************/
   //Science Room
-  export var Door = "Locked."
-  export var Blanket = "It’s a blanket. Makes the whole 'sleeping in a box’ thing a little more cozy."
-  export var HandScanner = "One way out, and it's with the biometrics scanner."
-  export var Outlet = "An outlet. Everything needs electricity, even you."
-  export var Poster = "'Hang in there!' Ha, ha."
-  export var ChargeBox = "Your chargebox. This is where you 'sleep'."
-  export var Dresser = "_This_ dresser is _yours_. It _used_ to be _his_. How thoughtful."
+  export var Door = "Locked.";
+  export var Blanket = "It’s a blanket. Makes the whole 'sleeping in a box’ thing a little more cozy.";
+  export var HandScanner = "One way out, and it's with the biometrics scanner.";
+  export var Outlet = "An outlet. Everything needs electricity, even you.";
+  export var Poster = ["'Hang in there!' It would make you grit your teeth, if you had teeth, but you suppose it's better than staring at a blank wall.", "He gave you this today, ordered you not to tear it down or else you'd 'hurt' his 'feelings.' You're not sure he's got feelings to hurt, but you are sure there's a worse threat, so you don't bother."];
+  export var ChargeBox = "Your chargebox. This is where you 'sleep'.";
+  export var Dresser = ["This dresser is yours. It used to be his. Cold, scratched, utilitarian metal. How thoughtful.", "You use it to store what few items you've accumulated over your year of sentience. It's not much to brag about, but it's all you've got."];
   
   // Fruit test
   export var Table = "Says here this is a table, but it looks more like a solid block of wood to me.";
@@ -48,8 +48,12 @@ module TextDataEn {
   export var Sec_okay = "Oh, yeah.";
   export var Sec_after = "Have a nice day, man.";
         
+  //Generics
+  export var Gen_okay = "Okay";
+  export var Gen_yeah = "Yeah";
+        
   //
-  export var lorem_ = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet ipsum et eros fermentum, id cursus lacus blandit. Suspendisse eleifend nisl eu felis faucibus consectetur. Aliquam sodales elit ut ullamcorper tempus. Phasellus tempus aliquet neque, et cursus orci tincidunt in. Donec in ante augue. Vivamus euismod arcu nisl, sollicitudin tempor augue auctor vel. Mauris a metus neque. Donec eget nunc semper, ornare diam nec, venenatis metus. Nunc a egestas quam. Nam eget diam in ipsum luctus venenatis eget vel massa. Curabitur non varius eros. Etiam dictum pulvinar risus sed placerat.";
+  export var lorem_ = "your gay";
         
   /************************************************
    *                    GUDUL                     *

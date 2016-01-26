@@ -14,7 +14,7 @@ class PlayerBehavior extends Sup.Behavior {
   mousePosition = new Sup.Math.Vector3(0,0,0);
   hoveredItem: Sup.Actor;
   targetItem: Sup.Actor;
-  activateDistance = 1;
+  activateDistance = 100;
 
   awake() {
     Game.playerBehavior = this;

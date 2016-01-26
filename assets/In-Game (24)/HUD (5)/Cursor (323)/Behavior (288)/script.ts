@@ -24,7 +24,7 @@ class CursorBehavior extends Sup.Behavior {
       if (this.position.y < -2.5) {
         newSprite = this.interactionSprite;
       } else if (Game.dialogBehavior.isVisible || Game.fsdialogBehavior.isVisible) {
-        if (Game.dialogBehavior.choiceIds != null) {
+        if (Game.dialogBehavior.choiceIds != null || Game.fsdialogBehavior.choiceIds != null) {
           newSprite = this.noFastForwardSprite;
         } else {
           newSprite = this.fastForwardSprite;

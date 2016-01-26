@@ -7,6 +7,7 @@
     },
     "DialogBehavior": {
       "scriptId": "20",
+      "line": 0,
       "parentBehavior": null,
       "properties": [
         {
@@ -24,6 +25,10 @@
         {
           "name": "previousRandomTextIndex",
           "type": "number"
+        },
+        {
+          "name": "choicesOriginPosition",
+          "type": "Sup.Math.Vector3"
         },
         {
           "name": "activeChoiceIndex",
@@ -58,7 +63,20 @@
       "scriptId": "174",
       "line": 0,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "isArray",
+          "type": "boolean"
+        },
+        {
+          "name": "index",
+          "type": "number"
+        },
+        {
+          "name": "text",
+          "type": "any"
+        }
+      ]
     },
     "LanguageBehavior": {
       "scriptId": "316",
@@ -521,6 +539,14 @@
         },
         {
           "name": "blackscreenOpacity",
+          "type": "number"
+        },
+        {
+          "name": "choicesOriginPosition",
+          "type": "Sup.Math.Vector3"
+        },
+        {
+          "name": "activeChoiceIndex",
           "type": "number"
         }
       ]

@@ -141,6 +141,36 @@ class DialogBehavior extends Sup.Behavior {
     this["dialogFinishBehavior"] = dialogFinishBehavior;
   }
   
+  showIdx(characterId: string, textId: string, index: number, dialogFinishBehavior?) {
+    this.textId = textId;
+    // this.textId is used in close()
+    
+    this.choicesOrigin.setVisible(false);
+    this.choiceSelectActor.setVisible(false);
+    
+    if (characterId === "Dowie_Thought") {
+      characterId = "Dowie";
+    } else {
+      let voiceSound = Sup.get("SFX/Voices/" + characterId, Sup.Sound, { ignoreMissing: true });
+      if (voiceSound !== null) new Sup.Audio.SoundPlayer(voiceSound).play();
+    }
+    
+    this.isVisible = true;
+    this.actor.setVisible(true);
+    
+    Game.playerBehavior.canMove = false;
+    this.faceSetSpriteRenderer.setSprite(Sup.get("In-Game/Pnj/Face Sets/"+characterId, Sup.Sprite))
+    
+    let text = Game.TextData[textId];
+    if (text == null) text = textId;
+      
+    text = text[index];
+      
+    this.mainTextBehavior.setText(text, 45);
+    
+    this["dialogFinishBehavior"] = dialogFinishBehavior;
+  }
+  
   close() {
     this.closedTimer = 0;
   

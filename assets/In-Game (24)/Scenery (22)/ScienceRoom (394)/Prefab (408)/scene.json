@@ -589,7 +589,7 @@
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "SimplePhraseBehavior",
+                "behaviorName": "SecurityBehavior",
                 "propertyValues": {}
               },
               "id": "1"

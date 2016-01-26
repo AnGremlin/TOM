@@ -28,7 +28,7 @@ class SecurityBehavior extends Sup.Behavior {
     }
     else
     {
-      Game.fsdialogBehavior.show(textId, this);
+      Game.fsdialogBehavior.show(textId, ["Gen_okay","Gen_yeah"], this);
     }
   }
   
