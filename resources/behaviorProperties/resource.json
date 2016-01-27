@@ -477,6 +477,21 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "SpenecersExitBehavior": {
+      "scriptId": "436",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "targetScene",
+          "type": "string"
+        },
+        {
+          "name": "targetActor",
+          "type": "string"
+        }
+      ]
     }
   }
 }

@@ -34,6 +34,7 @@ class FSDialogBehavior extends Sup.Behavior {
     this.choicesOriginPosition = this.choicesOrigin.getLocalPosition();
     
     this.choiceSelectActor = this.actor.getChild("Select Choice");
+    this.choiceSelectActor.setVisible(false);
     
     for (let i = 0; i < 5; i++) {
       let choiceActor = new Sup.Actor("Choice" + i, this.choicesOrigin);

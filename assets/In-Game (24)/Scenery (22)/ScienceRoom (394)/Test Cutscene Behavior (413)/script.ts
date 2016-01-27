@@ -7,7 +7,7 @@ class TCSBehavior extends Sup.Behavior {
   }
 
   activate() {
-    Cutscene.loadScript(TestCutscene); 
+    Cutscene.loadScript("test"); 
   }
 }
 Sup.registerBehavior(TCSBehavior);

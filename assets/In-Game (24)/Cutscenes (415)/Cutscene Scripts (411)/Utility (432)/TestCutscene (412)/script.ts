@@ -1,9 +1,14 @@
 module TestCutscene {
   
-  export var name = "TestCutscene.ts"
+  export var name = "test"
         
   export var lines =
       [
+        "SFX Select",
+        "SFX Select",
+        "SFX Select",
+        "SFX Select",
+        "SFX Select",
         "ENTER LEFT AngelTom",
         "ANIMATE LEFT Idle",
         "SPEAK Tom/Face Hey man",

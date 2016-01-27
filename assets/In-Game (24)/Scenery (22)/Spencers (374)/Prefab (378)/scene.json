@@ -312,7 +312,7 @@
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "GenericDoorBehavior",
+                "behaviorName": "SpenecersExitBehavior",
                 "propertyValues": {
                   "targetScene": {
                     "type": "string",

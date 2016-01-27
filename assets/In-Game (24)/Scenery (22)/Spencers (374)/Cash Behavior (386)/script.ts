@@ -32,10 +32,13 @@ class CashierBehavior extends Sup.Behavior {
     
     if (textId === "Cash_Dialog") { 
       if (choiceId === "Cash_buy_yes") {
-        Game.getItem("Card");
-        Game.state.receiptAcquired=true;
-        Game.state.hasMoney = false;
-        Game.useItem("Flower");
+        if(Game.hasItem("Flower"))
+        {
+          Game.getItem("Card");
+          Game.state.receiptAcquired=true;
+          Game.state.hasMoney = false;
+          Game.useItem("Flower");
+        }
       }
     }
     Game.playerBehavior.actor.spriteRenderer.setAnimation(dowieAnim)

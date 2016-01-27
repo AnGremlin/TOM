@@ -26,6 +26,7 @@ module Game {
     andyTalkedTo: false,
     lubeAcquired: false,
     receiptAcquired: false,
+    moneyAcquired: false,
     
     // Floor 0
     janitorDoorKnocked: false,
@@ -78,6 +79,8 @@ module Game {
     for (let item in Game.inventory) {
       Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
     }
+    
+    CutsceneList.buildList();
     
     Game.switchToScene("In-Game/Scenery/ScienceRoom/Prefab", "Start");
   }

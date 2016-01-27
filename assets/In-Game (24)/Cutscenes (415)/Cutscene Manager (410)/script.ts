@@ -4,6 +4,7 @@ module Cutscene {
         export var sceneName = "";
         export var active = false;
         export var waitingForDialog = false;
+        export var waitingForSound = false;
         
         export var leftActor: Sup.Actor;
         export var leftImage: string;
@@ -11,21 +12,28 @@ module Cutscene {
         export var rightActor: Sup.Actor;
         export var rightImage: string;
         
+        var fdBehavior: Sup.Behavior;
+        
+        var playingSound: Sup.Audio.SoundPlayer;
+        
         export function test() {
-          loadScript(TestCutscene);
+          loadScript("test");
         }
         
-        export function loadScript(scene) {
+        export function loadScript(scene: string, finishDialogBehavior?) {
           reset();
           
+          scene = CutsceneList.getScene(scene);
           sceneName = scene["name"];
           sceneLines = scene["lines"];
           active = true;
           
+          fdBehavior = finishDialogBehavior;
+          
           if(Game.fsdialogBehavior != null)
           {
             Game.fsdialogBehavior.actor.setVisible(true);
-            Game.fsdialogBehavior.blackoutActor.spriteRenderer.setOpacity(0.5);
+            Game.fsdialogBehavior.blackoutActor.spriteRenderer.setOpacity(0.8);
           }
         }
         
@@ -57,10 +65,10 @@ module Cutscene {
         
         export function update() {
           
-          if(active && !waitingForDialog) {
+          if(active && !waitingForDialog && !waitingForSound) {
             var line = sceneLines[lineIdx];
           
-            while(line != null && active && !waitingForDialog) {
+            while(line != null && active && !waitingForDialog && !waitingForSound) {
               parseLine(line);
 
               lineIdx++;
@@ -71,7 +79,20 @@ module Cutscene {
               waitingForDialog = false;
               var line = sceneLines[lineIdx];
 
-              while(line != null && active && !waitingForDialog) {
+              while(line != null && active && !waitingForDialog && !waitingForSound) {
+                parseLine(line);
+
+                lineIdx++;
+                line = sceneLines[lineIdx];
+              }
+            }
+          } else if (active && waitingForSound) {
+            if (playingSound == null || !playingSound.isPlaying()) {
+              waitingForSound = false;
+              playingSound = null;
+              var line = sceneLines[lineIdx];
+
+              while(line != null && active && !waitingForDialog && !waitingForSound) {
                 parseLine(line);
 
                 lineIdx++;
@@ -83,9 +104,15 @@ module Cutscene {
         }
         
         function parseLine(line: string) {
+          Sup.log("Cutscene: " + line)
           if(line == "END") {
+            var fdb = fdBehavior;
+            var nombre = sceneName;
+            
             exit("BOTH");
             reset();
+            
+            if(fdb != null) fdb["finishDialog"](nombre,"");
           }
           var spaceIdx = line.indexOf(' ');
           if (spaceIdx != -1) {
@@ -108,6 +135,14 @@ module Cutscene {
               
               speak(face, line);
               
+            }  else if (command == "LOADIFITEM") {
+              
+              spaceIdx = line.indexOf(' ');
+              var item = line.substr(0,spaceIdx);
+              line = line.substr(spaceIdx+1,line.length);
+              
+              loadifitem(item, line);
+              
             } else if (command == "ANIMATE") {
               
               spaceIdx = line.indexOf(' ');
@@ -118,6 +153,21 @@ module Cutscene {
               
             } else if (command == "EXIT") {
               exit(line);
+              
+            } else if (command == "LOAD") {
+              load(line);
+              
+            } else if (command == "SCENE") {
+              scene(line, "Background");
+              
+            }  else if (command == "SFX") {
+              sfx(line);
+              
+            }  else if (command == "USE") {
+              use(line);
+              
+            }  else if (command == "GIVE") {
+              give(line);
               
             }  else {
               Sup.log("Error in cutscene '" + sceneName + "': bad line at line " + lineIdx);
@@ -176,5 +226,32 @@ module Cutscene {
           } else {
             Sup.log("Error in cutscene '" + sceneName + "': bad ENTER command at line " + lineIdx);
           }
+        }
+        
+        function give(item: string) {
+          Game.getItem(item);
+        }
+        
+        function use(item: string) {
+          Game.useItem(item);
+        }
+        
+        function sfx(sound: string) {
+          playingSound = new Sup.Audio.SoundPlayer(Sup.get("SFX/"+sound, Sup.Sound));
+          playingSound.play();
+          waitingForSound = true;
+        }
+        
+        function scene(name: string, target: string) {
+          fdBehavior = null; //Don't try to call back to destroyed actor!
+          Game.cameraBehavior.transitionToScene(name, target);
+        }
+        
+        function load(name: string) {
+          Cutscene.loadScript(name, fdBehavior);
+        }
+        
+        function loadifitem(item:string, name: string) {
+          if(Game.hasItem(item)) Cutscene.loadScript(name, fdBehavior);
         }
 }

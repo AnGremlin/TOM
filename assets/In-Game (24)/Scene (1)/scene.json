@@ -118,11 +118,269 @@
             "w": null
           },
           "scale": {
-            "x": 0,
-            "y": 0,
-            "z": 1
+            "x": null,
+            "y": null,
+            "z": null
           },
           "id": "17",
+          "visible": true,
+          "layer": 0
+        },
+        {
+          "id": "38",
+          "name": "LCSActor",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "spriteAssetId": null,
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -6,
+            "y": -2.5,
+            "z": -1.5
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "39",
+          "name": "RCSActor",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "spriteAssetId": null,
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 6,
+            "y": -2.5,
+            "z": -1.5
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "28",
+          "name": "Fullscreen Dialog",
+          "children": [
+            {
+              "id": "29",
+              "name": "Text",
+              "children": [],
+              "components": [
+                {
+                  "type": "Behavior",
+                  "config": {
+                    "behaviorName": "TextBehavior",
+                    "propertyValues": {}
+                  },
+                  "id": "1"
+                }
+              ],
+              "position": {
+                "x": -4.823757171630859,
+                "y": 3.4149999618530273,
+                "z": 0
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0
+            },
+            {
+              "id": "36",
+              "name": "Select Choice",
+              "children": [],
+              "components": [
+                {
+                  "type": "SpriteRenderer",
+                  "config": {
+                    "spriteAssetId": "101",
+                    "animationId": null,
+                    "overrideOpacity": false,
+                    "color": "ffffff",
+                    "horizontalFlip": false,
+                    "verticalFlip": false,
+                    "castShadow": false,
+                    "receiveShadow": false,
+                    "materialType": "basic"
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -5.25,
+                "y": -4.682,
+                "z": 2
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 0.30000001192092896,
+                "y": 0.30000001192092896,
+                "z": 0.30000001192092896
+              },
+              "visible": true,
+              "layer": 0
+            },
+            {
+              "id": "37",
+              "name": "Choices",
+              "children": [],
+              "components": [],
+              "position": {
+                "x": -5.25,
+                "y": -4.682,
+                "z": 2
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0
+            },
+            {
+              "id": "35",
+              "name": "Blackout",
+              "children": [],
+              "components": [
+                {
+                  "type": "SpriteRenderer",
+                  "config": {
+                    "spriteAssetId": "25",
+                    "animationId": null,
+                    "overrideOpacity": false,
+                    "color": "aaaaaa",
+                    "horizontalFlip": false,
+                    "verticalFlip": false,
+                    "castShadow": false,
+                    "receiveShadow": false,
+                    "materialType": "basic",
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 0,
+                "y": -0.781990479432352,
+                "z": -0.10000038146972656
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 40,
+                "y": 20,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0
+            }
+          ],
+          "components": [
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "FSDialogBehavior",
+                "propertyValues": {}
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0.782,
+            "z": -3
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
           "visible": true,
           "layer": 0
         },
@@ -585,7 +843,7 @@
           "position": {
             "x": 7,
             "y": -3.75,
-            "z": -2
+            "z": -4
           },
           "orientation": {
             "x": 0,
@@ -599,264 +857,6 @@
             "z": 1
           },
           "id": "18",
-          "visible": true,
-          "layer": 0
-        },
-        {
-          "id": "38",
-          "name": "LCSActor",
-          "children": [],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "spriteAssetId": null,
-                "animationId": null,
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
-                "materialType": "basic",
-                "shaderAssetId": null
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": -6,
-            "y": -2.5,
-            "z": -2
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
-          "id": "39",
-          "name": "RCSActor",
-          "children": [],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "spriteAssetId": null,
-                "animationId": null,
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
-                "materialType": "basic",
-                "shaderAssetId": null
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": 6,
-            "y": -2.5,
-            "z": -2
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
-          "id": "28",
-          "name": "Fullscreen Dialog",
-          "children": [
-            {
-              "id": "29",
-              "name": "Text",
-              "children": [],
-              "components": [
-                {
-                  "type": "Behavior",
-                  "config": {
-                    "behaviorName": "TextBehavior",
-                    "propertyValues": {}
-                  },
-                  "id": "1"
-                }
-              ],
-              "position": {
-                "x": -4.823757171630859,
-                "y": 3.4149999618530273,
-                "z": 0
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0
-            },
-            {
-              "id": "36",
-              "name": "Select Choice",
-              "children": [],
-              "components": [
-                {
-                  "type": "SpriteRenderer",
-                  "config": {
-                    "spriteAssetId": "101",
-                    "animationId": null,
-                    "overrideOpacity": false,
-                    "color": "ffffff",
-                    "horizontalFlip": false,
-                    "verticalFlip": false,
-                    "castShadow": false,
-                    "receiveShadow": false,
-                    "materialType": "basic"
-                  },
-                  "id": "0"
-                }
-              ],
-              "position": {
-                "x": -5.25,
-                "y": -4.682000160217285,
-                "z": 0
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 0.30000001192092896,
-                "y": 0.30000001192092896,
-                "z": 0.30000001192092896
-              },
-              "visible": true,
-              "layer": 0
-            },
-            {
-              "id": "37",
-              "name": "Choices",
-              "children": [],
-              "components": [],
-              "position": {
-                "x": -5.25,
-                "y": -4.682,
-                "z": 0
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0
-            },
-            {
-              "id": "35",
-              "name": "Blackout",
-              "children": [],
-              "components": [
-                {
-                  "type": "SpriteRenderer",
-                  "config": {
-                    "spriteAssetId": "25",
-                    "animationId": null,
-                    "overrideOpacity": false,
-                    "color": "aaaaaa",
-                    "horizontalFlip": false,
-                    "verticalFlip": false,
-                    "castShadow": false,
-                    "receiveShadow": false,
-                    "materialType": "basic",
-                    "opacity": null
-                  },
-                  "id": "0"
-                }
-              ],
-              "position": {
-                "x": 0,
-                "y": -0.781990479432352,
-                "z": -0.10000038146972656
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 40,
-                "y": 20,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0
-            }
-          ],
-          "components": [
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "FSDialogBehavior",
-                "propertyValues": {}
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": 0,
-            "y": 0.7820000052452087,
-            "z": -3
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
           "visible": true,
           "layer": 0
         }
@@ -917,7 +917,7 @@
           "type": "SpriteRenderer",
           "config": {
             "spriteAssetId": "422",
-            "animationId": "",
+            "animationId": null,
             "overrideOpacity": false,
             "color": "ffffff",
             "horizontalFlip": false,

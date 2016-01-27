@@ -263,9 +263,43 @@
             "type": null,
             "children": [
               {
-                "id": "412",
-                "name": "TestCutscene",
+                "id": "430",
+                "name": "CutsceneList",
                 "type": "script"
+              },
+              {
+                "id": "432",
+                "name": "Utility",
+                "type": null,
+                "children": [
+                  {
+                    "id": "431",
+                    "name": "ErrorCutscene",
+                    "type": "script"
+                  },
+                  {
+                    "id": "412",
+                    "name": "TestCutscene",
+                    "type": "script"
+                  }
+                ]
+              },
+              {
+                "id": "433",
+                "name": "Spencers",
+                "type": null,
+                "children": [
+                  {
+                    "id": "434",
+                    "name": "SecurityExitStop",
+                    "type": "script"
+                  },
+                  {
+                    "id": "435",
+                    "name": "SecurityExitPass",
+                    "type": "script"
+                  }
+                ]
               }
             ]
           },
@@ -622,6 +656,11 @@
               {
                 "id": "385",
                 "name": "Andy Behavior",
+                "type": "script"
+              },
+              {
+                "id": "436",
+                "name": "ExitBehavior",
                 "type": "script"
               },
               {

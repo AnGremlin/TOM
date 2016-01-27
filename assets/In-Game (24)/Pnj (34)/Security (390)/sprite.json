@@ -5,18 +5,18 @@
   ],
   "filtering": "smooth",
   "wrapping": "clampToEdge",
-  "pixelsPerUnit": 20,
+  "pixelsPerUnit": 10,
   "framesPerSecond": 10,
   "opacity": null,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
     "width": 64,
-    "height": 64
+    "height": 48
   },
   "origin": {
     "x": 0.5,
-    "y": 0.5
+    "y": 0
   },
   "animations": [
     {
