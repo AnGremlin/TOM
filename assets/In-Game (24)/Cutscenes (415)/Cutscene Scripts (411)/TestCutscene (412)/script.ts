@@ -4,17 +4,22 @@ module TestCutscene {
         
   export var lines =
       [
-        "ENTER LEFT In-Game/Pnj/RexMaid",
+        "ENTER LEFT In-Game/Pnj/AngelTom",
         "ANIMATE LEFT Idle",
-        "SPEAK RexMaid Hey man",
-        "ENTER RIGHT In-Game/Pnj/Andy",
+        "SPEAK Tom/Face Hey man",
+        "ENTER RIGHT In-Game/Pnj/KetchupKids",
         "ANIMATE RIGHT Idle",
-        "SPEAK Andy Hey there Rex.",
-        "SPEAK RexMaid Well, bye.",
+        "SPEAK Andy Hey there Tom.",
+        "SPEAK Tom/Face Well, bye.",
         "EXIT LEFT",
-        "SPEAK Andy Bye :3",
+        "SPEAK Frank Bye :3",
+        "EXIT RIGHT",
+        "SPEAK TomBlank ...",
+        "ENTER RIGHT In-Game/Pnj/Silas",
+        "SPEAK Silas/Face I could have sworn I heard fun in here.",
+        "SPEAK Silas/Silas3 Hm...",
+        "SPEAK TomBlank ...",
         "END",
-        ""
       ]
         
 }

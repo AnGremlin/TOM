@@ -758,11 +758,6 @@
                 "type": "sprite"
               },
               {
-                "id": "373",
-                "name": "Tom",
-                "type": "sprite"
-              },
-              {
                 "id": "409",
                 "name": "TomBlank",
                 "type": "sprite"
@@ -789,7 +784,7 @@
                 "children": [
                   {
                     "id": "417",
-                    "name": "Silas1",
+                    "name": "Face",
                     "type": "sprite"
                   },
                   {
@@ -811,12 +806,12 @@
               },
               {
                 "id": "423",
-                "name": "Tom (1)",
+                "name": "Tom",
                 "type": null,
                 "children": [
                   {
                     "id": "424",
-                    "name": "Tom1",
+                    "name": "Face",
                     "type": "sprite"
                   }
                 ]

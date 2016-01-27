@@ -20,10 +20,10 @@ class SimplePhraseBehavior extends Sup.Behavior {
   
   activate() {
     if(!this.isArray) {
-      Game.dialogBehavior.showRaw(this.overrideFaceset != "" ? this.overrideFaceset : "Tom", this.text, null);  
+      Game.dialogBehavior.showRaw(this.overrideFaceset != "" ? this.overrideFaceset : "TomBlank", this.text, null);  
     } else {
       this.index = 1;
-      Game.dialogBehavior.showIdx(this.overrideFaceset != "" ? this.overrideFaceset : "Tom", this.overrideTextId != "" ? this.overrideTextId : this.actor.getName(), 0, this);  
+      Game.dialogBehavior.showIdx(this.overrideFaceset != "" ? this.overrideFaceset : "TomBlank", this.overrideTextId != "" ? this.overrideTextId : this.actor.getName(), 0, this);  
     }
   }
 
@@ -31,7 +31,7 @@ class SimplePhraseBehavior extends Sup.Behavior {
     if(this.index < this.text.length){
       var showIndex = this.index;
       this.index++;
-      Game.dialogBehavior.showIdx("Tom", this.actor.getName(), showIndex, this);  
+      Game.dialogBehavior.showIdx("TomBlank", this.actor.getName(), showIndex, this);  
     }
   }
 }

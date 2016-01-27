@@ -917,7 +917,7 @@
           "type": "SpriteRenderer",
           "config": {
             "spriteAssetId": "422",
-            "animationId": null,
+            "animationId": "",
             "overrideOpacity": false,
             "color": "ffffff",
             "horizontalFlip": false,
