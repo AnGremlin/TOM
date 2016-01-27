@@ -21,7 +21,7 @@ class CursorBehavior extends Sup.Behavior {
     var newSprite = this.normalSprite;
     
     if (Game.dialogBehavior != null) {
-      if (Game.dialogBehavior.isVisible || Game.fsdialogBehavior.isVisible) {
+      if (Game.dialogBehavior.isVisible || Game.fsdialogBehavior.isVisible || Cutscene.active) {
         newSprite = this.normalSprite;
       }else if (Game.playerBehavior.hoveredItem != null) {
         if (Game.playerBehavior.hoveredItem.getBehavior(ItemBehavior).type === "bubble") {

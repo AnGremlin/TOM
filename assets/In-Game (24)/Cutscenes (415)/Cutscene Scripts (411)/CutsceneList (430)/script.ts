@@ -15,6 +15,8 @@ module CutsceneList {
   {
     //UTILITY
     add(TestCutscene);
+    add(TestCutsceneA);
+    add(TestCutsceneB);
     add(ErrorCutscene);
 
     //spencers test room

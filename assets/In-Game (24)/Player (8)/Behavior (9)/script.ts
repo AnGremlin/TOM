@@ -76,7 +76,7 @@ class PlayerBehavior extends Sup.Behavior {
       new Sup.Audio.SoundPlayer(Game.hoverSound).play();
     }
     
-    if (Game.dialogBehavior.closedTimer > 2 && Game.fsdialogBehavior.closedTimer > 2) {
+    if (Game.dialogBehavior.closedTimer > 2 && Game.fsdialogBehavior.closedTimer > 2 && !Cutscene.active) {
       
       if (Sup.Input.wasMouseButtonJustReleased(0)) {
         this.targetItem = this.hoveredItem;

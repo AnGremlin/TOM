@@ -281,6 +281,16 @@
                     "id": "412",
                     "name": "TestCutscene",
                     "type": "script"
+                  },
+                  {
+                    "id": "437",
+                    "name": "TestCutsceneA",
+                    "type": "script"
+                  },
+                  {
+                    "id": "438",
+                    "name": "TestCutsceneB",
+                    "type": "script"
                   }
                 ]
               },

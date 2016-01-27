@@ -94,12 +94,19 @@ class DialogBehavior extends Sup.Behavior {
   show(characterId: string, textId: string, choiceIds: string[], dialogFinishBehavior?) {
     let text = Game.TextData[textId];
     if (text == null) text = textId;
+    var choiceTexts = [];
+    if (choiceIds != null) {
+      choiceIds.forEach((choiceId, i) => {
+        choiceTexts[i] = Game.TextData[choiceId];
+      });
+    }
     
-    this.showRaw(characterId, text, choiceIds, dialogFinishBehavior, textId)
+    this.showRaw(characterId, text, choiceIds, choiceTexts, dialogFinishBehavior, textId)
   }
   
-  showRaw(characterId: string, text: string, choiceIds: string[], dialogFinishBehavior?, textId?) {
+  showRaw(characterId: string, text: string, choiceIds: string[], choiceTexts: string[], dialogFinishBehavior?, textId?) {
     this.textId = textId;
+    this.choiceIds = choiceIds;
     
     if (characterId === "Dowie_Thought") {
       characterId = "Dowie";
@@ -122,8 +129,8 @@ class DialogBehavior extends Sup.Behavior {
     this.mainTextBehavior.setText(text, 45);
     
     if (choiceIds != null) {
-      choiceIds.forEach((choiceId, i) => {
-        this.choiceTextBehaviors[i].setText(Game.TextData[choiceId]);
+      choiceTexts.forEach((choiceText, i) => {
+        this.choiceTextBehaviors[i].setText(choiceText);
       });
     }
     

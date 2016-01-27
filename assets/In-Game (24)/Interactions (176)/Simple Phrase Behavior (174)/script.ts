@@ -20,7 +20,7 @@ class SimplePhraseBehavior extends Sup.Behavior {
   
   activate() {
     if(!this.isArray) {
-      Game.dialogBehavior.showRaw(this.overrideFaceset != "" ? this.overrideFaceset : "TomBlank", this.text, null);  
+      Game.dialogBehavior.showRaw(this.overrideFaceset != "" ? this.overrideFaceset : "TomBlank", this.text, null, null);  
     } else {
       this.index = 1;
       Game.dialogBehavior.showIdx(this.overrideFaceset != "" ? this.overrideFaceset : "TomBlank", this.overrideTextId != "" ? this.overrideTextId : this.actor.getName(), 0, this);  

@@ -13,13 +13,22 @@ module Cutscene {
         export var rightImage: string;
         
         var fdBehavior: Sup.Behavior;
+        var branchA = "";
+        var branchB = "";
         
         var playingSound: Sup.Audio.SoundPlayer;
         
-        export function test() {
-          loadScript("test");
-        }
-        
+        /**
+         * Load a script into the manager and run it. 
+         * If the script name is invalid an error message will be displayed instead.
+         * 
+         * @method update
+         * @param scene {string} 'name' value of the script to load
+         * @param finishDialogBehavior {Sup.Behavior} If a behavior is passed into the function,
+         * on completeion of the script 'finishDialog' will be called on the behavior with
+         * the name of the script passed in as the textId
+         * @public
+         */
         export function loadScript(scene: string, finishDialogBehavior?) {
           reset();
           
@@ -37,6 +46,12 @@ module Cutscene {
           }
         }
         
+        /**
+         * Initialize all values of the cutscene manager
+         * 
+         * @method update
+         * @public
+         */
         export function reset()
         {
           lineIdx = 0;
@@ -61,8 +76,18 @@ module Cutscene {
             Game.fsdialogBehavior.actor.setVisible(true);
             Game.fsdialogBehavior.blackoutActor.spriteRenderer.setOpacity(0);
           }
+          
+          this["finishDialog"] = null;
+          branchA = "";
+          branchB = "";
         }
         
+        /**
+         * If a cutscene is active, run the script parser until hitting an END call or a blocking call
+         * 
+         * @method update
+         * @public
+         */
         export function update() {
           
           if(active && !waitingForDialog && !waitingForSound) {
@@ -77,6 +102,7 @@ module Cutscene {
           } else if (active && waitingForDialog) {
             if (!Game.dialogBehavior.isVisible && !Game.fsdialogBehavior.isVisible) {
               waitingForDialog = false;
+              this["finishDialog"] = null;
               var line = sceneLines[lineIdx];
 
               while(line != null && active && !waitingForDialog && !waitingForSound) {
@@ -103,6 +129,13 @@ module Cutscene {
           
         }
         
+        /**
+         * Takes a script line and parses it into a command
+         * 
+         * @method parseLine
+         * @param line {string} The line to parse
+         * @private
+         */
         function parseLine(line: string) {
           Sup.log("Cutscene: " + line)
           if(line == "END") {
@@ -134,6 +167,14 @@ module Cutscene {
               line = line.substr(spaceIdx+1,line.length);
               
               speak(face, line);
+              
+            }  else if (command == "BRANCH") {
+              
+              spaceIdx = line.indexOf(' ');
+              var face = line.substr(0,spaceIdx);
+              line = line.substr(spaceIdx+1,line.length);
+              
+              branch(face, line);
               
             }  else if (command == "LOADIFITEM") {
               
@@ -177,6 +218,14 @@ module Cutscene {
           
         }
         
+         /**
+         * Set the current display actor for one side of the cutscene
+         * 
+         * @method enter
+         * @param side {string} Either "RIGHT" or "LEFT"
+         * @param art {string} Entry name from the CharacterList file
+         * @private
+         */
         function enter(side: string, art: string) {
           art = CharacterList.getSprite(art);
           if (side == "LEFT") {
@@ -192,6 +241,14 @@ module Cutscene {
           }
         }
         
+        /***
+         * Set the current animation for one of the current actors in the cutscene
+         * 
+         * @method animate
+         * @param side {string} Either "RIGHT" or "LEFT"
+         * @param anim {string} Name of an animation in the character sprite
+         * @private
+         */
         function animate(side: string, anim: string) {
           if (side == "LEFT") {
             leftActor.spriteRenderer.setAnimation(anim);
@@ -202,11 +259,26 @@ module Cutscene {
           }
         }
         
+        /***
+         * Display a basic dialog with a given faceset
+         * 
+         * @method speak
+         * @param faceSet {string} Name of the face set to show
+         * @param text {string} The text to be displayed in the dialog
+         * @private
+         */
         function speak(faceSet: string, text: string) {
           waitingForDialog = true;
           Game.dialogBehavior.showRaw(faceSet, text, null, null, null);
         }
         
+        /***
+         * Clear one or both of the cutscene actors.
+         * 
+         * @method exit
+         * @param side {string} Either "RIGHT" or "LEFT" or "BOTH"
+         * @private
+         */
         function exit(side: string) {
           if (side == "LEFT") {
             leftImage = "Blank";
@@ -228,30 +300,111 @@ module Cutscene {
           }
         }
         
+        /***
+         * Add an item to inventory
+         * 
+         * @method give
+         * @param item {string} Name of the item to add
+         * @private
+         */
         function give(item: string) {
           Game.getItem(item);
         }
         
+        /***
+         * Use an item from inventory
+         * 
+         * @method use
+         * @param item {string} Name of the item to add
+         * @private
+         */
         function use(item: string) {
           Game.useItem(item);
         }
         
+        /***
+         * Play a sound effect and wait for it to finish
+         * 
+         * @method sfx
+         * @param sound {string} Name of the effect to play
+         * @private
+         */
         function sfx(sound: string) {
           playingSound = new Sup.Audio.SoundPlayer(Sup.get("SFX/"+sound, Sup.Sound));
           playingSound.play();
           waitingForSound = true;
         }
         
+        /***
+         * Transition ot another scene
+         * 
+         * @method scene
+         * @param name {string} Path to the scene
+         * @param target {string} Target actor on which to center the camera in the new scene
+         * @private
+         */
         function scene(name: string, target: string) {
           fdBehavior = null; //Don't try to call back to destroyed actor!
           Game.cameraBehavior.transitionToScene(name, target);
         }
         
+        /***
+         * Load and run another cutscene script
+         * 
+         * @method load
+         * @param sound {string} Name of the script to load
+         * @private
+         */
         function load(name: string) {
           Cutscene.loadScript(name, fdBehavior);
         }
         
+        /***
+         * Load and run another cutscene script IF the player has a certain item.
+         * Anything after this call is inherently the "else" clause
+         * 
+         * @method load
+         * @param item {string} Name of the item to check for
+         * @param sound {string} Name of the script to load
+         * @private
+         */
         function loadifitem(item:string, name: string) {
-          if(Game.hasItem(item)) Cutscene.loadScript(name, fdBehavior);
+          if (Game.hasItem(item)) Cutscene.loadScript(name, fdBehavior);
+        }
+        
+        /***
+         * Display a dialog with two choices and load a new script depending on the choice selected.
+         * Always results in a LOAD command, so any lines after this call will never be reached
+         * 
+         * @method load
+         * @param faceset {string} face to display on the dialog
+         * @param args {string} A string of five '|'-separated arguments:
+         *    1) The name of the script to load if the first choice is selected
+         *    2) The name of the script to load if the second choice is selected
+         *    3) The text to display in the dialog
+         *    4) The text of the first choice
+         *    5) The text of the second choice
+         * @private
+         */
+        function branch(faceSet: string, args: string){
+          var argArray = args.split('|');
+          if (argArray.length == 5) {
+            branchA = argArray[0];
+            branchB = argArray[1];
+            var dText = argArray[2];
+            var cText1 = argArray[3];
+            var cText2 = argArray[4];
+            
+            this["finishDialog"] = function(textId: string, choiceid: string) {
+              if(choiceid == "0") load(branchA)
+              else if(choiceid == "1") load(branchB)
+            };
+            
+            waitingForDialog = true;
+            Game.dialogBehavior.showRaw(faceSet, dText, ["0","1"], [cText1,cText2], this);
+            
+          } else {
+            Sup.log("Error in cutscene '" + sceneName + "': bad BRANCH command at line " + lineIdx);
+          }
         }
 }
