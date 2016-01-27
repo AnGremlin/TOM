@@ -278,6 +278,11 @@
             "id": "416",
             "name": "CSupdaterBehavior",
             "type": "script"
+          },
+          {
+            "id": "429",
+            "name": "CharacterList",
+            "type": "script"
           }
         ]
       },

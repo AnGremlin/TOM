@@ -4,6 +4,129 @@
       "name": "Camera",
       "children": [
         {
+          "id": "40",
+          "name": "CS Updater",
+          "children": [],
+          "components": [
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "CSUpdaterBehavior",
+                "propertyValues": {}
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "name": "Cursor",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "spriteAssetId": "304",
+                "animationId": null,
+                "overrideOpacity": false,
+                "color": "ffffff",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "materialType": "basic"
+              },
+              "id": "0"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "CursorBehavior",
+                "propertyValues": {}
+              },
+              "id": "1"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": -0.5
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 0.6000000238418579,
+            "y": 0.6000000238418579,
+            "z": 1
+          },
+          "id": "27",
+          "visible": true,
+          "layer": 0
+        },
+        {
+          "name": "Blackscreen",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "spriteAssetId": "25",
+                "animationId": null,
+                "overrideOpacity": false,
+                "color": "ffffff",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "materialType": "basic",
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": -1
+          },
+          "orientation": {
+            "x": null,
+            "y": null,
+            "z": null,
+            "w": null
+          },
+          "scale": {
+            "x": 0,
+            "y": 0,
+            "z": 1
+          },
+          "id": "17",
+          "visible": true,
+          "layer": 0
+        },
+        {
           "name": "Main Dialog",
           "children": [
             {
@@ -211,47 +334,6 @@
             "z": 1
           },
           "id": "13",
-          "visible": true,
-          "layer": 0
-        },
-        {
-          "name": "Blackscreen",
-          "children": [],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "spriteAssetId": "25",
-                "animationId": null,
-                "overrideOpacity": false,
-                "color": "ffffff",
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "materialType": "basic",
-                "opacity": null
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": 0,
-            "y": 0,
-            "z": -1
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 0,
-            "y": 0,
-            "z": 1
-          },
-          "id": "17",
           "visible": true,
           "layer": 0
         },
@@ -521,37 +603,32 @@
           "layer": 0
         },
         {
-          "name": "Cursor",
+          "id": "38",
+          "name": "LCSActor",
           "children": [],
           "components": [
             {
               "type": "SpriteRenderer",
               "config": {
-                "spriteAssetId": "304",
+                "spriteAssetId": null,
                 "animationId": null,
-                "overrideOpacity": false,
-                "color": "ffffff",
                 "horizontalFlip": false,
                 "verticalFlip": false,
                 "castShadow": false,
                 "receiveShadow": false,
-                "materialType": "basic"
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
               },
               "id": "0"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "CursorBehavior",
-                "propertyValues": {}
-              },
-              "id": "1"
             }
           ],
           "position": {
-            "x": 0,
-            "y": 0,
-            "z": -0.5
+            "x": -6,
+            "y": -2.5,
+            "z": -2
           },
           "orientation": {
             "x": 0,
@@ -560,13 +637,56 @@
             "w": 1
           },
           "scale": {
-            "x": 0.6,
-            "y": 0.6,
+            "x": 1,
+            "y": 1,
             "z": 1
           },
-          "id": "27",
           "visible": true,
-          "layer": 0
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "39",
+          "name": "RCSActor",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "spriteAssetId": null,
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 6,
+            "y": -2.5,
+            "z": -2
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
         },
         {
           "id": "28",
@@ -723,8 +843,8 @@
           ],
           "position": {
             "x": 0,
-            "y": 0.782,
-            "z": -1
+            "y": 0.7820000052452087,
+            "z": -3
           },
           "orientation": {
             "x": 0,
@@ -739,126 +859,6 @@
           },
           "visible": true,
           "layer": 0
-        },
-        {
-          "id": "38",
-          "name": "LCSActor",
-          "children": [],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "spriteAssetId": null,
-                "animationId": null,
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
-                "materialType": "basic",
-                "shaderAssetId": null
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": -6,
-            "y": -2.5,
-            "z": -2
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
-          "id": "39",
-          "name": "RCSActor",
-          "children": [],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "spriteAssetId": null,
-                "animationId": null,
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
-                "materialType": "basic",
-                "shaderAssetId": null
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": 6,
-            "y": -2.5,
-            "z": -2
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
-          "id": "40",
-          "name": "CS Updater",
-          "children": [],
-          "components": [
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "CSUpdaterBehavior",
-                "propertyValues": {}
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
         }
       ],
       "components": [

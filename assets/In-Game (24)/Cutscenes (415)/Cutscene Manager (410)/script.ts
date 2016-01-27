@@ -22,7 +22,11 @@ module Cutscene {
           sceneLines = scene["lines"];
           active = true;
           
-          //Game.cameraBehavior.blackscreenTargetOpacity = 0.5;
+          if(Game.fsdialogBehavior != null)
+          {
+            Game.fsdialogBehavior.actor.setVisible(true);
+            Game.fsdialogBehavior.blackoutActor.spriteRenderer.setOpacity(0.5);
+          }
         }
         
         export function reset()
@@ -44,7 +48,11 @@ module Cutscene {
           rightActor.spriteRenderer.setSprite(rightImage);
           rightActor.setVisible(false);
           
-          //Game.cameraBehavior.blackscreenTargetOpacity = 0;
+          if(Game.fsdialogBehavior != null)
+          {
+            Game.fsdialogBehavior.actor.setVisible(true);
+            Game.fsdialogBehavior.blackoutActor.spriteRenderer.setOpacity(0);
+          }
         }
         
         export function update() {
@@ -120,6 +128,7 @@ module Cutscene {
         }
         
         function enter(side: string, art: string) {
+          art = CharacterList.getSprite(art);
           if (side == "LEFT") {
             leftImage = art;
             leftActor.spriteRenderer.setSprite(leftImage);

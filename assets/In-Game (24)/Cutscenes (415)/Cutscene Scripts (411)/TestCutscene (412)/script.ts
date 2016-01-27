@@ -4,10 +4,10 @@ module TestCutscene {
         
   export var lines =
       [
-        "ENTER LEFT In-Game/Pnj/AngelTom",
+        "ENTER LEFT AngelTom",
         "ANIMATE LEFT Idle",
         "SPEAK Tom/Face Hey man",
-        "ENTER RIGHT In-Game/Pnj/KetchupKids",
+        "ENTER RIGHT KetchupKids",
         "ANIMATE RIGHT Idle",
         "SPEAK Andy Hey there Tom.",
         "SPEAK Tom/Face Well, bye.",
@@ -15,7 +15,7 @@ module TestCutscene {
         "SPEAK Frank Bye :3",
         "EXIT RIGHT",
         "SPEAK TomBlank ...",
-        "ENTER RIGHT In-Game/Pnj/Silas",
+        "ENTER RIGHT Silas",
         "SPEAK Silas/Face I could have sworn I heard fun in here.",
         "SPEAK Silas/Silas3 Hm...",
         "SPEAK TomBlank ...",
