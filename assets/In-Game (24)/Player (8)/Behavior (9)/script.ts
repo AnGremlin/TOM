@@ -22,7 +22,7 @@ class PlayerBehavior extends Sup.Behavior {
     this.footstepsSound.setLoop(true);
   }
 
-  update() {
+  update() {    
     let mousePosition = Sup.Input.getMousePosition();
     let screenSize = Sup.Input.getScreenSize();
 

@@ -284,16 +284,6 @@
       "parentBehavior": null,
       "properties": []
     },
-    "FamilyDoorInBehavior": {
-      "scriptId": "75",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "FamilyHallDoorBehavior": {
-      "scriptId": "102",
-      "parentBehavior": null,
-      "properties": []
-    },
     "IntroCameraBehavior": {
       "scriptId": "196",
       "parentBehavior": null,
@@ -376,26 +366,6 @@
         }
       ]
     },
-    "OuafbarfGirlBehavior": {
-      "scriptId": "347",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "OuafbarfMomBehavior": {
-      "scriptId": "346",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "OuafbarfDadBehavior": {
-      "scriptId": "344",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "SelfiboyBehavior": {
-      "scriptId": "342",
-      "parentBehavior": null,
-      "properties": []
-    },
     "CursorBehavior": {
       "scriptId": "288",
       "line": 0,
@@ -406,73 +376,6 @@
           "type": "Sup.Math.Vector3"
         }
       ]
-    },
-    "OldWomanDoorInBehavior": {
-      "scriptId": "295",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "isKnocking",
-          "type": "boolean"
-        }
-      ]
-    },
-    "OldWomanDoorBehavior": {
-      "scriptId": "297",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "MusclorDoorBehavior": {
-      "scriptId": "320",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "activated",
-          "type": "boolean"
-        },
-        {
-          "name": "isKnocking",
-          "type": "boolean"
-        },
-        {
-          "name": "hitboxWidth",
-          "type": "number"
-        },
-        {
-          "name": "hitboxHeight",
-          "type": "number"
-        }
-      ]
-    },
-    "MusclorBehavior": {
-      "scriptId": "322",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "FlowerPotBehavior": {
-      "scriptId": "329",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "OldWomanBehavior": {
-      "scriptId": "331",
-      "parentBehavior": null,
-      "properties": []
-    },
-    "DetectiveBehavior": {
-      "scriptId": "333",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "move",
-          "type": "boolean"
-        }
-      ]
-    },
-    "ChiomeBehavior": {
-      "scriptId": "337",
-      "parentBehavior": null,
-      "properties": []
     },
     "MusicBehavior": {
       "scriptId": "367",
@@ -562,6 +465,18 @@
           "type": "number"
         }
       ]
+    },
+    "TCSBehavior": {
+      "scriptId": "413",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "CSUpdaterBehavior": {
+      "scriptId": "416",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

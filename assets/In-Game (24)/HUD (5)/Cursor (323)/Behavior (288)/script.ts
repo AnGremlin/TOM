@@ -23,9 +23,7 @@ class CursorBehavior extends Sup.Behavior {
     if (Game.dialogBehavior != null) {
       if (Game.dialogBehavior.isVisible || Game.fsdialogBehavior.isVisible) {
         newSprite = this.normalSprite;
-      }
-
-      else if (Game.playerBehavior.hoveredItem != null) {
+      }else if (Game.playerBehavior.hoveredItem != null) {
         if (Game.playerBehavior.hoveredItem.getBehavior(ItemBehavior).type === "bubble") {
           newSprite = this.bubbleSprite;
         } else {
@@ -40,7 +38,7 @@ class CursorBehavior extends Sup.Behavior {
       this.currentSprite = newSprite;
       this.actor.spriteRenderer.setSprite(newSprite);
       
-      if (newSprite === this.bubbleSprite || newSprite === this.normalSprite) {
+      if (newSprite === this.bubbleSprite) {
         this.actor.spriteRenderer.setAnimation("Animation");
       }
     }

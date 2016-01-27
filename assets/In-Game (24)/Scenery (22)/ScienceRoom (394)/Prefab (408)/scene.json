@@ -589,7 +589,7 @@
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "SecurityBehavior",
+                "behaviorName": "TCSBehavior",
                 "propertyValues": {}
               },
               "id": "1"

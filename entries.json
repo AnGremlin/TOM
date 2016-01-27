@@ -5,6 +5,11 @@
     "type": "script"
   },
   {
+    "id": "422",
+    "name": "Blank",
+    "type": "sprite"
+  },
+  {
     "id": "314",
     "name": "Language",
     "type": null,
@@ -248,6 +253,35 @@
         "type": "script"
       },
       {
+        "id": "415",
+        "name": "Cutscenes",
+        "type": null,
+        "children": [
+          {
+            "id": "411",
+            "name": "Cutscene Scripts",
+            "type": null,
+            "children": [
+              {
+                "id": "412",
+                "name": "TestCutscene",
+                "type": "script"
+              }
+            ]
+          },
+          {
+            "id": "410",
+            "name": "Cutscene Manager",
+            "type": "script"
+          },
+          {
+            "id": "416",
+            "name": "CSupdaterBehavior",
+            "type": "script"
+          }
+        ]
+      },
+      {
         "id": "176",
         "name": "Interactions",
         "type": null,
@@ -415,31 +449,6 @@
         "type": null,
         "children": [
           {
-            "id": "41",
-            "name": "Door In",
-            "type": "sprite"
-          },
-          {
-            "id": "289",
-            "name": "Door Open",
-            "type": "sprite"
-          },
-          {
-            "id": "99",
-            "name": "Door Out",
-            "type": "sprite"
-          },
-          {
-            "id": "321",
-            "name": "Door Out Beauty",
-            "type": "sprite"
-          },
-          {
-            "id": "68",
-            "name": "Distritou",
-            "type": "sprite"
-          },
-          {
             "id": "49",
             "name": "Elevator",
             "type": null,
@@ -533,223 +542,6 @@
                 "id": "200",
                 "name": "Opening door",
                 "type": "sound"
-              }
-            ]
-          },
-          {
-            "id": "28",
-            "name": "Floor 1",
-            "type": null,
-            "children": [
-              {
-                "id": "73",
-                "name": "Hall",
-                "type": null,
-                "children": [
-                  {
-                    "id": "30",
-                    "name": "Prefab",
-                    "type": "scene"
-                  },
-                  {
-                    "id": "75",
-                    "name": "Family Door",
-                    "type": "script"
-                  },
-                  {
-                    "id": "295",
-                    "name": "Old Woman Door",
-                    "type": "script"
-                  },
-                  {
-                    "id": "333",
-                    "name": "Detective Behavior",
-                    "type": "script"
-                  },
-                  {
-                    "id": "3",
-                    "name": "Background",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "179",
-                    "name": "Vent",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "177",
-                    "name": "Pot",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "154",
-                    "name": "Family Portrait",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "155",
-                    "name": "Flower Portrait",
-                    "type": "sprite"
-                  }
-                ]
-              },
-              {
-                "id": "87",
-                "name": "Family",
-                "type": null,
-                "children": [
-                  {
-                    "id": "91",
-                    "name": "Prefab",
-                    "type": "scene"
-                  },
-                  {
-                    "id": "95",
-                    "name": "Background",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "102",
-                    "name": "Hall Door",
-                    "type": "script"
-                  },
-                  {
-                    "id": "337",
-                    "name": "Chiome Behavior",
-                    "type": "script"
-                  },
-                  {
-                    "id": "344",
-                    "name": "Ouafbarf Dad Behavior",
-                    "type": "script"
-                  },
-                  {
-                    "id": "346",
-                    "name": "Ouafbarf Mom Behavior",
-                    "type": "script"
-                  },
-                  {
-                    "id": "347",
-                    "name": "Ouafbarf Girl Behavior",
-                    "type": "script"
-                  }
-                ]
-              },
-              {
-                "id": "123",
-                "name": "Old Woman",
-                "type": null,
-                "children": [
-                  {
-                    "id": "296",
-                    "name": "Prefab",
-                    "type": "scene"
-                  },
-                  {
-                    "id": "297",
-                    "name": "Hall Door",
-                    "type": "script"
-                  },
-                  {
-                    "id": "331",
-                    "name": "Old Woman Behavior",
-                    "type": "script"
-                  },
-                  {
-                    "id": "329",
-                    "name": "Flower Pot Behavior",
-                    "type": "script"
-                  },
-                  {
-                    "id": "124",
-                    "name": "Background",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "125",
-                    "name": "Flower Pot",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "274",
-                    "name": "Watering",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "306",
-                    "name": "Dead Cat",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "276",
-                    "name": "Sofa",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "277",
-                    "name": "Plant 1",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "278",
-                    "name": "Plant 2",
-                    "type": "sprite"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "29",
-            "name": "Floor 2",
-            "type": null,
-            "children": [
-              {
-                "id": "74",
-                "name": "Hall",
-                "type": null,
-                "children": [
-                  {
-                    "id": "31",
-                    "name": "Prefab",
-                    "type": "scene"
-                  },
-                  {
-                    "id": "27",
-                    "name": "Background",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "180",
-                    "name": "Vent",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "152",
-                    "name": "Detective Portrait",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "153",
-                    "name": "Musclor Portrait",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "320",
-                    "name": "Musclor Door Behavior",
-                    "type": "script"
-                  },
-                  {
-                    "id": "322",
-                    "name": "Musclor Behavior",
-                    "type": "script"
-                  },
-                  {
-                    "id": "342",
-                    "name": "Selfiboy Behavior",
-                    "type": "script"
-                  }
-                ]
               }
             ]
           },
@@ -850,6 +642,11 @@
                 "type": "scene"
               },
               {
+                "id": "413",
+                "name": "Test Cutscene Behavior",
+                "type": "script"
+              },
+              {
                 "id": "407",
                 "name": "Background",
                 "type": "sprite"
@@ -921,6 +718,26 @@
             "type": "sprite"
           },
           {
+            "id": "425",
+            "name": "Silas",
+            "type": "sprite"
+          },
+          {
+            "id": "426",
+            "name": "KetchupKids",
+            "type": "sprite"
+          },
+          {
+            "id": "427",
+            "name": "AngelTom",
+            "type": "sprite"
+          },
+          {
+            "id": "428",
+            "name": "RobotTom",
+            "type": "sprite"
+          },
+          {
             "id": "383",
             "name": "Andy",
             "type": "sprite"
@@ -964,6 +781,45 @@
                 "id": "384",
                 "name": "Andy",
                 "type": "sprite"
+              },
+              {
+                "id": "421",
+                "name": "Silas",
+                "type": null,
+                "children": [
+                  {
+                    "id": "417",
+                    "name": "Silas1",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "418",
+                    "name": "Silas2",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "419",
+                    "name": "Silas3",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "420",
+                    "name": "Silas4",
+                    "type": "sprite"
+                  }
+                ]
+              },
+              {
+                "id": "423",
+                "name": "Tom (1)",
+                "type": null,
+                "children": [
+                  {
+                    "id": "424",
+                    "name": "Tom1",
+                    "type": "sprite"
+                  }
+                ]
               }
             ]
           }
