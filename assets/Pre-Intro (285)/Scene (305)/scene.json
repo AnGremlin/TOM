@@ -141,6 +141,7 @@
       "layer": 0
     },
     {
+      "id": "6",
       "name": "Background",
       "children": [],
       "components": [
@@ -149,13 +150,15 @@
           "config": {
             "spriteAssetId": "283",
             "animationId": null,
-            "overrideOpacity": false,
-            "color": "ffffff",
             "horizontalFlip": false,
             "verticalFlip": false,
             "castShadow": false,
             "receiveShadow": false,
-            "materialType": "basic"
+            "color": "ffffff",
+            "overrideOpacity": false,
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
           },
           "id": "0"
         }
@@ -176,9 +179,9 @@
         "y": 1,
         "z": 1
       },
-      "id": "1",
       "visible": true,
-      "layer": 0
+      "layer": 0,
+      "prefab": null
     }
   ],
   "formatVersion": 1

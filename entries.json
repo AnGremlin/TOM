@@ -90,130 +90,8 @@
       },
       {
         "id": "283",
-        "name": "Chair",
+        "name": "BG",
         "type": "sprite"
-      },
-      {
-        "id": "282",
-        "name": "Chair Light",
-        "type": "sprite"
-      }
-    ]
-  },
-  {
-    "id": "159",
-    "name": "Intro",
-    "type": null,
-    "children": [
-      {
-        "id": "195",
-        "name": "Scene",
-        "type": "scene"
-      },
-      {
-        "id": "196",
-        "name": "Behavior",
-        "type": "script"
-      },
-      {
-        "id": "173",
-        "name": "Background",
-        "type": "sprite"
-      },
-      {
-        "id": "202",
-        "name": "Black Screen",
-        "type": "sprite"
-      },
-      {
-        "id": "203",
-        "name": "Error",
-        "type": "sprite"
-      },
-      {
-        "id": "165",
-        "name": "Happy Dowie",
-        "type": "sprite"
-      },
-      {
-        "id": "164",
-        "name": "Angry Dowie",
-        "type": "sprite"
-      },
-      {
-        "id": "162",
-        "name": "Push Hand",
-        "type": "sprite"
-      },
-      {
-        "id": "163",
-        "name": "Button Hand",
-        "type": "sprite"
-      },
-      {
-        "id": "345",
-        "name": "Button Hand Pressed",
-        "type": "sprite"
-      },
-      {
-        "id": "166",
-        "name": "Crisps",
-        "type": "sprite"
-      },
-      {
-        "id": "228",
-        "name": "Chicken",
-        "type": "sprite"
-      },
-      {
-        "id": "168",
-        "name": "Chiome",
-        "type": "sprite"
-      },
-      {
-        "id": "169",
-        "name": "Apple",
-        "type": "sprite"
-      },
-      {
-        "id": "170",
-        "name": "Swing",
-        "type": "sprite"
-      },
-      {
-        "id": "171",
-        "name": "Axe",
-        "type": "sprite"
-      },
-      {
-        "id": "172",
-        "name": "Buy Now!",
-        "type": "sprite"
-      },
-      {
-        "id": "358",
-        "name": "Updating",
-        "type": "sprite"
-      },
-      {
-        "id": "204",
-        "name": "Distritou Broken",
-        "type": "sound"
-      },
-      {
-        "id": "222",
-        "name": "Click Sound",
-        "type": "sound"
-      },
-      {
-        "id": "241",
-        "name": "Error Click Sound",
-        "type": "sound"
-      },
-      {
-        "id": "242",
-        "name": "Cash",
-        "type": "sound"
       }
     ]
   },
@@ -291,6 +169,11 @@
                     "id": "438",
                     "name": "TestCutsceneB",
                     "type": "script"
+                  },
+                  {
+                    "id": "439",
+                    "name": "TestCutsceneC",
+                    "type": "script"
                   }
                 ]
               },
@@ -310,6 +193,18 @@
                     "type": "script"
                   }
                 ]
+              },
+              {
+                "id": "452",
+                "name": "ScienceRoom",
+                "type": null,
+                "children": [
+                  {
+                    "id": "453",
+                    "name": "UsedAll",
+                    "type": "script"
+                  }
+                ]
               }
             ]
           },
@@ -326,6 +221,11 @@
           {
             "id": "429",
             "name": "CharacterList",
+            "type": "script"
+          },
+          {
+            "id": "451",
+            "name": "CutsceneAfterUseAll",
             "type": "script"
           }
         ]
@@ -696,11 +596,6 @@
                 "type": "scene"
               },
               {
-                "id": "413",
-                "name": "Test Cutscene Behavior",
-                "type": "script"
-              },
-              {
                 "id": "407",
                 "name": "Background",
                 "type": "sprite"
@@ -748,6 +643,65 @@
                   {
                     "id": "406",
                     "name": "Dresser",
+                    "type": "sprite"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "440",
+            "name": "Cyberspace1",
+            "type": null,
+            "children": [
+              {
+                "id": "450",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
+                "id": "441",
+                "name": "Background",
+                "type": "sprite"
+              },
+              {
+                "id": "444",
+                "name": "Reference",
+                "type": "sprite"
+              },
+              {
+                "id": "442",
+                "name": "Objects",
+                "type": null,
+                "children": [
+                  {
+                    "id": "443",
+                    "name": "Pillars",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "445",
+                    "name": "Door",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "446",
+                    "name": "Candle",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "447",
+                    "name": "Grid",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "448",
+                    "name": "Messenger",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "449",
+                    "name": "Envelope",
                     "type": "sprite"
                   }
                 ]

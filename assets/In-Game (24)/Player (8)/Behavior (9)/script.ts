@@ -7,8 +7,6 @@ class PlayerBehavior extends Sup.Behavior {
   scale = this.actor.getLocalScale();
   canMove = false;
   autoPilot = false;
-  leftLimit = 0;
-  rightLimit = 0;
 
   mousePosition = new Sup.Math.Vector3(0,0,0);
   hoveredItem: Sup.Actor;

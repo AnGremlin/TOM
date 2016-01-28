@@ -4,122 +4,6 @@
       "name": "Scene",
       "children": [
         {
-          "id": "23",
-          "name": "Reference",
-          "children": [],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "spriteAssetId": "395",
-                "animationId": null,
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
-                "materialType": "basic",
-                "shaderAssetId": null
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": 0,
-            "y": 0,
-            "z": -2
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
-          "name": "Limits",
-          "children": [
-            {
-              "name": "Left",
-              "children": [],
-              "components": [],
-              "position": {
-                "x": -7,
-                "y": 0,
-                "z": 0
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "id": "6",
-              "visible": true,
-              "layer": 0
-            },
-            {
-              "name": "Right",
-              "children": [],
-              "components": [],
-              "position": {
-                "x": 6.816037654876709,
-                "y": 0,
-                "z": 0
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "id": "7",
-              "visible": true,
-              "layer": 0
-            }
-          ],
-          "components": [],
-          "position": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "id": "5",
-          "visible": true,
-          "layer": 0
-        },
-        {
           "name": "Background",
           "children": [],
           "components": [
@@ -195,7 +79,7 @@
                 "propertyValues": {
                   "musicName": {
                     "type": "string",
-                    "value": "Elevator"
+                    "value": "Intro"
                   }
                 }
               },
@@ -589,7 +473,7 @@
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "TCSBehavior",
+                "behaviorName": "SimplePhraseBehavior",
                 "propertyValues": {}
               },
               "id": "1"
@@ -921,6 +805,45 @@
           },
           "visible": true,
           "layer": 0
+        },
+        {
+          "id": "38",
+          "name": "CheckAllActor",
+          "children": [],
+          "components": [
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "CutsceneAfterUseAll",
+                "propertyValues": {
+                  "sceneName": {
+                    "type": "string",
+                    "value": "sciroom_usedall"
+                  }
+                }
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -0.09198117256164551,
+            "y": -0.24902337789535522,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
         }
       ],
       "components": [],

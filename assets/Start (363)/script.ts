@@ -1,5 +1,5 @@
 Sup.Input.setMouseVisible(false);
-//Sup.loadScene("Language/Scene");
+Sup.loadScene("Pre-Intro/Scene");
 
 // To skip the intro, uncomment this:
- Game.start();
+// Game.start();

@@ -85,25 +85,11 @@ module Game {
     Game.switchToScene("In-Game/Scenery/ScienceRoom/Prefab", "Start");
   }
   
-  export function switchToScene(sceneName: string, target: string) {
-    Game.itemBehaviors.length = 0;
-    
-    let sceneRoot = Sup.appendScene(Sup.get(sceneName , Sup.Scene))[0];
-    Game.playerBehavior.leftLimit = sceneRoot.getChild("Limits").getChild("Left").getLocalPosition().x;
-    Game.playerBehavior.rightLimit = sceneRoot.getChild("Limits").getChild("Right").getLocalPosition().x;
-    
-    // Play correct music
-    let musicActor = sceneRoot.getChild("Music");
-    let musicName = "Intro";
-    if(musicActor != null)
-    {
-      Sup.log("got music actor.");
-      musicName = (musicActor["musicName"]);
-    }
+  export function setBGM(musicName: string) {
     Sup.log("Music name: " + musicName);
     let newMusic = Sup.get("Music/" + musicName);
     if (newMusic == null) {
-      Sup.log("NO MUSIC SET FOR: " + sceneName)
+      Sup.log("NO MUSIC CALLED: " + musicName)
     } else {
       if (newMusic !== Game.musicAsset) {
         if (Game.music != null) {
@@ -123,6 +109,22 @@ module Game {
         }
       }
     }
+  }
+  
+  export function switchToScene(sceneName: string, target: string) {
+    Game.itemBehaviors.length = 0;
+    
+    let sceneRoot = Sup.appendScene(Sup.get(sceneName , Sup.Scene))[0];
+    
+    // Play correct music
+    let musicActor = sceneRoot.getChild("Music");
+    let musicName = "Intro";
+    if(musicActor != null)
+    {
+      Sup.log("got music actor.");
+      musicName = (musicActor["musicName"]);
+    }
+    setBGM(musicName);
     
     let targetActor = sceneRoot.getChild(target);
     if (targetActor == null) {

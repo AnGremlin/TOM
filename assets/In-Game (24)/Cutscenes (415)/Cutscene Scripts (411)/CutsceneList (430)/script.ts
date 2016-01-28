@@ -17,11 +17,15 @@ module CutsceneList {
     add(TestCutscene);
     add(TestCutsceneA);
     add(TestCutsceneB);
+    add(TestCutsceneC);
     add(ErrorCutscene);
 
     //spencers test room
     add(SecurityExitStop);
-    add(SecurityExitPass);    
+    add(SecurityExitPass);   
+    
+    //Science Room
+    add(ScienceRoomUsedAll);
   }
         
         

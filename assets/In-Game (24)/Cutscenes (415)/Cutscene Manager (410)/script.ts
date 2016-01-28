@@ -13,8 +13,9 @@ module Cutscene {
         export var rightImage: string;
         
         var fdBehavior: Sup.Behavior;
-        var branchA = "";
-        var branchB = "";
+        var branches = [];
+        var choiceIds = [];
+        var choiceTexts = [];
         
         var playingSound: Sup.Audio.SoundPlayer;
         
@@ -78,8 +79,9 @@ module Cutscene {
           }
           
           this["finishDialog"] = null;
-          branchA = "";
-          branchB = "";
+          branches = [];
+          choiceIds = [];
+          choiceTexts = [];
         }
         
         /**
@@ -103,6 +105,9 @@ module Cutscene {
             if (!Game.dialogBehavior.isVisible && !Game.fsdialogBehavior.isVisible) {
               waitingForDialog = false;
               this["finishDialog"] = null;
+              branches = [];
+              choiceIds = [];
+              choiceTexts = [];
               var line = sceneLines[lineIdx];
 
               while(line != null && active && !waitingForDialog && !waitingForSound) {
@@ -138,6 +143,8 @@ module Cutscene {
          */
         function parseLine(line: string) {
           Sup.log("Cutscene: " + line)
+          
+          //process any no-arg commands before splitting
           if(line == "END") {
             var fdb = fdBehavior;
             var nombre = sceneName;
@@ -147,73 +154,84 @@ module Cutscene {
             
             if(fdb != null) fdb["finishDialog"](nombre,"");
           }
+          
+          //now split the command from its arguments
           var spaceIdx = line.indexOf(' ');
           if (spaceIdx != -1) {
             var command = line.substr(0,spaceIdx);
             line = line.substr(spaceIdx+1,line.length);
             
-            if (command == "ENTER") {
-              
-              spaceIdx = line.indexOf(' ');
-              var side = line.substr(0,spaceIdx);
-              line = line.substr(spaceIdx+1,line.length);
-              
-              enter(side, line);
-              
-            } else if (command == "SPEAK") {
-              
-              spaceIdx = line.indexOf(' ');
-              var face = line.substr(0,spaceIdx);
-              line = line.substr(spaceIdx+1,line.length);
-              
-              speak(face, line);
-              
-            }  else if (command == "BRANCH") {
-              
-              spaceIdx = line.indexOf(' ');
-              var face = line.substr(0,spaceIdx);
-              line = line.substr(spaceIdx+1,line.length);
-              
-              branch(face, line);
-              
-            }  else if (command == "LOADIFITEM") {
-              
-              spaceIdx = line.indexOf(' ');
-              var item = line.substr(0,spaceIdx);
-              line = line.substr(spaceIdx+1,line.length);
-              
-              loadifitem(item, line);
-              
-            } else if (command == "ANIMATE") {
-              
-              spaceIdx = line.indexOf(' ');
-              var side = line.substr(0,spaceIdx);
-              line = line.substr(spaceIdx+1,line.length);
-              
-              animate(side, line);
-              
-            } else if (command == "EXIT") {
-              exit(line);
-              
-            } else if (command == "LOAD") {
-              load(line);
-              
-            } else if (command == "SCENE") {
-              scene(line, "Background");
-              
-            }  else if (command == "SFX") {
-              sfx(line);
-              
-            }  else if (command == "USE") {
-              use(line);
-              
-            }  else if (command == "GIVE") {
-              give(line);
-              
-            }  else {
-              Sup.log("Error in cutscene '" + sceneName + "': bad line at line " + lineIdx);
+            //process the command
+            {
+              if (command == "ENTER") {
+
+                spaceIdx = line.indexOf(' ');
+                var side = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                enter(side, line);
+
+              } else if (command == "SPEAK") {
+
+                spaceIdx = line.indexOf(' ');
+                var face = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                speak(face, line);
+
+              }  else if (command == "BRANCH") {
+
+                spaceIdx = line.indexOf(' ');
+                var n = parseInt(line.substr(0,spaceIdx));
+                line = line.substr(spaceIdx+1,line.length);
+                
+                spaceIdx = line.indexOf(' ');
+                var face = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                branch(face, n, line);
+
+              }  else if (command == "LOADIFITEM") {
+
+                spaceIdx = line.indexOf(' ');
+                var item = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                loadifitem(item, line);
+
+              } else if (command == "ANIMATE") {
+
+                spaceIdx = line.indexOf(' ');
+                var side = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                animate(side, line);
+
+              } else if (command == "EXIT") {
+                exit(line);
+
+              } else if (command == "LOAD") {
+                load(line);
+
+              } else if (command == "SCENE") {
+                scene(line, "Background");
+
+              } else if (command == "SFX") {
+                sfx(line);
+
+              } else if (command == "BGM") {
+                bgm(line);
+
+              } else if (command == "USE") {
+                use(line);
+
+              } else if (command == "GIVE") {
+                give(line);
+
+              } else {
+                Sup.log("Error in cutscene '" + sceneName + "': bad line at line " + lineIdx);
+              }
             }
-            
           }
           
         }
@@ -302,7 +320,7 @@ module Cutscene {
         
         /***
          * Add an item to inventory
-         * 
+         * [cText1,cText2]
          * @method give
          * @param item {string} Name of the item to add
          * @private
@@ -333,6 +351,17 @@ module Cutscene {
           playingSound = new Sup.Audio.SoundPlayer(Sup.get("SFX/"+sound, Sup.Sound));
           playingSound.play();
           waitingForSound = true;
+        }
+        
+        /***
+         * Play a sound effect and wait for it to finish
+         * 
+         * @method sfx
+         * @param sound {string} Name of the effect to play
+         * @private
+         */
+        function bgm(sound: string) {
+          Game.setBGM(sound);
         }
         
         /***
@@ -373,35 +402,40 @@ module Cutscene {
         }
         
         /***
-         * Display a dialog with two choices and load a new script depending on the choice selected.
+         * Display a dialog with N choices and load a new script depending on the choice selected.
          * Always results in a LOAD command, so any lines after this call will never be reached
          * 
-         * @method load
+         * @method branch
          * @param faceset {string} face to display on the dialog
+         * @param n {number} number of branches
          * @param args {string} A string of five '|'-separated arguments:
-         *    1) The name of the script to load if the first choice is selected
-         *    2) The name of the script to load if the second choice is selected
-         *    3) The text to display in the dialog
-         *    4) The text of the first choice
-         *    5) The text of the second choice
+         *    * N many names of the script to load, one per choice
+         *    * The text to display in the dialog
+         *    * N many choice text strings
          * @private
          */
-        function branch(faceSet: string, args: string){
+        function branch(faceSet: string, n: number, args: string){
           var argArray = args.split('|');
-          if (argArray.length == 5) {
-            branchA = argArray[0];
-            branchB = argArray[1];
-            var dText = argArray[2];
-            var cText1 = argArray[3];
-            var cText2 = argArray[4];
+          if (argArray.length == (2*n + 1)) {
+            
+            for(var i = 0; i < n; i++) {
+              branches[i] = argArray[i];
+              choiceIds[i] = String(i);
+            }
+            
+            var dText = argArray[n];
+            
+            
+            for(var i = 0; i < n; i++) {
+              choiceTexts[i] = argArray[n+1+i];
+            }
             
             this["finishDialog"] = function(textId: string, choiceid: string) {
-              if(choiceid == "0") load(branchA)
-              else if(choiceid == "1") load(branchB)
+              load(branches[parseInt(choiceid)])
             };
             
             waitingForDialog = true;
-            Game.dialogBehavior.showRaw(faceSet, dText, ["0","1"], [cText1,cText2], this);
+            Game.dialogBehavior.showRaw(faceSet, dText, choiceIds, choiceTexts, this);
             
           } else {
             Sup.log("Error in cutscene '" + sceneName + "': bad BRANCH command at line " + lineIdx);

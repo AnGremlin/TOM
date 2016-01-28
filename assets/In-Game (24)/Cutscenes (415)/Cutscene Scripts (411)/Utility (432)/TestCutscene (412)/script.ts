@@ -9,7 +9,9 @@ module TestCutscene {
         "SFX Select",
         "ENTER LEFT AngelTom",
         "ANIMATE LEFT Idle",
-        "BRANCH Tom/Face test_a|test_b|Hmm, the Ketchup Kids are here...|Greet Frank|Greet Andy",
+        "BRANCH 3 Tom/Face test_a|test_b|test_c|\
+          Hmm, the Ketchup Kids are here...\
+          |Greet Frank|Greet Andy|Fuck those guys",
         "END",
       ]
         

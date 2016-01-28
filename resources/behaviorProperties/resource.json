@@ -132,6 +132,7 @@
     },
     "PreIntroBehavior": {
       "scriptId": "287",
+      "line": 0,
       "parentBehavior": null,
       "properties": [
         {
@@ -205,14 +206,6 @@
           "type": "boolean"
         },
         {
-          "name": "leftLimit",
-          "type": "number"
-        },
-        {
-          "name": "rightLimit",
-          "type": "number"
-        },
-        {
           "name": "mousePosition",
           "type": "Sup.Math.Vector3"
         },
@@ -283,88 +276,6 @@
       "scriptId": "82",
       "parentBehavior": null,
       "properties": []
-    },
-    "IntroCameraBehavior": {
-      "scriptId": "196",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "properties",
-          "type": "any"
-        },
-        {
-          "name": "exitIntro",
-          "type": "boolean"
-        },
-        {
-          "name": "outroTimer",
-          "type": "number"
-        },
-        {
-          "name": "outroDelay",
-          "type": "number"
-        },
-        {
-          "name": "exitOutro",
-          "type": "boolean"
-        },
-        {
-          "name": "isBroken",
-          "type": "boolean"
-        },
-        {
-          "name": "canBuy",
-          "type": "boolean"
-        },
-        {
-          "name": "canClick",
-          "type": "boolean"
-        },
-        {
-          "name": "isClicking",
-          "type": "boolean"
-        },
-        {
-          "name": "clickTimer",
-          "type": "number"
-        },
-        {
-          "name": "clickDelay",
-          "type": "number"
-        },
-        {
-          "name": "pushHandPosition",
-          "type": "Sup.Math.Vector3"
-        },
-        {
-          "name": "pushHandAngle",
-          "type": "number"
-        },
-        {
-          "name": "objectPosition",
-          "type": "Sup.Math.Vector3"
-        },
-        {
-          "name": "objectScale",
-          "type": "Sup.Math.Vector3"
-        },
-        {
-          "name": "boughtObjectPosition",
-          "type": "Sup.Math.Vector3"
-        },
-        {
-          "name": "boughtObjectScale",
-          "type": "Sup.Math.Vector3"
-        },
-        {
-          "name": "boughtObjectAngles",
-          "type": "Sup.Math.Vector3"
-        },
-        {
-          "name": "currentItem",
-          "type": "number"
-        }
-      ]
     },
     "CursorBehavior": {
       "scriptId": "288",
@@ -466,12 +377,6 @@
         }
       ]
     },
-    "TCSBehavior": {
-      "scriptId": "413",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": []
-    },
     "CSUpdaterBehavior": {
       "scriptId": "416",
       "line": 0,
@@ -489,6 +394,29 @@
         },
         {
           "name": "targetActor",
+          "type": "string"
+        }
+      ]
+    },
+    "CutsceneAfterUseAll": {
+      "scriptId": "451",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "neededOverride",
+          "type": "number"
+        },
+        {
+          "name": "filterString",
+          "type": "string"
+        },
+        {
+          "name": "triggered",
+          "type": "boolean"
+        },
+        {
+          "name": "sceneName",
           "type": "string"
         }
       ]
