@@ -179,6 +179,10 @@ module Cutscene {
 
                 speak(face, line);
 
+              } else if (command == "FSD") {
+
+                fsd(line);
+
               }  else if (command == "BRANCH") {
 
                 spaceIdx = line.indexOf(' ');
@@ -288,6 +292,18 @@ module Cutscene {
         function speak(faceSet: string, text: string) {
           waitingForDialog = true;
           Game.dialogBehavior.showRaw(faceSet, text, null, null, null);
+        }
+        
+        /***
+         * Display a fullscreen dialog
+         * 
+         * @method fsd
+         * @param text {string} The ID of the text to be displayed in the dialog
+         * @private
+         */
+        function fsd(textId: string) {
+          waitingForDialog = true;
+          Game.fsdialogBehavior.show(textId,null,null);
         }
         
         /***

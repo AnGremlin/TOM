@@ -26,6 +26,8 @@ module CutsceneList {
     
     //Science Room
     add(ScienceRoomUsedAll);
+    add(ScienceRoomUsedYes);
+    add(ScienceRoomUsedNo);
   }
         
         

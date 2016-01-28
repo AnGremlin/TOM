@@ -203,6 +203,16 @@
                     "id": "453",
                     "name": "UsedAll",
                     "type": "script"
+                  },
+                  {
+                    "id": "454",
+                    "name": "UsedNo",
+                    "type": "script"
+                  },
+                  {
+                    "id": "455",
+                    "name": "UsedYes",
+                    "type": "script"
                   }
                 ]
               }

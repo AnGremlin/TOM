@@ -10,6 +10,7 @@ module TextDataEn {
   export var Poster = ["'Hang in there!' It would make you grit your teeth, if you had teeth, but you suppose it's better than staring at a blank wall.", "He gave you this today, ordered you not to tear it down or else you'd 'hurt' his 'feelings.' You're not sure he's got feelings to hurt, but you are sure there's a worse threat, so you don't bother."];
   export var ChargeBox = "Your chargebox. This is where you 'sleep'.";
   export var Dresser = ["This dresser is yours. It used to be his. Cold, scratched, utilitarian metal. How thoughtful.", "You use it to store what few items you've accumulated over your year of sentience. It's not much to brag about, but it's all you've got."];
+  export var ToCyberspace = "And so Tom entered Cyberspace."  
   
   // Fruit test
   export var Table = "Says here this is a table, but it looks more like a solid block of wood to me.";

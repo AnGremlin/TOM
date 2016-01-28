@@ -115,7 +115,7 @@ class FSDialogBehavior extends Sup.Behavior {
     }
     
     // Skip text / close dialog
-    if (Sup.Input.wasMouseButtonJustReleased(0)) {
+    if (Sup.Input.wasMouseButtonJustReleased(0) || Sup.Input.wasKeyJustPressed("SPACE")) {
       if (! this.mainTextBehavior.skipToEnd() && (this.choiceIds == null || this.activeChoiceIndex >= 0)) {
         if (this.choiceIds != null) {
           new Sup.Audio.SoundPlayer(Game.selectSound).play();

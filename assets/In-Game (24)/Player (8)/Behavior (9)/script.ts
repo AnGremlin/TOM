@@ -76,7 +76,7 @@ class PlayerBehavior extends Sup.Behavior {
     
     if (Game.dialogBehavior.closedTimer > 2 && Game.fsdialogBehavior.closedTimer > 2 && !Cutscene.active) {
       
-      if (Sup.Input.wasMouseButtonJustReleased(0)) {
+      if (Sup.Input.wasMouseButtonJustReleased(0) || Sup.Input.wasKeyJustPressed("SPACE")) {
         this.targetItem = this.hoveredItem;
         if (this.targetItem != null) {
           this.activateItem(this.targetItem);

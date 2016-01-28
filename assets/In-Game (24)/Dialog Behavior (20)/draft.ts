@@ -67,7 +67,7 @@ class DialogBehavior extends Sup.Behavior {
           this.activeChoiceIndex = -1;
         }
 
-        if (this.activeChoiceIndex >= 0) {
+        if (this.activeChoiceIndex >= 0) {' '
           if (oldActiveChoiceIndex !== this.activeChoiceIndex) {
             new Sup.Audio.SoundPlayer(Game.hoverSound).play();
           }
