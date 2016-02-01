@@ -7,60 +7,36 @@ module Game {
   export let dialogBehavior: DialogBehavior;
   export let fsdialogBehavior: FSDialogBehavior;
   
-  export let inventory = { "Sucker": false, "Oil": false, "Card": false, "Flower": false, "Skin": false };
-  export let state = {
-    // Intro
-    boughtItems: { "Crisps": false, "Chicken": false, "Chiome": false, "Apple": false, "Swing": false, "Axe": false },
-    
-    // Quests: intro, goToJanitor, pickUpPass, goToBasement, plantTheCop, askBeautyOil
-    // meetMusclor, giveFlower, pickUpOil, useOil, finish
-    activeQuest: "intro",
-    currentFloor: 3,
-    
-    //Fruit Room
-    hasMoney: true,
-    
-    //Spencers
-    frankTalkedTo: false,
-    dildoAcquired: false,
-    andyTalkedTo: false,
-    lubeAcquired: false,
-    receiptAcquired: false,
-    moneyAcquired: false,
-    
-    // Floor 0
-    janitorDoorKnocked: false,
-    janitorCalledForHelp: false,
-    mustRepairJanitorPortrait: false,
-    janitorPortraitOpen: false,
-    janitorDoorOpen: false,
-    suckerPickedUp: false,
-    skinPickedUp: false,
-    mammouthSeen: false,
-    
-    // Floor 1
-    wearingSkin: false,
-    flowerPickedUp: false,
-    detectiveMet: false,
-    
-    // Floor 3
-    oilPickedUp: false,
-    
-    // Elevator
-    isInElevator: false, // used not to hide the dialog when the player is in the elevator
-  };
-  
+        
+  //vars what get initialized go here for sanity
+  export let perRoomObjectUseStatus: Object[] = [];
+  export let itemBehaviors: ItemBehavior[] = [];  
   export let music: Sup.Audio.SoundPlayer = null;
   export let musicVolume = 0;
   export let targetMusicVolume = 1;
   export let musicAsset = null;
+        
+  /* IMPORTANT!!!!!!
+   * Do NOT start the player with items! Otherwise saving/loading will be a big mess.
+   * Besides it's good practice to let the player pick stuff up in their room anywho.
+   */
+  export let inventory = { 
+    "ItemName" : false, 
+  };
+  
+  /* IMPORTANT!!!!!!
+   * ALL state variables must default to false! Otherwise saving/loading will be a big mess
+   */
+  export let state = {
+    
+    //Science Room
+    listenTriggered: false,
+  };
   
   export let TextData: any;
   
   export let hoverSound: Sup.Sound;
   export let selectSound: Sup.Sound;
-  
-  export let itemBehaviors: ItemBehavior[] = [];
   
   export function initialize() {
     Game.hoverSound = Sup.get("SFX/Hover", Sup.Sound);
@@ -70,6 +46,38 @@ module Game {
       let textData = TextDataEn;
       Game.TextData = textData;
     }
+  }
+  
+  export function newGame() {
+    //clear state
+    for(var key in state) {
+      state[key] = false;
+    }
+    
+    //clear inventory
+    for(var key in inventory) {
+      inventory[key] = false;
+    }
+    
+    //stop music
+    if (music != null) {
+      music.stop();
+    }
+    
+    //reset vars as needed
+    perRoomObjectUseStatus = [];
+    itemBehaviors = [];  
+    music = null;
+    musicVolume = 0;
+    targetMusicVolume = 1;
+    musicAsset = null;
+    
+    //run code formerly found in Start.ts
+    Sup.Input.setMouseVisible(false);
+    Sup.loadScene("Pre-Intro/Scene");
+
+    // To skip the intro, uncomment this:
+    // Game.start();
   }
     
   export function start() {
@@ -172,6 +180,12 @@ module Game {
   export function useItem(item: string) {
     Game.inventory[item] = false;
     Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
+  }
+  
+  export function saveGame(idx: number) {
+    for(var prop in this) {
+      
+    }
   }
 }
 

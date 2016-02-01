@@ -85,6 +85,11 @@ class PlayerBehavior extends Sup.Behavior {
       }
       
     }
+    
+    //debug new/save/load
+    if (Sup.Input.wasKeyJustPressed("N")) {
+      Game.newGame();
+    }
   }
   
   activateItem(item: Sup.Actor) {

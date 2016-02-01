@@ -18,13 +18,10 @@ module CutsceneList {
     add(TestCutsceneA);
     add(TestCutsceneB);
     add(TestCutsceneC);
-    add(ErrorCutscene);
-
-    //spencers test room
-    add(SecurityExitStop);
-    add(SecurityExitPass);   
+    add(ErrorCutscene); 
     
     //Science Room
+    add(ScienceRoomForeshadow);
     add(ScienceRoomUsedAll);
     add(ScienceRoomListen);
     add(ScienceRoomFuckAlone);

@@ -254,29 +254,6 @@
         }
       ]
     },
-    "ElevatorBehavior": {
-      "scriptId": "51",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "floorOffset",
-          "type": "number"
-        },
-        {
-          "name": "nextFloorId",
-          "type": "number"
-        },
-        {
-          "name": "shaftAnimSpeed",
-          "type": "number"
-        }
-      ]
-    },
-    "ElevatorButtonBehavior": {
-      "scriptId": "82",
-      "parentBehavior": null,
-      "properties": []
-    },
     "CursorBehavior": {
       "scriptId": "288",
       "line": 0,
@@ -299,12 +276,6 @@
         }
       ]
     },
-    "FrankBehavior": {
-      "scriptId": "382",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": []
-    },
     "GenericDoorBehavior": {
       "scriptId": "376",
       "line": 0,
@@ -319,24 +290,6 @@
           "type": "string"
         }
       ]
-    },
-    "AndyBehavior": {
-      "scriptId": "385",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": []
-    },
-    "CashierBehavior": {
-      "scriptId": "386",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": []
-    },
-    "SecurityBehavior": {
-      "scriptId": "391",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": []
     },
     "FSDialogBehavior": {
       "scriptId": "392",
@@ -383,26 +336,15 @@
       "parentBehavior": null,
       "properties": []
     },
-    "SpenecersExitBehavior": {
-      "scriptId": "436",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "targetScene",
-          "type": "string"
-        },
-        {
-          "name": "targetActor",
-          "type": "string"
-        }
-      ]
-    },
     "CutsceneAfterUseAll": {
       "scriptId": "451",
       "line": 0,
       "parentBehavior": null,
       "properties": [
+        {
+          "name": "roomName",
+          "type": "string"
+        },
         {
           "name": "neededOverride",
           "type": "number"
@@ -417,6 +359,10 @@
         },
         {
           "name": "sceneName",
+          "type": "string"
+        },
+        {
+          "name": "triggerVar",
           "type": "string"
         }
       ]

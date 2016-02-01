@@ -178,23 +178,6 @@
                 ]
               },
               {
-                "id": "433",
-                "name": "Spencers",
-                "type": null,
-                "children": [
-                  {
-                    "id": "434",
-                    "name": "SecurityExitStop",
-                    "type": "script"
-                  },
-                  {
-                    "id": "435",
-                    "name": "SecurityExitPass",
-                    "type": "script"
-                  }
-                ]
-              },
-              {
                 "id": "452",
                 "name": "ScienceRoom",
                 "type": null,
@@ -202,6 +185,11 @@
                   {
                     "id": "453",
                     "name": "UsedAll",
+                    "type": "script"
+                  },
+                  {
+                    "id": "463",
+                    "name": "Foreshadow",
                     "type": "script"
                   },
                   {
@@ -417,194 +405,6 @@
         "name": "Scenery",
         "type": null,
         "children": [
-          {
-            "id": "49",
-            "name": "Elevator",
-            "type": null,
-            "children": [
-              {
-                "id": "50",
-                "name": "Prefab",
-                "type": "scene"
-              },
-              {
-                "id": "82",
-                "name": "Button Behavior",
-                "type": "script"
-              },
-              {
-                "id": "51",
-                "name": "Elevator",
-                "type": "script"
-              },
-              {
-                "id": "42",
-                "name": "Button",
-                "type": "sprite"
-              },
-              {
-                "id": "53",
-                "name": "Cabin floor",
-                "type": "sprite"
-              },
-              {
-                "id": "86",
-                "name": "Cabin glass",
-                "type": "sprite"
-              },
-              {
-                "id": "56",
-                "name": "Shaft",
-                "type": "sprite"
-              },
-              {
-                "id": "193",
-                "name": "Shaft Long",
-                "type": "sprite"
-              },
-              {
-                "id": "299",
-                "name": "RDC background",
-                "type": "sprite"
-              },
-              {
-                "id": "300",
-                "name": "RDC foreground",
-                "type": "sprite"
-              },
-              {
-                "id": "90",
-                "name": "City1",
-                "type": "sprite"
-              },
-              {
-                "id": "88",
-                "name": "City2",
-                "type": "sprite"
-              },
-              {
-                "id": "93",
-                "name": "Cloud",
-                "type": "sprite"
-              },
-              {
-                "id": "94",
-                "name": "Background",
-                "type": "sprite"
-              },
-              {
-                "id": "96",
-                "name": "Cables",
-                "type": "sprite"
-              },
-              {
-                "id": "148",
-                "name": "Black",
-                "type": "sprite"
-              },
-              {
-                "id": "199",
-                "name": "Elevator button sound",
-                "type": "sound"
-              },
-              {
-                "id": "200",
-                "name": "Opening door",
-                "type": "sound"
-              }
-            ]
-          },
-          {
-            "id": "364",
-            "name": "FruitRoom",
-            "type": null,
-            "children": [
-              {
-                "id": "366",
-                "name": "Prefab",
-                "type": "scene"
-              },
-              {
-                "id": "365",
-                "name": "Background",
-                "type": "sprite"
-              },
-              {
-                "id": "393",
-                "name": "Recolored Background",
-                "type": "sprite"
-              },
-              {
-                "id": "368",
-                "name": "Table",
-                "type": "sprite"
-              },
-              {
-                "id": "369",
-                "name": "Fruits",
-                "type": null,
-                "children": [
-                  {
-                    "id": "370",
-                    "name": "fruit1",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "371",
-                    "name": "fruit2",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "372",
-                    "name": "fruit3",
-                    "type": "sprite"
-                  }
-                ]
-              },
-              {
-                "id": "375",
-                "name": "SpencersDoor",
-                "type": "sprite"
-              }
-            ]
-          },
-          {
-            "id": "374",
-            "name": "Spencers",
-            "type": null,
-            "children": [
-              {
-                "id": "378",
-                "name": "Prefab",
-                "type": "scene"
-              },
-              {
-                "id": "382",
-                "name": "Frank Behavior",
-                "type": "script"
-              },
-              {
-                "id": "385",
-                "name": "Andy Behavior",
-                "type": "script"
-              },
-              {
-                "id": "436",
-                "name": "ExitBehavior",
-                "type": "script"
-              },
-              {
-                "id": "391",
-                "name": "Security Behavior",
-                "type": "script"
-              },
-              {
-                "id": "386",
-                "name": "Cash Behavior",
-                "type": "script"
-              }
-            ]
-          },
           {
             "id": "394",
             "name": "ScienceRoom",

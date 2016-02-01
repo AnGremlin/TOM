@@ -819,6 +819,57 @@
                   "sceneName": {
                     "type": "string",
                     "value": "sciroom_usedall"
+                  },
+                  "roomName": {
+                    "type": "string",
+                    "value": "ScienceRoom"
+                  }
+                }
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -0.09198117256164551,
+            "y": -0.24902337789535522,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "39",
+          "name": "CheckAllActor_retest",
+          "children": [],
+          "components": [
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "CutsceneAfterUseAll",
+                "propertyValues": {
+                  "sceneName": {
+                    "type": "string",
+                    "value": "sciroom_foreshadow"
+                  },
+                  "roomName": {
+                    "type": "string",
+                    "value": "ScienceRoom"
+                  },
+                  "neededOverride": {
+                    "type": "number",
+                    "value": 2
                   }
                 }
               },
