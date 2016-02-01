@@ -6,7 +6,6 @@ module Game {
   export let fullscreenDialog: Sup.Actor;
   export let dialogBehavior: DialogBehavior;
   export let fsdialogBehavior: FSDialogBehavior;
-  
         
   //vars what get initialized go here for sanity
   export let perRoomObjectUseStatus: Object[] = [];
@@ -15,6 +14,7 @@ module Game {
   export let musicVolume = 0;
   export let targetMusicVolume = 1;
   export let musicAsset = null;
+  export let loadedScene = "";
         
   /* IMPORTANT!!!!!!
    * Do NOT start the player with items! Otherwise saving/loading will be a big mess.
@@ -49,19 +49,27 @@ module Game {
   }
   
   export function newGame() {
+    if(Sup.getActor("Scene") != null) {
+      Sup.getActor("Scene").destroy();
+      Sup.log("Destroyed current scene node.")
+    }
+    
     //clear state
     for(var key in state) {
       state[key] = false;
+      Sup.log("Set Game.state." + key + " to false.");
     }
     
     //clear inventory
     for(var key in inventory) {
       inventory[key] = false;
+      Sup.log("Set Game.inventory." + key + " to false.");
     }
     
     //stop music
     if (music != null) {
       music.stop();
+      Sup.log("Stopped music");
     }
     
     //reset vars as needed
@@ -71,6 +79,7 @@ module Game {
     musicVolume = 0;
     targetMusicVolume = 1;
     musicAsset = null;
+    loadedScene = "";
     
     //run code formerly found in Start.ts
     Sup.Input.setMouseVisible(false);
@@ -91,6 +100,18 @@ module Game {
     CutsceneList.buildList();
     
     Game.switchToScene("In-Game/Scenery/ScienceRoom/Prefab", "Start");
+    Game.saveGame("new");
+  }
+    
+  export function restoreScene(name: string) {
+    Sup.loadScene(Sup.get("In-Game/Scene", Sup.Scene));
+    Game.playerBehavior = Sup.getActor("Player").getBehavior(PlayerBehavior);
+    
+    for (let item in Game.inventory) {
+      Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
+    }
+    
+    Game.switchToScene(name, "Background");
   }
   
   export function setBGM(musicName: string) {
@@ -122,6 +143,8 @@ module Game {
   export function switchToScene(sceneName: string, target: string) {
     Game.itemBehaviors.length = 0;
     
+    Game.loadedScene = sceneName;
+    
     let sceneRoot = Sup.appendScene(Sup.get(sceneName , Sup.Scene))[0];
     
     // Play correct music
@@ -144,6 +167,8 @@ module Game {
     //Game.playerBehavior.position.y = -1.2;
     
     Game.playerBehavior.actor.setLocalPosition(Game.playerBehavior.position);
+    
+    Game.saveGame("auto");
   }
     
   export function createText(text: string, position: Sup.Math.Vector3, alignment: string, parent: Sup.Actor) {
@@ -182,10 +207,69 @@ module Game {
     Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
   }
   
-  export function saveGame(idx: number) {
-    for(var prop in this) {
-      
+  export function printUseState(obj: Object) {
+    Sup.log("Printing use state object.....");
+    for(var roomName in obj) {
+      Sup.log("\tROOM: " + roomName);
+      var room = obj[roomName];
+      for(var itemName in room) {
+        var item = room[itemName];
+        Sup.log("\t\tITEM: " + itemName + " = " + (item == null ? "NULL" : item ? "TRUE" : "FALSE"));
+      }
     }
+  }
+  
+  export function saveGame(idx: string) {
+    //unzip use state
+    var useKeys = [];
+    var useVals = [];
+    var i = 0;
+    for(var key in Game.perRoomObjectUseStatus) {
+      useKeys[i] = key;
+      useVals[i] = Game.perRoomObjectUseStatus[key];
+      i++;
+    }
+    
+    Sup.Storage.setJSON(idx + "_state", Game.state);
+    Sup.Storage.setJSON(idx + "_usedKeys", useKeys);
+    Sup.Storage.setJSON(idx + "_usedVals", useVals);
+    Sup.Storage.setJSON(idx + "_room", Game.loadedScene);
+    
+    Sup.log("Use state key JSON:\n" + JSON.stringify(useKeys));
+    Sup.log("Use state val JSON:\n" + JSON.stringify(useVals));
+    
+    Sup.log("Saved game in slot " + idx);
+  }
+  
+  
+  
+  export function loadGame(idx: string) {
+    //if you haven't saved to the slot obviously just skip it
+    if (Sup.Storage.getJSON(idx+"_room") == null) {
+      return;
+    }
+    
+    //first just clear everything
+    Game.newGame();
+    
+    //now load the saved data
+    Game.state = Sup.Storage.getJSON(idx + "_state");
+    Game.loadedScene = Sup.Storage.getJSON(idx + "_room");
+    var usedKeys = Sup.Storage.getJSON(idx + "_usedKeys");
+    var usedVals = Sup.Storage.getJSON(idx + "_usedVals");
+    
+    //zip use info
+    for (var i = 0; i < usedKeys.length; i++) {
+      Game.perRoomObjectUseStatus[usedKeys[i]] = usedVals[i];
+    }
+    
+    Sup.log("Loaded use state key JSON:\n" + JSON.stringify(usedKeys));
+    Sup.log("loaded use state val JSON:\n" + JSON.stringify(usedVals));
+    
+    //and load the room
+    Game.restoreScene(Game.loadedScene);
+    
+    Sup.log("Loaded game from slot " + idx);
   }
 }
 

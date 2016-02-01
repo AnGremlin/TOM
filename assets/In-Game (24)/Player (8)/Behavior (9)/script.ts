@@ -87,8 +87,28 @@ class PlayerBehavior extends Sup.Behavior {
     }
     
     //debug new/save/load
-    if (Sup.Input.wasKeyJustPressed("N")) {
-      Game.newGame();
+    if(Sup.Input.isKeyDown("SHIFT")) {
+      //loading 
+      if(Sup.Input.wasKeyJustPressed("1")) {
+        Game.loadGame("1");
+      } else if(Sup.Input.wasKeyJustPressed("2")) {
+        Game.loadGame("2");
+      } else if(Sup.Input.wasKeyJustPressed("3")) {
+        Game.loadGame("3");
+      } else if(Sup.Input.wasKeyJustPressed("0")) {
+        Game.loadGame("auto");
+      } else if(Sup.Input.wasKeyJustPressed("N")) {
+        Game.loadGame("new");
+      }
+    } else {
+      //saving
+      if(Sup.Input.wasKeyJustPressed("1")) {
+        Game.saveGame("1");
+      } else if(Sup.Input.wasKeyJustPressed("2")) {
+        Game.saveGame("2");
+      } else if(Sup.Input.wasKeyJustPressed("3")) {
+        Game.saveGame("3");
+      }
     }
   }
   

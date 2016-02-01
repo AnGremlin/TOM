@@ -79,5 +79,14 @@ class CameraBehavior extends Sup.Behavior {
     Game.playerBehavior.canMove = false;
     Game.playerBehavior.hoveredItem = null;
   }
+
+  reset() {
+    this.blackscreenActor = null;
+    this.blackscreenOpacity = 1;
+    this.blackscreenTargetOpacity = 0;
+
+    this.targetScene = "";
+    this.targetActor = "";
+  }
 }
 Sup.registerBehavior(CameraBehavior);

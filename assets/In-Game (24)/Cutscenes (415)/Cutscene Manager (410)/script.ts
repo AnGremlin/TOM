@@ -65,12 +65,20 @@ module Cutscene {
           rightImage = "Blank";
           
           leftActor = Sup.getActor("LCSActor");
-          leftActor.spriteRenderer.setSprite(leftImage)
-          leftActor.setVisible(false);
+          if (leftActor != null) {
+            leftActor.spriteRenderer.setSprite(leftImage)
+            leftActor.setVisible(false);
+          } else {
+            Sup.log("!!!!! FATAL ERROR: LEFT CUTSCENE ACTOR NOT FOUND")
+          }
           
           rightActor = Sup.getActor("RCSActor");
-          rightActor.spriteRenderer.setSprite(rightImage);
-          rightActor.setVisible(false);
+          if (rightActor != null) {
+            rightActor.spriteRenderer.setSprite(rightImage);
+            rightActor.setVisible(false);
+          } else {
+            Sup.log("!!!!! FATAL ERROR: RIGHT CUTSCENE ACTOR NOT FOUND")
+          }
           
           if(Game.fsdialogBehavior != null)
           {

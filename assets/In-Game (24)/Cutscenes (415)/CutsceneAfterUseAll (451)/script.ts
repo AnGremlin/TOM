@@ -27,45 +27,17 @@ class CutsceneAfterUseAll extends Sup.Behavior {
     
     //restore saved values
     roomItems.forEach((child, i) => {
-      if(savedItems[child.getName()] != null) {
-        child["used"] = savedItems[child.getName()];
+      if(savedItems.indexOf(child.getName()) != -1) {
+        child["used"] = true;
       }  
     });
     
     // HACKY BULLSHIT: if this actor's trigger condition has been met after loading,
     // then the actor should have triggered previously and so should NOT trigger again
-    var needed = (this.neededOverride == -1 ? 0 : this.neededOverride);
-    var used = 0;
-    roomItems.forEach((child, i) => {
-      
-      if(this.filterString == "" || child.getName().indexOf(this.filterString) != -1) {
-        
-        //check if this child is an item
-        if(this.neededOverride == -1) {
-          if(child["actionBehavior"] != null) {
-            needed++;
-          }
-        }
-        
-        //check if used
-        if(child["used"] != null) {
-          Game.perRoomObjectUseStatus[this.roomName][child.getName()] = child["used"];
-          if(child["used"]) {
-            used++;
-          } 
-        }
-        
-      } else {
-        //continue
-      }
-    });
-    
-    if(used == needed) {
-      this.trigger();
-    }
+    this.update(true);
   }
 
-  update() {
+  update(skip = false) {
     if(this.triggered) return;
     
     var root = Sup.getActor("Scene");
@@ -86,9 +58,11 @@ class CutsceneAfterUseAll extends Sup.Behavior {
         
         //check if used
         if(child["used"] != null) {
-          Game.perRoomObjectUseStatus[this.roomName][child.getName()] = child["used"];
           if(child["used"]) {
             used++;
+            if(Game.perRoomObjectUseStatus[this.roomName].indexOf(child.getName()) == -1) {
+              Game.perRoomObjectUseStatus[this.roomName].push(child.getName());
+            }
           } 
         }
         
@@ -98,12 +72,13 @@ class CutsceneAfterUseAll extends Sup.Behavior {
     });
     
     if(used == needed) {
-      this.trigger();
+      if(!skip)this.trigger();
+      this.triggered = true;
     }
   }
 
   trigger() {
-    this.triggered = true;
+    Game.state[this.triggerVar] = true;
     Cutscene.loadScript(this.sceneName);
   }
 }
