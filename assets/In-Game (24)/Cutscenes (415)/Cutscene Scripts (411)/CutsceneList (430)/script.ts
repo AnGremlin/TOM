@@ -26,8 +26,10 @@ module CutsceneList {
     
     //Science Room
     add(ScienceRoomUsedAll);
-    add(ScienceRoomUsedYes);
-    add(ScienceRoomUsedNo);
+    add(ScienceRoomListen);
+    add(ScienceRoomFuckAlone);
+    add(ScienceRoomWant);
+    add(ScienceRoomFuckYou);
   }
         
         

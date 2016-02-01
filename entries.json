@@ -205,13 +205,23 @@
                     "type": "script"
                   },
                   {
-                    "id": "454",
-                    "name": "UsedNo",
+                    "id": "456",
+                    "name": "Listen",
                     "type": "script"
                   },
                   {
-                    "id": "455",
-                    "name": "UsedYes",
+                    "id": "458",
+                    "name": "WhatDoYouWant",
+                    "type": "script"
+                  },
+                  {
+                    "id": "457",
+                    "name": "FuckAlone",
+                    "type": "script"
+                  },
+                  {
+                    "id": "461",
+                    "name": "FuckYou",
                     "type": "script"
                   }
                 ]
@@ -654,6 +664,11 @@
                     "id": "406",
                     "name": "Dresser",
                     "type": "sprite"
+                  },
+                  {
+                    "id": "462",
+                    "name": "Cologne",
+                    "type": "sprite"
                   }
                 ]
               }
@@ -763,6 +778,16 @@
           {
             "id": "387",
             "name": "RexMaid",
+            "type": "sprite"
+          },
+          {
+            "id": "459",
+            "name": "SilasNew",
+            "type": "sprite"
+          },
+          {
+            "id": "460",
+            "name": "TomNew",
             "type": "sprite"
           },
           {

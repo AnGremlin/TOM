@@ -257,6 +257,7 @@ module Cutscene {
           } else if (side == "RIGHT") {
             rightImage = art;
             rightActor.spriteRenderer.setSprite(rightImage);
+            rightActor.spriteRenderer.setHorizontalFlip(true);
             rightActor.setVisible(true);
           } else {
             Sup.log("Error in cutscene '" + sceneName + "': bad ENTER command at line " + lineIdx);
@@ -436,6 +437,7 @@ module Cutscene {
             
             for(var i = 0; i < n; i++) {
               branches[i] = argArray[i];
+              branches[i] = branches[i].trim();
               choiceIds[i] = String(i);
             }
             

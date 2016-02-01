@@ -5,7 +5,6 @@ module SecurityExitPass {
   export var lines =
       [
         "ENTER LEFT Security",
-        "ANIMATE LEFT Idle",
         "ENTER RIGHT RobotTom",
         "SPEAK Tom/Face Yeah, here.",
         "USE Card",

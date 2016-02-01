@@ -5,9 +5,7 @@ module TestCutsceneB {
   export var lines =
       [
         "ENTER LEFT AngelTom",
-        "ANIMATE LEFT Idle",
         "ENTER RIGHT KetchupKids",
-        "ANIMATE RIGHT Idle",
         "SPEAK Tom/Face Oh hey Andy",
         "SPEAK Andy Hey there Tom.",
         "SPEAK Tom/Face Well, bye.",

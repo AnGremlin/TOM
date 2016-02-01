@@ -1,9 +1,9 @@
 module CharacterList {
   export var list = [];
         
-  list["RobotTom"] = "In-Game/Pnj/RobotTom";
+  list["RobotTom"] = "In-Game/Pnj/TomNew";
   list["AngelTom"] = "In-Game/Pnj/AngelTom";
-  list["Silas"] = "In-Game/Pnj/Silas";
+  list["Silas"] = "In-Game/Pnj/SilasNew";
   list["KetchupKids"] = "In-Game/Pnj/KetchupKids";
   list["Security"] = "In-Game/Pnj/Security";
         

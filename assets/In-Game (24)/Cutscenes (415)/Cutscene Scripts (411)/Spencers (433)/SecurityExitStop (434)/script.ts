@@ -5,7 +5,6 @@ module SecurityExitStop {
   export var lines =
       [
         "ENTER LEFT Security",
-        "ANIMATE LEFT Idle",
         "SPEAK Security You got a recepit, man?",
         "LOADIFITEM Card security_pass",
         //if no receipt, continues
