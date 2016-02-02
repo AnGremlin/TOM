@@ -397,6 +397,11 @@
                 "type": "sprite"
               }
             ]
+          },
+          {
+            "id": "468",
+            "name": "Font",
+            "type": "font"
           }
         ]
       },
@@ -532,6 +537,11 @@
                 ]
               }
             ]
+          },
+          {
+            "id": "469",
+            "name": "SceneList",
+            "type": "script"
           }
         ]
       },
@@ -679,6 +689,47 @@
         "id": "367",
         "name": "MusicBehavior",
         "type": "script"
+      },
+      {
+        "id": "464",
+        "name": "Debug",
+        "type": null,
+        "children": [
+          {
+            "id": "465",
+            "name": "StateDebugMenu",
+            "type": null,
+            "children": [
+              {
+                "id": "466",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
+                "id": "467",
+                "name": "StateMenuBehavior",
+                "type": "script"
+              }
+            ]
+          },
+          {
+            "id": "470",
+            "name": "SceneLoadMenu",
+            "type": null,
+            "children": [
+              {
+                "id": "471",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
+                "id": "472",
+                "name": "SceneMenuBehavior",
+                "type": "script"
+              }
+            ]
+          }
+        ]
       }
     ]
   },

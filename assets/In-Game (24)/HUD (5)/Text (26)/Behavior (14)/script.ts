@@ -104,7 +104,7 @@ class TextBehavior extends Sup.Behavior {
       index += 1
       indexX += 1
       if (wrapWidth !== null && nextSpaceIndex === index) {
-        nextSpaceIndex = text.indexOf(" ", index + 1);
+        nextSpaceIndex = this.text.indexOf(" ", index + 1);
         if (nextSpaceIndex === -1) { nextSpaceIndex = text.length; }
         
         var charsToNextBreak = nextSpaceIndex - index;

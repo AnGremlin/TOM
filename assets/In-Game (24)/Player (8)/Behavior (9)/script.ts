@@ -43,6 +43,11 @@ class PlayerBehavior extends Sup.Behavior {
   }
     
   interaction() {
+    
+    if(Game.menuOpen) {
+      return;
+    }
+    
     // Update interactions
     let closestItem: Sup.Actor = null;
     let minDistance = 1000;
@@ -108,7 +113,13 @@ class PlayerBehavior extends Sup.Behavior {
         Game.saveGame("2");
       } else if(Sup.Input.wasKeyJustPressed("3")) {
         Game.saveGame("3");
-      }
+      } 
+      //menus
+      else if(Sup.Input.wasKeyJustPressed("M")) {
+        Game.openMenu("StateDebugMenu");
+      } else if(Sup.Input.wasKeyJustPressed("L")) {
+        Game.openMenu("SceneLoadMenu");
+      } 
     }
   }
   

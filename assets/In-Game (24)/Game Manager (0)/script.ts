@@ -15,6 +15,7 @@ module Game {
   export let targetMusicVolume = 1;
   export let musicAsset = null;
   export let loadedScene = "";
+  export let menuOpen = false;
         
   /* IMPORTANT!!!!!!
    * Do NOT start the player with items! Otherwise saving/loading will be a big mess.
@@ -30,6 +31,7 @@ module Game {
   export let state = {
     
     //Science Room
+    foreshadowTriggered: false,
     listenTriggered: false,
   };
   
@@ -169,6 +171,24 @@ module Game {
     Game.playerBehavior.actor.setLocalPosition(Game.playerBehavior.position);
     
     Game.saveGame("auto");
+  }
+  
+  export function openMenu(name: string) {
+    var menuPath = "In-Game/Debug/" + name + "/Prefab";
+    if (Sup.getActor("Menu") != null) {
+      Sup.getActor("Menu").destroy();
+    }
+    
+    Sup.appendScene(menuPath);
+    menuOpen = true;
+  }
+  
+  export function closeMenu() {
+    if (Sup.getActor("Menu") != null) {
+      Sup.getActor("Menu").destroy();
+    }
+    
+    menuOpen = false;
   }
     
   export function createText(text: string, position: Sup.Math.Vector3, alignment: string, parent: Sup.Actor) {
