@@ -823,6 +823,10 @@
                   "roomName": {
                     "type": "string",
                     "value": "ScienceRoom"
+                  },
+                  "triggerVar": {
+                    "type": "string",
+                    "value": "listenTriggered"
                   }
                 }
               },
@@ -870,6 +874,10 @@
                   "neededOverride": {
                     "type": "number",
                     "value": 2
+                  },
+                  "triggerVar": {
+                    "type": "string",
+                    "value": "foreshadowTriggered"
                   }
                 }
               },

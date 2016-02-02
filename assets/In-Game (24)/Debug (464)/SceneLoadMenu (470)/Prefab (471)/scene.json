@@ -22,7 +22,7 @@
                     "alignment": "center",
                     "size": 36,
                     "color": "ff0000",
-                    "verticalAlignment": "center"
+                    "verticalAlignment": "top"
                   },
                   "id": "0"
                 }
@@ -115,6 +115,44 @@
           "scale": {
             "x": 100,
             "y": 100,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "6",
+          "name": "Title",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "fontAssetId": "468",
+                "text": "RMENU",
+                "alignment": "center",
+                "size": 36,
+                "color": "a5a5fe",
+                "verticalAlignment": "bottom"
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 9
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
             "z": 1
           },
           "visible": true,

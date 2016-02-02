@@ -28,8 +28,8 @@
                 }
               ],
               "position": {
-                "x": 0.6197212934494019,
-                "y": 0.9089949131011963,
+                "x": 0,
+                "y": 0,
                 "z": 9
               },
               "orientation": {
@@ -66,8 +66,8 @@
                 }
               ],
               "position": {
-                "x": 0.6197212934494019,
-                "y": 0.9089949131011963,
+                "x": 0,
+                "y": 0,
                 "z": 9
               },
               "orientation": {
@@ -97,8 +97,8 @@
             }
           ],
           "position": {
-            "x": -0.6197212934494019,
-            "y": -0.9089949131011963,
+            "x": 0,
+            "y": -1.2263033390045166,
             "z": 0
           },
           "orientation": {
@@ -153,6 +153,44 @@
           "scale": {
             "x": 100,
             "y": 100,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "6",
+          "name": "Title",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "fontAssetId": "468",
+                "text": "STATE DEBUG",
+                "alignment": "center",
+                "size": 36,
+                "color": "A5A5fe",
+                "verticalAlignment": "center"
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 2.6392178535461426,
+            "z": 9
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
             "z": 1
           },
           "visible": true,
