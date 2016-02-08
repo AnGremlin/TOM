@@ -219,6 +219,14 @@ module Cutscene {
 
                 animate(side, line);
 
+              }  else if (command == "SKIN") {
+
+                spaceIdx = line.indexOf(' ');
+                var char = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                skin(char, line);
+
               } else if (command == "EXIT") {
                 exit(line);
 
@@ -300,7 +308,8 @@ module Cutscene {
          */
         function speak(faceSet: string, text: string) {
           waitingForDialog = true;
-          Game.dialogBehavior.showRaw(faceSet, text, null, null, null);
+          var face = CharacterList.getFace(faceSet); 
+          Game.dialogBehavior.showRaw(face, text, null, null, null);
         }
         
         /***
@@ -313,6 +322,18 @@ module Cutscene {
         function fsd(textId: string) {
           waitingForDialog = true;
           Game.fsdialogBehavior.show(textId,null,null);
+        }
+        
+        /***
+         * Display a fullscreen dialog
+         * 
+         * @method skin
+         * @param char {string} The name of the character
+         * @param skin {string} The name of the skin to adopt
+         * @private
+         */
+        function skin(char: string, skin: string) {
+          CharacterList.setSkin(char,skin.trim());
         }
         
         /***
@@ -461,7 +482,8 @@ module Cutscene {
             };
             
             waitingForDialog = true;
-            Game.dialogBehavior.showRaw(faceSet, dText, choiceIds, choiceTexts, this);
+            var face = CharacterList.getFace(faceSet);
+            Game.dialogBehavior.showRaw(face, dText, choiceIds, choiceTexts, this);
             
           } else {
             Sup.log("Error in cutscene '" + sceneName + "': bad BRANCH command at line " + lineIdx);

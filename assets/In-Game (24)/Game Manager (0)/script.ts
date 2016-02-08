@@ -23,6 +23,7 @@ module Game {
    */
   export let inventory = { 
     "ItemName" : false, 
+    "ItemName2" : false, 
   };
   
   /* IMPORTANT!!!!!!
@@ -217,7 +218,7 @@ module Game {
   }
   
   export function getItem(item: string) {
-    Sup.Audio.playSound("SFX/Pick Up");
+    //Sup.Audio.playSound("SFX/Pick Up");
     Game.inventory[item] = true;
     Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(1);
   }
@@ -249,14 +250,24 @@ module Game {
       useVals[i] = Game.perRoomObjectUseStatus[key];
       i++;
     }
+    //unzip skindices
+    var skinKeys = [];
+    var skinVals = [];
+    for(var key in CharacterList.indices) {
+      skinKeys[i] = key;
+      skinVals[i] = CharacterList.indices[key];
+      i++;
+    }
     
     Sup.Storage.setJSON(idx + "_state", Game.state);
+    
     Sup.Storage.setJSON(idx + "_usedKeys", useKeys);
     Sup.Storage.setJSON(idx + "_usedVals", useVals);
-    Sup.Storage.setJSON(idx + "_room", Game.loadedScene);
     
-    Sup.log("Use state key JSON:\n" + JSON.stringify(useKeys));
-    Sup.log("Use state val JSON:\n" + JSON.stringify(useVals));
+    Sup.Storage.setJSON(idx + "_skinKeys", skinKeys);
+    Sup.Storage.setJSON(idx + "_skinVals", skinVals);
+    
+    Sup.Storage.setJSON(idx + "_room", Game.loadedScene);
     
     Sup.log("Saved game in slot " + idx);
   }
@@ -274,17 +285,24 @@ module Game {
     
     //now load the saved data
     Game.state = Sup.Storage.getJSON(idx + "_state");
+    CharacterList.indices = Sup.Storage.getJSON(idx + "_skins");
     Game.loadedScene = Sup.Storage.getJSON(idx + "_room");
+    
     var usedKeys = Sup.Storage.getJSON(idx + "_usedKeys");
     var usedVals = Sup.Storage.getJSON(idx + "_usedVals");
+    
+    var skinKeys = Sup.Storage.getJSON(idx + "_skinKeys");
+    var skinVals = Sup.Storage.getJSON(idx + "_skinVals");
     
     //zip use info
     for (var i = 0; i < usedKeys.length; i++) {
       Game.perRoomObjectUseStatus[usedKeys[i]] = usedVals[i];
     }
     
-    Sup.log("Loaded use state key JSON:\n" + JSON.stringify(usedKeys));
-    Sup.log("loaded use state val JSON:\n" + JSON.stringify(usedVals));
+    //zip skindices
+    for (var i = 0; i < skinKeys.length; i++) {
+      CharacterList.indices[skinKeys[i]] = skinVals[i];
+    }
     
     //and load the room
     Game.restoreScene(Game.loadedScene);

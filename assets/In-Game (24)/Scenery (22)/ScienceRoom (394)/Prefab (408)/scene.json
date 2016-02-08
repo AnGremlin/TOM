@@ -865,7 +865,7 @@
                 "propertyValues": {
                   "sceneName": {
                     "type": "string",
-                    "value": "sciroom_foreshadow"
+                    "value": "skintest_start"
                   },
                   "roomName": {
                     "type": "string",

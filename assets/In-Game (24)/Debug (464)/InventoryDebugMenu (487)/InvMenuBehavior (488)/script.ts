@@ -1,4 +1,4 @@
-class StateMenuBehavior extends Sup.Behavior {
+class InvMenuBehavior extends Sup.Behavior {
   
   varNameActor: Sup.Actor;
   varValueActor: Sup.Actor;
@@ -14,7 +14,7 @@ class StateMenuBehavior extends Sup.Behavior {
     
     var idx = 0;
     var found = false;
-    for(var key in Game.state)
+    for(var key in Game.inventory)
     {
       if (idx == this.index) {
         found = true;
@@ -25,8 +25,8 @@ class StateMenuBehavior extends Sup.Behavior {
     
     this.stateLen = idx;
     this.varNameActor.textRenderer.setText(this.varName);
-    this.varValueActor.textRenderer.setText(Game.state[this.varName] ? "TRUE" : "FALSE");
-    this.varValue = Game.state[this.varName];
+    this.varValueActor.textRenderer.setText(Game.inventory[this.varName] ? "TRUE" : "FALSE");
+    this.varValue = Game.inventory[this.varName];
   }
 
   update() {
@@ -42,14 +42,18 @@ class StateMenuBehavior extends Sup.Behavior {
     } else if (Sup.Input.wasKeyJustPressed("RETURN") || Sup.Input.wasKeyJustPressed("SPACE")) {
       this.varValue = !this.varValue;
       this.varValueActor.textRenderer.setText(this.varValue ? "TRUE" : "FALSE");
-      Game.state[this.varName] = this.varValue;
+      if(this.varValue) {
+        Game.getItem(this.varName);
+      } else {
+        Game.useItem(this.varName);
+      }
     }
     
     if(idxChange)
     {
       var idx = 0;
       var key = "";
-      for(key in Game.state)
+      for(key in Game.inventory)
       {
         if (idx == this.index) {
           this.varName = key;
@@ -59,9 +63,9 @@ class StateMenuBehavior extends Sup.Behavior {
       }
 
       this.varNameActor.textRenderer.setText(this.varName);
-      this.varValueActor.textRenderer.setText(Game.state[this.varName] ? "TRUE" : "FALSE");
-      this.varValue = Game.state[this.varName];
+      this.varValueActor.textRenderer.setText(Game.inventory[this.varName] ? "TRUE" : "FALSE");
+      this.varValue = Game.inventory[this.varName];
     }
   }
 }
-Sup.registerBehavior(StateMenuBehavior);
+Sup.registerBehavior(InvMenuBehavior);

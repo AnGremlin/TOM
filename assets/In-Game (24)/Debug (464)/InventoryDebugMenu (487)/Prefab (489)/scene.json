@@ -18,10 +18,48 @@
                   "type": "TextRenderer",
                   "config": {
                     "fontAssetId": "468",
-                    "text": "Scene",
+                    "text": "VarName",
                     "alignment": "center",
                     "size": 36,
                     "color": "ff0000",
+                    "verticalAlignment": "bottom"
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 0,
+                "y": 0,
+                "z": 9
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "4",
+              "name": "VarValue",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "fontAssetId": "468",
+                    "text": "VarValue",
+                    "alignment": "center",
+                    "size": 24,
+                    "color": null,
                     "verticalAlignment": "top"
                   },
                   "id": "0"
@@ -52,7 +90,7 @@
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "SceneMenuBehavior",
+                "behaviorName": "InvMenuBehavior",
                 "propertyValues": {}
               },
               "id": "0"
@@ -60,7 +98,7 @@
           ],
           "position": {
             "x": 0,
-            "y": 0,
+            "y": -1.2263033390045166,
             "z": 0
           },
           "orientation": {
@@ -130,18 +168,18 @@
               "type": "TextRenderer",
               "config": {
                 "fontAssetId": "468",
-                "text": "ROOM MENU",
+                "text": "INVENTORY DEBUG",
                 "alignment": "center",
                 "size": 36,
-                "color": "a5a5fe",
-                "verticalAlignment": "bottom"
+                "color": "A5A5fe",
+                "verticalAlignment": "center"
               },
               "id": "0"
             }
           ],
           "position": {
             "x": 0,
-            "y": 0,
+            "y": 2.6392178535461426,
             "z": 9
           },
           "orientation": {

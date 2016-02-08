@@ -7,7 +7,7 @@ module ScienceRoomForeshadow {
         "SPEAK TomBlank `shuffle shuffle`",
         "SPEAK TomBlank `...`",
         "ENTER LEFT RobotTom",
-        "SPEAK Tom/Face Was that... No, never mind. I'm just imagining it.",
+        "SPEAK RobotTom Was that... No, never mind. I'm just imagining it.",
         "END"
       ]
         

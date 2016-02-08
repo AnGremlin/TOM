@@ -108,13 +108,6 @@ class DialogBehavior extends Sup.Behavior {
     this.textId = textId;
     this.choiceIds = choiceIds;
     
-    if (characterId === "Dowie_Thought") {
-      characterId = "Dowie";
-    } else {
-      let voiceSound = Sup.get("SFX/Voices/" + characterId, Sup.Sound, { ignoreMissing: true });
-      if (voiceSound !== null) new Sup.Audio.SoundPlayer(voiceSound).play();
-    }
-    
     this.isVisible = true;
     this.actor.setVisible(true);
     this.choiceIds = choiceIds;

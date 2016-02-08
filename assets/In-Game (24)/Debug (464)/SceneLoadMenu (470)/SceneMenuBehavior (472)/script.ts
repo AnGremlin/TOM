@@ -36,7 +36,7 @@ class SceneMenuBehavior extends Sup.Behavior {
     } else if (Sup.Input.wasKeyJustPressed("RIGHT")) {
       idxChange = true;
       this.index = (this.index + 1) % this.stateLen;
-    } else if (Sup.Input.wasKeyJustPressed("RETURN")) {
+    } else if (Sup.Input.wasKeyJustPressed("RETURN") || Sup.Input.wasKeyJustPressed("SPACE")) {
       Game.cameraBehavior.transitionToScene(this.varValue, "Background");
       Game.closeMenu();
     }

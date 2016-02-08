@@ -20,6 +20,12 @@ module CutsceneList {
     add(TestCutsceneC);
     add(ErrorCutscene); 
     
+    //Skin test
+    add(SkinTestStart);
+    add(SkinTestBlack);
+    add(SkinTestRed);
+    add(SkinTestBlue);
+    
     //Science Room
     add(ScienceRoomForeshadow);
     add(ScienceRoomUsedAll);

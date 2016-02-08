@@ -10,33 +10,6 @@
     "type": "sprite"
   },
   {
-    "id": "314",
-    "name": "Language",
-    "type": null,
-    "children": [
-      {
-        "id": "315",
-        "name": "Scene",
-        "type": "scene"
-      },
-      {
-        "id": "316",
-        "name": "Behavior",
-        "type": "script"
-      },
-      {
-        "id": "318",
-        "name": "French",
-        "type": "sprite"
-      },
-      {
-        "id": "319",
-        "name": "English",
-        "type": "sprite"
-      }
-    ]
-  },
-  {
     "id": "145",
     "name": "Menu",
     "type": null,
@@ -126,11 +99,6 @@
         "type": "script"
       },
       {
-        "id": "376",
-        "name": "Generic Door Behavior",
-        "type": "script"
-      },
-      {
         "id": "415",
         "name": "Cutscenes",
         "type": null,
@@ -210,6 +178,33 @@
                   {
                     "id": "461",
                     "name": "FuckYou",
+                    "type": "script"
+                  }
+                ]
+              },
+              {
+                "id": "482",
+                "name": "Skin Test",
+                "type": null,
+                "children": [
+                  {
+                    "id": "483",
+                    "name": "SprayPaint",
+                    "type": "script"
+                  },
+                  {
+                    "id": "484",
+                    "name": "SprayPaintBlack",
+                    "type": "script"
+                  },
+                  {
+                    "id": "485",
+                    "name": "SprayPaintRed",
+                    "type": "script"
+                  },
+                  {
+                    "id": "486",
+                    "name": "SprayPaintBlue",
                     "type": "script"
                   }
                 ]
@@ -596,9 +591,26 @@
             "type": "sprite"
           },
           {
-            "id": "460",
-            "name": "TomNew",
-            "type": "sprite"
+            "id": "479",
+            "name": "Tom",
+            "type": null,
+            "children": [
+              {
+                "id": "460",
+                "name": "Normal",
+                "type": "sprite"
+              },
+              {
+                "id": "477",
+                "name": "Red",
+                "type": "sprite"
+              },
+              {
+                "id": "478",
+                "name": "Blue",
+                "type": "sprite"
+              }
+            ]
           },
           {
             "id": "71",
@@ -664,7 +676,17 @@
                 "children": [
                   {
                     "id": "424",
-                    "name": "Face",
+                    "name": "Normal",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "480",
+                    "name": "Red",
+                    "type": "sprite"
+                  },
+                  {
+                    "id": "481",
+                    "name": "Blue",
                     "type": "sprite"
                   }
                 ]
@@ -688,6 +710,11 @@
       {
         "id": "367",
         "name": "MusicBehavior",
+        "type": "script"
+      },
+      {
+        "id": "376",
+        "name": "Generic Door Behavior",
         "type": "script"
       },
       {
@@ -728,6 +755,40 @@
                 "type": "script"
               }
             ]
+          },
+          {
+            "id": "473",
+            "name": "SkinsDebugMenu",
+            "type": null,
+            "children": [
+              {
+                "id": "476",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
+                "id": "474",
+                "name": "SkinsMenuBehavior",
+                "type": "script"
+              }
+            ]
+          },
+          {
+            "id": "487",
+            "name": "InventoryDebugMenu",
+            "type": null,
+            "children": [
+              {
+                "id": "489",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
+                "id": "488",
+                "name": "InvMenuBehavior",
+                "type": "script"
+              }
+            ]
           }
         ]
       }
@@ -747,79 +808,6 @@
         "id": "209",
         "name": "Elevator",
         "type": "sound"
-      },
-      {
-        "id": "270",
-        "name": "Floor 0",
-        "type": null,
-        "children": [
-          {
-            "id": "213",
-            "name": "Janitor",
-            "type": "sound"
-          },
-          {
-            "id": "214",
-            "name": "Cave",
-            "type": "sound"
-          },
-          {
-            "id": "208",
-            "name": "Hall",
-            "type": "sound"
-          }
-        ]
-      },
-      {
-        "id": "271",
-        "name": "Floor 1",
-        "type": null,
-        "children": [
-          {
-            "id": "207",
-            "name": "Hall",
-            "type": "sound"
-          },
-          {
-            "id": "210",
-            "name": "Family",
-            "type": "sound"
-          },
-          {
-            "id": "211",
-            "name": "Old Woman",
-            "type": "sound"
-          }
-        ]
-      },
-      {
-        "id": "272",
-        "name": "Floor 2",
-        "type": null,
-        "children": [
-          {
-            "id": "206",
-            "name": "Hall",
-            "type": "sound"
-          }
-        ]
-      },
-      {
-        "id": "273",
-        "name": "Floor 3",
-        "type": null,
-        "children": [
-          {
-            "id": "205",
-            "name": "Hall",
-            "type": "sound"
-          },
-          {
-            "id": "233",
-            "name": "Beauty",
-            "type": "sound"
-          }
-        ]
       }
     ]
   },
@@ -829,98 +817,6 @@
     "type": null,
     "children": [
       {
-        "id": "238",
-        "name": "Voices",
-        "type": null,
-        "children": [
-          {
-            "id": "237",
-            "name": "Beauty",
-            "type": "sound"
-          },
-          {
-            "id": "244",
-            "name": "Maid",
-            "type": "sound"
-          },
-          {
-            "id": "245",
-            "name": "Cop",
-            "type": "sound"
-          },
-          {
-            "id": "246",
-            "name": "Cop run",
-            "type": "sound"
-          },
-          {
-            "id": "247",
-            "name": "Musclor",
-            "type": "sound"
-          },
-          {
-            "id": "248",
-            "name": "Old Woman",
-            "type": "sound"
-          },
-          {
-            "id": "250",
-            "name": "Detective",
-            "type": "sound"
-          },
-          {
-            "id": "251",
-            "name": "Chiome",
-            "type": "sound"
-          },
-          {
-            "id": "252",
-            "name": "Chienpere",
-            "type": "sound"
-          },
-          {
-            "id": "354",
-            "name": "Chienmere",
-            "type": "sound"
-          },
-          {
-            "id": "355",
-            "name": "Chienfille",
-            "type": "sound"
-          },
-          {
-            "id": "328",
-            "name": "Dowie",
-            "type": "sound"
-          },
-          {
-            "id": "343",
-            "name": "Selfiboy",
-            "type": "sound"
-          }
-        ]
-      },
-      {
-        "id": "201",
-        "name": "Opening Door",
-        "type": "sound"
-      },
-      {
-        "id": "254",
-        "name": "Mammouth",
-        "type": "sound"
-      },
-      {
-        "id": "218",
-        "name": "Door Pass",
-        "type": "sound"
-      },
-      {
-        "id": "221",
-        "name": "Locked Door",
-        "type": "sound"
-      },
-      {
         "id": "348",
         "name": "Hover",
         "type": "sound"
@@ -929,68 +825,6 @@
         "id": "349",
         "name": "Select",
         "type": "sound"
-      },
-      {
-        "id": "350",
-        "name": "Clang",
-        "type": "sound"
-      },
-      {
-        "id": "351",
-        "name": "Electrocute",
-        "type": "sound"
-      },
-      {
-        "id": "352",
-        "name": "Knock",
-        "type": "sound"
-      },
-      {
-        "id": "353",
-        "name": "Fight",
-        "type": "sound"
-      },
-      {
-        "id": "357",
-        "name": "Pick Up",
-        "type": "sound"
-      },
-      {
-        "id": "359",
-        "name": "Elevator",
-        "type": "sound"
-      },
-      {
-        "id": "361",
-        "name": "Plunger",
-        "type": "sound"
-      }
-    ]
-  },
-  {
-    "id": "261",
-    "name": "Credits",
-    "type": null,
-    "children": [
-      {
-        "id": "262",
-        "name": "Scene",
-        "type": "scene"
-      },
-      {
-        "id": "263",
-        "name": "Background",
-        "type": "sprite"
-      },
-      {
-        "id": "268",
-        "name": "OutroMask",
-        "type": "sprite"
-      },
-      {
-        "id": "266",
-        "name": "OutroBehavior",
-        "type": "script"
       }
     ]
   },

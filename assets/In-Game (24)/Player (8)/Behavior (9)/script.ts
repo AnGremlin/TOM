@@ -119,6 +119,10 @@ class PlayerBehavior extends Sup.Behavior {
         Game.openMenu("StateDebugMenu");
       } else if(Sup.Input.wasKeyJustPressed("L")) {
         Game.openMenu("SceneLoadMenu");
+      } else if(Sup.Input.wasKeyJustPressed("K")) {
+        Game.openMenu("SkinsDebugMenu");
+      }  else if(Sup.Input.wasKeyJustPressed("I")) {
+        Game.openMenu("InventoryDebugMenu");
       } 
     }
   }

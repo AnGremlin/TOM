@@ -1,10 +1,5 @@
 {
   "behaviors": {
-    "OutroBehavior": {
-      "scriptId": "266",
-      "parentBehavior": null,
-      "properties": []
-    },
     "DialogBehavior": {
       "scriptId": "20",
       "line": 0,
@@ -86,16 +81,6 @@
         },
         {
           "name": "overrideFaceset",
-          "type": "string"
-        }
-      ]
-    },
-    "LanguageBehavior": {
-      "scriptId": "316",
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "hovered",
           "type": "string"
         }
       ]
@@ -402,6 +387,64 @@
         {
           "name": "varValue",
           "type": "string"
+        },
+        {
+          "name": "index",
+          "type": "number"
+        },
+        {
+          "name": "stateLen",
+          "type": "number"
+        }
+      ]
+    },
+    "SkinsMenuBehavior": {
+      "scriptId": "474",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "varName",
+          "type": "string"
+        },
+        {
+          "name": "varValue",
+          "type": "string"
+        },
+        {
+          "name": "charDex",
+          "type": "number"
+        },
+        {
+          "name": "charLen",
+          "type": "number"
+        },
+        {
+          "name": "currentSkin",
+          "type": "number"
+        },
+        {
+          "name": "skinDex",
+          "type": "number"
+        },
+        {
+          "name": "skinLen",
+          "type": "number"
+        }
+      ]
+    },
+    "InvMenuBehavior": {
+      "scriptId": "488",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "varName",
+          "type": "string"
+        },
+        {
+          "name": "varValue",
+          "type": "boolean"
         },
         {
           "name": "index",
