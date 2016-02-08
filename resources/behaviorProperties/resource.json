@@ -87,6 +87,7 @@
     },
     "MenuBehavior": {
       "scriptId": "147",
+      "line": 0,
       "parentBehavior": null,
       "properties": [
         {
@@ -149,10 +150,6 @@
         },
         {
           "name": "targetScene",
-          "type": "string"
-        },
-        {
-          "name": "targetActor",
           "type": "string"
         }
       ]
@@ -269,10 +266,6 @@
         {
           "name": "targetScene",
           "type": "string"
-        },
-        {
-          "name": "targetActor",
-          "type": "string"
         }
       ]
     },
@@ -382,10 +375,6 @@
       "properties": [
         {
           "name": "varName",
-          "type": "string"
-        },
-        {
-          "name": "varValue",
           "type": "string"
         },
         {

@@ -1,88 +1,9 @@
 [
   {
-    "id": "235",
-    "name": "Sound Credits",
-    "type": "script"
-  },
-  {
-    "id": "422",
-    "name": "Blank",
-    "type": "sprite"
-  },
-  {
-    "id": "145",
-    "name": "Menu",
+    "id": "490",
+    "name": "TomE",
     "type": null,
     "children": [
-      {
-        "id": "146",
-        "name": "Scene",
-        "type": "scene"
-      },
-      {
-        "id": "147",
-        "name": "Behavior",
-        "type": "script"
-      },
-      {
-        "id": "143",
-        "name": "Background",
-        "type": "sprite"
-      },
-      {
-        "id": "191",
-        "name": "Title",
-        "type": "sprite"
-      },
-      {
-        "id": "265",
-        "name": "Title Murder",
-        "type": "sprite"
-      },
-      {
-        "id": "338",
-        "name": "Title Murder En",
-        "type": "sprite"
-      }
-    ]
-  },
-  {
-    "id": "285",
-    "name": "Pre-Intro",
-    "type": null,
-    "children": [
-      {
-        "id": "305",
-        "name": "Scene",
-        "type": "scene"
-      },
-      {
-        "id": "287",
-        "name": "Behavior",
-        "type": "script"
-      },
-      {
-        "id": "283",
-        "name": "BG",
-        "type": "sprite"
-      }
-    ]
-  },
-  {
-    "id": "24",
-    "name": "In-Game",
-    "type": null,
-    "children": [
-      {
-        "id": "1",
-        "name": "Scene",
-        "type": "scene"
-      },
-      {
-        "id": "308",
-        "name": "Text Data En",
-        "type": "script"
-      },
       {
         "id": "0",
         "name": "Game Manager",
@@ -99,175 +20,98 @@
         "type": "script"
       },
       {
-        "id": "415",
-        "name": "Cutscenes",
+        "id": "376",
+        "name": "Generic Door Behavior",
+        "type": "script"
+      },
+      {
+        "id": "367",
+        "name": "MusicBehavior",
+        "type": "script"
+      },
+      {
+        "id": "464",
+        "name": "Debug",
         "type": null,
         "children": [
           {
-            "id": "411",
-            "name": "Cutscene Scripts",
+            "id": "465",
+            "name": "StateDebugMenu",
             "type": null,
             "children": [
               {
-                "id": "430",
-                "name": "CutsceneList",
+                "id": "466",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
+                "id": "467",
+                "name": "StateMenuBehavior",
                 "type": "script"
-              },
-              {
-                "id": "432",
-                "name": "Utility",
-                "type": null,
-                "children": [
-                  {
-                    "id": "431",
-                    "name": "ErrorCutscene",
-                    "type": "script"
-                  },
-                  {
-                    "id": "412",
-                    "name": "TestCutscene",
-                    "type": "script"
-                  },
-                  {
-                    "id": "437",
-                    "name": "TestCutsceneA",
-                    "type": "script"
-                  },
-                  {
-                    "id": "438",
-                    "name": "TestCutsceneB",
-                    "type": "script"
-                  },
-                  {
-                    "id": "439",
-                    "name": "TestCutsceneC",
-                    "type": "script"
-                  }
-                ]
-              },
-              {
-                "id": "452",
-                "name": "ScienceRoom",
-                "type": null,
-                "children": [
-                  {
-                    "id": "453",
-                    "name": "UsedAll",
-                    "type": "script"
-                  },
-                  {
-                    "id": "463",
-                    "name": "Foreshadow",
-                    "type": "script"
-                  },
-                  {
-                    "id": "456",
-                    "name": "Listen",
-                    "type": "script"
-                  },
-                  {
-                    "id": "458",
-                    "name": "WhatDoYouWant",
-                    "type": "script"
-                  },
-                  {
-                    "id": "457",
-                    "name": "FuckAlone",
-                    "type": "script"
-                  },
-                  {
-                    "id": "461",
-                    "name": "FuckYou",
-                    "type": "script"
-                  }
-                ]
-              },
-              {
-                "id": "482",
-                "name": "Skin Test",
-                "type": null,
-                "children": [
-                  {
-                    "id": "483",
-                    "name": "SprayPaint",
-                    "type": "script"
-                  },
-                  {
-                    "id": "484",
-                    "name": "SprayPaintBlack",
-                    "type": "script"
-                  },
-                  {
-                    "id": "485",
-                    "name": "SprayPaintRed",
-                    "type": "script"
-                  },
-                  {
-                    "id": "486",
-                    "name": "SprayPaintBlue",
-                    "type": "script"
-                  }
-                ]
               }
             ]
           },
           {
-            "id": "410",
-            "name": "Cutscene Manager",
-            "type": "script"
+            "id": "470",
+            "name": "SceneLoadMenu",
+            "type": null,
+            "children": [
+              {
+                "id": "471",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
+                "id": "472",
+                "name": "SceneMenuBehavior",
+                "type": "script"
+              }
+            ]
           },
           {
-            "id": "416",
-            "name": "CSupdaterBehavior",
-            "type": "script"
+            "id": "473",
+            "name": "SkinsDebugMenu",
+            "type": null,
+            "children": [
+              {
+                "id": "476",
+                "name": "Prefab",
+                "type": "scene"
+              },
+              {
+                "id": "474",
+                "name": "SkinsMenuBehavior",
+                "type": "script"
+              }
+            ]
           },
           {
-            "id": "429",
-            "name": "CharacterList",
-            "type": "script"
-          },
-          {
-            "id": "451",
-            "name": "CutsceneAfterUseAll",
-            "type": "script"
+            "id": "487",
+            "name": "InventoryDebugMenu",
+            "type": null,
+            "children": [
+              {
+                "id": "488",
+                "name": "InvMenuBehavior",
+                "type": "script"
+              },
+              {
+                "id": "489",
+                "name": "Prefab",
+                "type": "scene"
+              }
+            ]
           }
         ]
       },
       {
-        "id": "176",
-        "name": "Interactions",
+        "id": "37",
+        "name": "Hitbox",
         "type": null,
         "children": [
           {
-            "id": "16",
-            "name": "Item Behavior",
-            "type": "script"
-          },
-          {
-            "id": "174",
-            "name": "Simple Phrase Behavior",
-            "type": "script"
-          }
-        ]
-      },
-      {
-        "id": "8",
-        "name": "Player",
-        "type": null,
-        "children": [
-          {
-            "id": "9",
-            "name": "Behavior",
-            "type": "script"
-          },
-          {
-            "id": "198",
-            "name": "Footsteps",
-            "type": "sound"
-          },
-          {
-            "id": "7",
-            "name": "Sprite",
+            "id": "38",
+            "name": "Rectangle",
             "type": "sprite"
           }
         ]
@@ -380,16 +224,6 @@
                 "id": "303",
                 "name": "Bubble",
                 "type": "sprite"
-              },
-              {
-                "id": "335",
-                "name": "Fast Forward",
-                "type": "sprite"
-              },
-              {
-                "id": "334",
-                "name": "No Fast Forward",
-                "type": "sprite"
               }
             ]
           },
@@ -401,10 +235,113 @@
         ]
       },
       {
+        "id": "8",
+        "name": "Player",
+        "type": null,
+        "children": [
+          {
+            "id": "9",
+            "name": "Behavior",
+            "type": "script"
+          }
+        ]
+      },
+      {
+        "id": "176",
+        "name": "Interactions",
+        "type": null,
+        "children": [
+          {
+            "id": "16",
+            "name": "Item Behavior",
+            "type": "script"
+          },
+          {
+            "id": "174",
+            "name": "Simple Phrase Behavior",
+            "type": "script"
+          }
+        ]
+      },
+      {
+        "id": "492",
+        "name": "Cutscenes",
+        "type": null,
+        "children": [
+          {
+            "id": "410",
+            "name": "Cutscene Manager",
+            "type": "script"
+          },
+          {
+            "id": "416",
+            "name": "CSupdaterBehavior",
+            "type": "script"
+          },
+          {
+            "id": "451",
+            "name": "CutsceneAfterUseAll",
+            "type": "script"
+          }
+        ]
+      },
+      {
+        "id": "496",
+        "name": "SFX",
+        "type": null,
+        "children": [
+          {
+            "id": "348",
+            "name": "Hover",
+            "type": "sound"
+          },
+          {
+            "id": "349",
+            "name": "Select",
+            "type": "sound"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "491",
+    "name": "Game",
+    "type": null,
+    "children": [
+      {
+        "id": "495",
+        "name": "GameConfig",
+        "type": "script"
+      },
+      {
+        "id": "493",
+        "name": "Text",
+        "type": null,
+        "children": [
+          {
+            "id": "308",
+            "name": "Text Data En",
+            "type": "script"
+          }
+        ]
+      },
+      {
+        "id": "494",
+        "name": "Scripts",
+        "type": null,
+        "children": []
+      },
+      {
         "id": "22",
         "name": "Scenery",
         "type": null,
         "children": [
+          {
+            "id": "469",
+            "name": "SceneList",
+            "type": "script"
+          },
           {
             "id": "394",
             "name": "ScienceRoom",
@@ -532,34 +469,157 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "415",
+        "name": "Cutscenes",
+        "type": null,
+        "children": [
+          {
+            "id": "411",
+            "name": "Cutscene Scripts",
+            "type": null,
+            "children": [
+              {
+                "id": "432",
+                "name": "Utility",
+                "type": null,
+                "children": [
+                  {
+                    "id": "431",
+                    "name": "ErrorCutscene",
+                    "type": "script"
+                  },
+                  {
+                    "id": "412",
+                    "name": "TestCutscene",
+                    "type": "script"
+                  },
+                  {
+                    "id": "437",
+                    "name": "TestCutsceneA",
+                    "type": "script"
+                  },
+                  {
+                    "id": "438",
+                    "name": "TestCutsceneB",
+                    "type": "script"
+                  },
+                  {
+                    "id": "439",
+                    "name": "TestCutsceneC",
+                    "type": "script"
+                  }
+                ]
+              },
+              {
+                "id": "452",
+                "name": "ScienceRoom",
+                "type": null,
+                "children": [
+                  {
+                    "id": "453",
+                    "name": "UsedAll",
+                    "type": "script"
+                  },
+                  {
+                    "id": "463",
+                    "name": "Foreshadow",
+                    "type": "script"
+                  },
+                  {
+                    "id": "456",
+                    "name": "Listen",
+                    "type": "script"
+                  },
+                  {
+                    "id": "458",
+                    "name": "WhatDoYouWant",
+                    "type": "script"
+                  },
+                  {
+                    "id": "457",
+                    "name": "FuckAlone",
+                    "type": "script"
+                  },
+                  {
+                    "id": "461",
+                    "name": "FuckYou",
+                    "type": "script"
+                  }
+                ]
+              },
+              {
+                "id": "482",
+                "name": "Skin Test",
+                "type": null,
+                "children": [
+                  {
+                    "id": "483",
+                    "name": "SprayPaint",
+                    "type": "script"
+                  },
+                  {
+                    "id": "484",
+                    "name": "SprayPaintBlack",
+                    "type": "script"
+                  },
+                  {
+                    "id": "485",
+                    "name": "SprayPaintRed",
+                    "type": "script"
+                  },
+                  {
+                    "id": "486",
+                    "name": "SprayPaintBlue",
+                    "type": "script"
+                  }
+                ]
+              }
+            ]
           },
           {
-            "id": "469",
-            "name": "SceneList",
+            "id": "429",
+            "name": "CharacterList",
+            "type": "script"
+          },
+          {
+            "id": "430",
+            "name": "CutsceneList",
             "type": "script"
           }
         ]
       },
       {
-        "id": "34",
-        "name": "Pnj",
+        "id": "236",
+        "name": "SFX",
+        "type": null,
+        "children": []
+      },
+      {
+        "id": "126",
+        "name": "Music",
         "type": null,
         "children": [
           {
-            "id": "381",
-            "name": "Frank",
-            "type": "sprite"
+            "id": "212",
+            "name": "Intro",
+            "type": "sound"
           },
           {
-            "id": "390",
-            "name": "Security",
-            "type": "sprite"
-          },
-          {
-            "id": "425",
-            "name": "Silas",
-            "type": "sprite"
-          },
+            "id": "209",
+            "name": "Elevator",
+            "type": "sound"
+          }
+        ]
+      },
+      {
+        "id": "34",
+        "name": "Sprites",
+        "type": null,
+        "children": [
           {
             "id": "426",
             "name": "KetchupKids",
@@ -568,21 +628,6 @@
           {
             "id": "427",
             "name": "AngelTom",
-            "type": "sprite"
-          },
-          {
-            "id": "428",
-            "name": "RobotTom",
-            "type": "sprite"
-          },
-          {
-            "id": "383",
-            "name": "Andy",
-            "type": "sprite"
-          },
-          {
-            "id": "387",
-            "name": "RexMaid",
             "type": "sprite"
           },
           {
@@ -613,224 +658,169 @@
             ]
           },
           {
-            "id": "71",
-            "name": "Face Sets",
-            "type": null,
-            "children": [
-              {
-                "id": "388",
-                "name": "RexMaid",
-                "type": "sprite"
-              },
-              {
-                "id": "409",
-                "name": "TomBlank",
-                "type": "sprite"
-              },
-              {
-                "id": "380",
-                "name": "Frank",
-                "type": "sprite"
-              },
-              {
-                "id": "389",
-                "name": "Security",
-                "type": "sprite"
-              },
-              {
-                "id": "384",
-                "name": "Andy",
-                "type": "sprite"
-              },
-              {
-                "id": "421",
-                "name": "Silas",
-                "type": null,
-                "children": [
-                  {
-                    "id": "417",
-                    "name": "Face",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "418",
-                    "name": "Silas2",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "419",
-                    "name": "Silas3",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "420",
-                    "name": "Silas4",
-                    "type": "sprite"
-                  }
-                ]
-              },
-              {
-                "id": "423",
-                "name": "Tom",
-                "type": null,
-                "children": [
-                  {
-                    "id": "424",
-                    "name": "Normal",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "480",
-                    "name": "Red",
-                    "type": "sprite"
-                  },
-                  {
-                    "id": "481",
-                    "name": "Blue",
-                    "type": "sprite"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "37",
-        "name": "Hitbox",
-        "type": null,
-        "children": [
-          {
-            "id": "38",
-            "name": "Rectangle",
+            "id": "422",
+            "name": "Blank",
             "type": "sprite"
           }
         ]
       },
       {
-        "id": "367",
-        "name": "MusicBehavior",
-        "type": "script"
-      },
-      {
-        "id": "376",
-        "name": "Generic Door Behavior",
-        "type": "script"
-      },
-      {
-        "id": "464",
-        "name": "Debug",
+        "id": "71",
+        "name": "Faces",
         "type": null,
         "children": [
           {
-            "id": "465",
-            "name": "StateDebugMenu",
+            "id": "388",
+            "name": "RexMaid",
+            "type": "sprite"
+          },
+          {
+            "id": "409",
+            "name": "TomBlank",
+            "type": "sprite"
+          },
+          {
+            "id": "380",
+            "name": "Frank",
+            "type": "sprite"
+          },
+          {
+            "id": "389",
+            "name": "Security",
+            "type": "sprite"
+          },
+          {
+            "id": "384",
+            "name": "Andy",
+            "type": "sprite"
+          },
+          {
+            "id": "421",
+            "name": "Silas",
             "type": null,
             "children": [
               {
-                "id": "466",
-                "name": "Prefab",
-                "type": "scene"
+                "id": "417",
+                "name": "Face",
+                "type": "sprite"
               },
               {
-                "id": "467",
-                "name": "StateMenuBehavior",
-                "type": "script"
+                "id": "418",
+                "name": "Silas2",
+                "type": "sprite"
+              },
+              {
+                "id": "419",
+                "name": "Silas3",
+                "type": "sprite"
+              },
+              {
+                "id": "420",
+                "name": "Silas4",
+                "type": "sprite"
               }
             ]
           },
           {
-            "id": "470",
-            "name": "SceneLoadMenu",
+            "id": "423",
+            "name": "Tom",
             "type": null,
             "children": [
               {
-                "id": "471",
-                "name": "Prefab",
-                "type": "scene"
+                "id": "424",
+                "name": "Normal",
+                "type": "sprite"
               },
               {
-                "id": "472",
-                "name": "SceneMenuBehavior",
-                "type": "script"
-              }
-            ]
-          },
-          {
-            "id": "473",
-            "name": "SkinsDebugMenu",
-            "type": null,
-            "children": [
-              {
-                "id": "476",
-                "name": "Prefab",
-                "type": "scene"
+                "id": "480",
+                "name": "Red",
+                "type": "sprite"
               },
               {
-                "id": "474",
-                "name": "SkinsMenuBehavior",
-                "type": "script"
-              }
-            ]
-          },
-          {
-            "id": "487",
-            "name": "InventoryDebugMenu",
-            "type": null,
-            "children": [
-              {
-                "id": "489",
-                "name": "Prefab",
-                "type": "scene"
-              },
-              {
-                "id": "488",
-                "name": "InvMenuBehavior",
-                "type": "script"
+                "id": "481",
+                "name": "Blue",
+                "type": "sprite"
               }
             ]
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "126",
-    "name": "Music",
-    "type": null,
-    "children": [
+      },
       {
-        "id": "212",
+        "id": "285",
         "name": "Intro",
-        "type": "sound"
+        "type": null,
+        "children": [
+          {
+            "id": "305",
+            "name": "Scene",
+            "type": "scene"
+          },
+          {
+            "id": "287",
+            "name": "Behavior",
+            "type": "script"
+          },
+          {
+            "id": "283",
+            "name": "BG",
+            "type": "sprite"
+          }
+        ]
       },
       {
-        "id": "209",
-        "name": "Elevator",
-        "type": "sound"
+        "id": "145",
+        "name": "Menu",
+        "type": null,
+        "children": [
+          {
+            "id": "146",
+            "name": "Scene",
+            "type": "scene"
+          },
+          {
+            "id": "147",
+            "name": "Behavior",
+            "type": "script"
+          },
+          {
+            "id": "143",
+            "name": "Background",
+            "type": "sprite"
+          },
+          {
+            "id": "191",
+            "name": "Title",
+            "type": "sprite"
+          },
+          {
+            "id": "265",
+            "name": "Title Murder",
+            "type": "sprite"
+          },
+          {
+            "id": "338",
+            "name": "Title Murder En",
+            "type": "sprite"
+          }
+        ]
+      },
+      {
+        "id": "1",
+        "name": "HUD",
+        "type": "scene"
       }
     ]
   },
   {
-    "id": "236",
-    "name": "SFX",
+    "id": "497",
+    "name": "MUST BE LAST",
     "type": null,
     "children": [
       {
-        "id": "348",
-        "name": "Hover",
-        "type": "sound"
-      },
-      {
-        "id": "349",
-        "name": "Select",
-        "type": "sound"
+        "id": "363",
+        "name": "Start",
+        "type": "script"
       }
     ]
-  },
-  {
-    "id": "363",
-    "name": "Start",
-    "type": "script"
   }
 ]
