@@ -282,6 +282,38 @@
             "id": "451",
             "name": "CutsceneAfterUseAll",
             "type": "script"
+          },
+          {
+            "id": "432",
+            "name": "Utility",
+            "type": null,
+            "children": [
+              {
+                "id": "431",
+                "name": "ErrorCutscene",
+                "type": "script"
+              },
+              {
+                "id": "412",
+                "name": "TestCutscene",
+                "type": "script"
+              },
+              {
+                "id": "437",
+                "name": "TestCutsceneA",
+                "type": "script"
+              },
+              {
+                "id": "438",
+                "name": "TestCutsceneB",
+                "type": "script"
+              },
+              {
+                "id": "439",
+                "name": "TestCutsceneC",
+                "type": "script"
+              }
+            ]
           }
         ]
       },
@@ -301,6 +333,28 @@
             "type": "sound"
           }
         ]
+      },
+      {
+        "id": "498",
+        "name": "DataManagement",
+        "type": null,
+        "children": [
+          {
+            "id": "469",
+            "name": "SceneList",
+            "type": "script"
+          },
+          {
+            "id": "429",
+            "name": "CharacterList",
+            "type": "script"
+          },
+          {
+            "id": "430",
+            "name": "CutsceneList",
+            "type": "script"
+          }
+        ]
       }
     ]
   },
@@ -312,6 +366,16 @@
       {
         "id": "495",
         "name": "GameConfig",
+        "type": "script"
+      },
+      {
+        "id": "499",
+        "name": "SceneListData",
+        "type": "script"
+      },
+      {
+        "id": "500",
+        "name": "CharacterListData",
         "type": "script"
       },
       {
@@ -334,14 +398,9 @@
       },
       {
         "id": "22",
-        "name": "Scenery",
+        "name": "Rooms",
         "type": null,
         "children": [
-          {
-            "id": "469",
-            "name": "SceneList",
-            "type": "script"
-          },
           {
             "id": "394",
             "name": "ScienceRoom",
@@ -478,116 +537,72 @@
         "type": null,
         "children": [
           {
-            "id": "411",
-            "name": "Cutscene Scripts",
+            "id": "452",
+            "name": "ScienceRoom",
             "type": null,
             "children": [
               {
-                "id": "432",
-                "name": "Utility",
-                "type": null,
-                "children": [
-                  {
-                    "id": "431",
-                    "name": "ErrorCutscene",
-                    "type": "script"
-                  },
-                  {
-                    "id": "412",
-                    "name": "TestCutscene",
-                    "type": "script"
-                  },
-                  {
-                    "id": "437",
-                    "name": "TestCutsceneA",
-                    "type": "script"
-                  },
-                  {
-                    "id": "438",
-                    "name": "TestCutsceneB",
-                    "type": "script"
-                  },
-                  {
-                    "id": "439",
-                    "name": "TestCutsceneC",
-                    "type": "script"
-                  }
-                ]
+                "id": "453",
+                "name": "UsedAll",
+                "type": "script"
               },
               {
-                "id": "452",
-                "name": "ScienceRoom",
-                "type": null,
-                "children": [
-                  {
-                    "id": "453",
-                    "name": "UsedAll",
-                    "type": "script"
-                  },
-                  {
-                    "id": "463",
-                    "name": "Foreshadow",
-                    "type": "script"
-                  },
-                  {
-                    "id": "456",
-                    "name": "Listen",
-                    "type": "script"
-                  },
-                  {
-                    "id": "458",
-                    "name": "WhatDoYouWant",
-                    "type": "script"
-                  },
-                  {
-                    "id": "457",
-                    "name": "FuckAlone",
-                    "type": "script"
-                  },
-                  {
-                    "id": "461",
-                    "name": "FuckYou",
-                    "type": "script"
-                  }
-                ]
+                "id": "463",
+                "name": "Foreshadow",
+                "type": "script"
               },
               {
-                "id": "482",
-                "name": "Skin Test",
-                "type": null,
-                "children": [
-                  {
-                    "id": "483",
-                    "name": "SprayPaint",
-                    "type": "script"
-                  },
-                  {
-                    "id": "484",
-                    "name": "SprayPaintBlack",
-                    "type": "script"
-                  },
-                  {
-                    "id": "485",
-                    "name": "SprayPaintRed",
-                    "type": "script"
-                  },
-                  {
-                    "id": "486",
-                    "name": "SprayPaintBlue",
-                    "type": "script"
-                  }
-                ]
+                "id": "456",
+                "name": "Listen",
+                "type": "script"
+              },
+              {
+                "id": "458",
+                "name": "WhatDoYouWant",
+                "type": "script"
+              },
+              {
+                "id": "457",
+                "name": "FuckAlone",
+                "type": "script"
+              },
+              {
+                "id": "461",
+                "name": "FuckYou",
+                "type": "script"
               }
             ]
           },
           {
-            "id": "429",
-            "name": "CharacterList",
-            "type": "script"
+            "id": "482",
+            "name": "Skin Test",
+            "type": null,
+            "children": [
+              {
+                "id": "483",
+                "name": "SprayPaint",
+                "type": "script"
+              },
+              {
+                "id": "484",
+                "name": "SprayPaintBlack",
+                "type": "script"
+              },
+              {
+                "id": "485",
+                "name": "SprayPaintRed",
+                "type": "script"
+              },
+              {
+                "id": "486",
+                "name": "SprayPaintBlue",
+                "type": "script"
+              }
+            ]
           },
           {
-            "id": "430",
-            "name": "CutsceneList",
+            "id": "501",
+            "name": "CutsceneListData",
             "type": "script"
           }
         ]

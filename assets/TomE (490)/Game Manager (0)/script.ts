@@ -84,6 +84,8 @@ module Game {
       Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
     }
     
+    CharacterList.buildList();
+    SceneList.buildList();
     CutsceneList.buildList();
     
     Game.switchToScene(GameConfig.startScene);
