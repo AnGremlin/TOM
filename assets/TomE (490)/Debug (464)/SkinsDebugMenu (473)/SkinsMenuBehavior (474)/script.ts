@@ -54,7 +54,7 @@ class SkinsMenuBehavior extends Sup.Behavior {
     var sidxChange = false;
     var cidxChange = false;
     if (Sup.Input.wasKeyJustPressed(GameConfig.closeDebugKey)) {
-      Game.closeMenu();
+      TomE.closeMenu();
     } else if (Sup.Input.wasKeyJustPressed("LEFT")) {
       sidxChange = true;
       this.skinDex = (this.skinDex - 1) % this.skinLen;

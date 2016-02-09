@@ -27,7 +27,7 @@ class SceneMenuBehavior extends Sup.Behavior {
   update() {
     var idxChange = false;
     if (Sup.Input.wasKeyJustPressed(GameConfig.closeDebugKey)) {
-      Game.closeMenu();
+      TomE.closeMenu();
     } else if (Sup.Input.wasKeyJustPressed("LEFT")) {
       idxChange = true;
       this.index = (this.index - 1) % this.stateLen;
@@ -35,8 +35,8 @@ class SceneMenuBehavior extends Sup.Behavior {
       idxChange = true;
       this.index = (this.index + 1) % this.stateLen;
     } else if (Sup.Input.wasKeyJustPressed("RETURN") || Sup.Input.wasKeyJustPressed("SPACE")) {
-      Game.cameraBehavior.transitionToScene(this.varName);
-      Game.closeMenu();
+      TomE.cameraBehavior.transitionToScene(this.varName);
+      TomE.closeMenu();
     }
     
     if(idxChange)

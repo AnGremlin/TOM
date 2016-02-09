@@ -16,7 +16,7 @@ class PreIntroBehavior extends Sup.Behavior {
   update() {
     this.timer -= 1;
     if (this.timer === 0) {
-      Game.start();
+      TomE.start();
       
     }// else if (this.lightOn.indexOf(this.timer) !== -1) {
     //  this.sprite.setSprite(Sup.get("Pre-Intro/Chair Light", Sup.Sprite));

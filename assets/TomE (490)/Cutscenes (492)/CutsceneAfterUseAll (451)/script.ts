@@ -6,7 +6,7 @@ class CutsceneAfterUseAll extends Sup.Behavior {
   triggered = false;
   sceneName = "error";
   
-  //when triggered, this value in Game.state will be set to True
+  //when triggered, this value in TomE.state will be set to True
   triggerVar = "";
   
   awake() {
@@ -15,15 +15,15 @@ class CutsceneAfterUseAll extends Sup.Behavior {
 
   start() {
     //initialize if needed
-    if (Game.perRoomObjectUseStatus[this.roomName] == null) {
-      Game.perRoomObjectUseStatus[this.roomName] = [];
+    if (TomE.perRoomObjectUseStatus[this.roomName] == null) {
+      TomE.perRoomObjectUseStatus[this.roomName] = [];
       return;
     }
     
     //get the local and saved items
     var root = Sup.getActor("Scene");
     var roomItems = root.getChildren();
-    var savedItems = Game.perRoomObjectUseStatus[this.roomName];
+    var savedItems = TomE.perRoomObjectUseStatus[this.roomName];
     
     //restore saved values
     roomItems.forEach((child, i) => {
@@ -60,8 +60,8 @@ class CutsceneAfterUseAll extends Sup.Behavior {
         if(child["used"] != null) {
           if(child["used"]) {
             used++;
-            if(Game.perRoomObjectUseStatus[this.roomName].indexOf(child.getName()) == -1) {
-              Game.perRoomObjectUseStatus[this.roomName].push(child.getName());
+            if(TomE.perRoomObjectUseStatus[this.roomName].indexOf(child.getName()) == -1) {
+              TomE.perRoomObjectUseStatus[this.roomName].push(child.getName());
             }
           } 
         }
@@ -78,7 +78,7 @@ class CutsceneAfterUseAll extends Sup.Behavior {
   }
 
   trigger() {
-    Game.state[this.triggerVar] = true;
+    TomE.state[this.triggerVar] = true;
     Cutscene.loadScript(this.sceneName);
   }
 }

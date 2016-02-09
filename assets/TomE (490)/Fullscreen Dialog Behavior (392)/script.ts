@@ -17,8 +17,8 @@ class FSDialogBehavior extends Sup.Behavior {
   choiceIds: string[];
   
   awake() {
-    Game.fullscreenDialog = this.actor;
-    Game.fsdialogBehavior = this;
+    TomE.fullscreenDialog = this.actor;
+    TomE.fsdialogBehavior = this;
   }
 
   start() {
@@ -59,20 +59,20 @@ class FSDialogBehavior extends Sup.Behavior {
         if (this.blackscreenOpacity === 1 && !this.blackedOut) {
           this.blackedOut = true;
           
-          let text = Game.TextData[this.textId];
+          let text = TomE.TextData[this.textId];
           if (text == null) text = this.textId;
           this.mainTextBehavior.setText(text, 45);
     
           if (this.choiceIds != null) {
             this.choiceIds.forEach((choiceId, i) => {
-              this.choiceTextBehaviors[i].setText(Game.TextData[choiceId]);
+              this.choiceTextBehaviors[i].setText(TomE.TextData[choiceId]);
             });
           }
           
         } else if (this.blackscreenOpacity === 0) {
           this.isVisible = false;
           this.actor.setVisible(false);
-          Game.playerBehavior.canMove = true;
+          TomE.playerBehavior.canMove = true;
           this.blackedOut = false;
         }
       }
@@ -89,12 +89,12 @@ class FSDialogBehavior extends Sup.Behavior {
       
         let oldActiveChoiceIndex = this.activeChoiceIndex;
 
-        if (Game.playerBehavior.mousePosition.y < -3.75 && Game.playerBehavior.mousePosition.y >= -3.75 - 0.3 * 3) {
-          let choiceY = Math.min(this.choiceIds.length - 1, Math.floor(-(Game.playerBehavior.mousePosition.y + 3.75) / 0.3));
+        if (TomE.playerBehavior.mousePosition.y < -3.75 && TomE.playerBehavior.mousePosition.y >= -3.75 - 0.3 * 3) {
+          let choiceY = Math.min(this.choiceIds.length - 1, Math.floor(-(TomE.playerBehavior.mousePosition.y + 3.75) / 0.3));
 
           let choiceX = 0;
           if (this.choiceIds.length > 3) {
-            choiceX = Sup.Math.clamp(Math.floor((Game.playerBehavior.mousePosition.x + 7.5) / 5), 0, 1);
+            choiceX = Sup.Math.clamp(Math.floor((TomE.playerBehavior.mousePosition.x + 7.5) / 5), 0, 1);
           }
 
           this.activeChoiceIndex = Math.min(choiceX * 3 + choiceY, this.choiceIds.length - 1);
@@ -104,7 +104,7 @@ class FSDialogBehavior extends Sup.Behavior {
 
         if (this.activeChoiceIndex >= 0 && this.blackscreenTargetOpacity != 0) {
           if (oldActiveChoiceIndex !== this.activeChoiceIndex) {
-            new Sup.Audio.SoundPlayer(Game.hoverSound).play();
+            new Sup.Audio.SoundPlayer(TomE.hoverSound).play();
           }
           this.choiceSelectActor.setVisible(true);
           this.choiceSelectActor.setLocalPosition(-5.35 + Math.floor(this.activeChoiceIndex / 3) * 5, -this.activeChoiceIndex % 3 * 0.3 - 4.682, 0);
@@ -118,7 +118,7 @@ class FSDialogBehavior extends Sup.Behavior {
     if (Sup.Input.wasMouseButtonJustReleased(0) || Sup.Input.wasKeyJustPressed("SPACE")) {
       if (! this.mainTextBehavior.skipToEnd() && (this.choiceIds == null || this.activeChoiceIndex >= 0)) {
         if (this.choiceIds != null) {
-          new Sup.Audio.SoundPlayer(Game.selectSound).play();
+          new Sup.Audio.SoundPlayer(TomE.selectSound).play();
         }
         this.close();
         return;
@@ -127,12 +127,12 @@ class FSDialogBehavior extends Sup.Behavior {
   }
   
   show(textId: string, choiceIds: string[], dialogFinishBehavior?) {
-    Game.playerBehavior.canMove = false;
+    TomE.playerBehavior.canMove = false;
     this.textId = textId;
     if(!this.blackedOut) {
       this.blackscreenTargetOpacity = 1;
     } else {
-      let text = Game.TextData[textId];
+      let text = TomE.TextData[textId];
       if (text == null) text = textId;
 
       this.mainTextBehavior.setText(text, 45);
@@ -149,7 +149,7 @@ class FSDialogBehavior extends Sup.Behavior {
     this.choicesOrigin.setVisible(false);
     this.choiceSelectActor.setVisible(false);
     
-    Game.playerBehavior.canMove = false;
+    TomE.playerBehavior.canMove = false;
     
     this["dialogFinishBehavior"] = dialogFinishBehavior;
   }
@@ -160,7 +160,7 @@ class FSDialogBehavior extends Sup.Behavior {
     //this.isVisible = false;
     //this.actor.setVisible(false);
     this.mainTextBehavior.setText("");
-    //Game.playerBehavior.canMove = true;
+    //TomE.playerBehavior.canMove = true;
     
     this.blackscreenTargetOpacity = 0;
     

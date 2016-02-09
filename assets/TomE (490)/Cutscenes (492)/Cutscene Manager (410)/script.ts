@@ -40,10 +40,10 @@ module Cutscene {
           
           fdBehavior = finishDialogBehavior;
           
-          if(Game.fsdialogBehavior != null)
+          if(TomE.fsdialogBehavior != null)
           {
-            Game.fsdialogBehavior.actor.setVisible(true);
-            Game.fsdialogBehavior.blackoutActor.spriteRenderer.setOpacity(0.8);
+            TomE.fsdialogBehavior.actor.setVisible(true);
+            TomE.fsdialogBehavior.blackoutActor.spriteRenderer.setOpacity(0.8);
           }
         }
         
@@ -80,10 +80,10 @@ module Cutscene {
             Sup.log("!!!!! FATAL ERROR: RIGHT CUTSCENE ACTOR NOT FOUND")
           }
           
-          if(Game.fsdialogBehavior != null)
+          if(TomE.fsdialogBehavior != null)
           {
-            Game.fsdialogBehavior.actor.setVisible(true);
-            Game.fsdialogBehavior.blackoutActor.spriteRenderer.setOpacity(0);
+            TomE.fsdialogBehavior.actor.setVisible(true);
+            TomE.fsdialogBehavior.blackoutActor.spriteRenderer.setOpacity(0);
           }
           
           this["finishDialog"] = null;
@@ -110,7 +110,7 @@ module Cutscene {
               line = sceneLines[lineIdx];
             }  
           } else if (active && waitingForDialog) {
-            if (!Game.dialogBehavior.isVisible && !Game.fsdialogBehavior.isVisible) {
+            if (!TomE.dialogBehavior.isVisible && !TomE.fsdialogBehavior.isVisible) {
               waitingForDialog = false;
               this["finishDialog"] = null;
               branches = [];
@@ -309,7 +309,7 @@ module Cutscene {
         function speak(faceSet: string, text: string) {
           waitingForDialog = true;
           var face = CharacterList.getFace(faceSet); 
-          Game.dialogBehavior.showRaw(face, text, null, null, null);
+          TomE.dialogBehavior.showRaw(face, text, null, null, null);
         }
         
         /***
@@ -321,7 +321,7 @@ module Cutscene {
          */
         function fsd(textId: string) {
           waitingForDialog = true;
-          Game.fsdialogBehavior.show(textId,null,null);
+          TomE.fsdialogBehavior.show(textId,null,null);
         }
         /***
          * Display a fullscreen dialog
@@ -371,7 +371,7 @@ module Cutscene {
          * @private
          */
         function give(item: string) {
-          Game.getItem(item);
+          TomE.getItem(item);
         }
         
         /***
@@ -382,7 +382,7 @@ module Cutscene {
          * @private
          */
         function use(item: string) {
-          Game.useItem(item);
+          TomE.useItem(item);
         }
         
         /***
@@ -406,7 +406,7 @@ module Cutscene {
          * @private
          */
         function bgm(sound: string) {
-          Game.setBGM(sound);
+          TomE.setBGM(sound);
         }
         
         /***
@@ -419,7 +419,7 @@ module Cutscene {
          */
         function scene(name: string) {
           fdBehavior = null; //Don't try to call back to destroyed actor!
-          Game.cameraBehavior.transitionToScene(name);
+          TomE.cameraBehavior.transitionToScene(name);
         }
         
         /***
@@ -443,7 +443,7 @@ module Cutscene {
          * @private
          */
         function loadifitem(item:string, name: string) {
-          if (Game.hasItem(item)) Cutscene.loadScript(name, fdBehavior);
+          if (TomE.hasItem(item)) Cutscene.loadScript(name, fdBehavior);
         }
         
         /***
@@ -482,7 +482,7 @@ module Cutscene {
             
             waitingForDialog = true;
             var face = CharacterList.getFace(faceSet);
-            Game.dialogBehavior.showRaw(face, dText, choiceIds, choiceTexts, this);
+            TomE.dialogBehavior.showRaw(face, dText, choiceIds, choiceTexts, this);
             
           } else {
             Sup.log("Error in cutscene '" + sceneName + "': bad BRANCH command at line " + lineIdx);

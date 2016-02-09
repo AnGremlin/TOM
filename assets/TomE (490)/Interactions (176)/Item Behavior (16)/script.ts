@@ -7,13 +7,13 @@ class ItemBehavior extends Sup.Behavior {
   type: string; // "bubble", ... ?
   
   awake() {
-    Game.itemBehaviors.push(this);
+    TomE.itemBehaviors.push(this);
     this.hover(false);
     this.position.z = 0;
   }
   onDestroy() {
-    let index = Game.itemBehaviors.indexOf(this);
-    if (index !== -1) Game.itemBehaviors.splice(index, 1);
+    let index = TomE.itemBehaviors.indexOf(this);
+    if (index !== -1) TomE.itemBehaviors.splice(index, 1);
   }
   
   start() {

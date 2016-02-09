@@ -11,7 +11,7 @@ class CameraBehavior extends Sup.Behavior {
   targetScene: string;
 
   awake() {
-    Game.cameraBehavior = this;
+    TomE.cameraBehavior = this;
   }
     
   start() {
@@ -21,10 +21,10 @@ class CameraBehavior extends Sup.Behavior {
 
   update() {
     // Position
-    //if (Game.playerBehavior.position.x - this.offset > this.position.x) {
-    //  this.position.x = Sup.Math.lerp(this.position.x, Game.playerBehavior.position.x - this.offset, 0.1);
-    //} else if (Game.playerBehavior.position.x + this.offset < this.position.x) {
-    //  this.position.x = Sup.Math.lerp(this.position.x, Game.playerBehavior.position.x + this.offset, 0.1);
+    //if (TomE.playerBehavior.position.x - this.offset > this.position.x) {
+    //  this.position.x = Sup.Math.lerp(this.position.x, TomE.playerBehavior.position.x - this.offset, 0.1);
+    //} else if (TomE.playerBehavior.position.x + this.offset < this.position.x) {
+    //  this.position.x = Sup.Math.lerp(this.position.x, TomE.playerBehavior.position.x + this.offset, 0.1);
     //}
     //
     //this.actor.setLocalPosition(this.position);
@@ -37,14 +37,14 @@ class CameraBehavior extends Sup.Behavior {
         
         if (this.blackscreenOpacity === 1) {
           Sup.getActor("Scene").destroy();
-          Game.switchToScene(this.targetScene);
+          TomE.switchToScene(this.targetScene);
           
           this.blackscreenOpacity = 2;
           this.blackscreenTargetOpacity = 0;
         
         } else if (this.blackscreenOpacity === 0) {
-          if (!Game.dialogBehavior.isVisible && !Game.fsdialogBehavior.isVisible) {
-            Game.playerBehavior.canMove = true;
+          if (!TomE.dialogBehavior.isVisible && !TomE.fsdialogBehavior.isVisible) {
+            TomE.playerBehavior.canMove = true;
           }
         }
       }
@@ -53,9 +53,9 @@ class CameraBehavior extends Sup.Behavior {
     }
     
     // Update music volume
-    if (Game.music != null) {
-      Game.musicVolume = Sup.Math.lerp(Game.musicVolume, Game.targetMusicVolume, 0.01);
-      Game.music.setVolume(Game.musicVolume);
+    if (TomE.music != null) {
+      TomE.musicVolume = Sup.Math.lerp(TomE.musicVolume, TomE.targetMusicVolume, 0.01);
+      TomE.music.setVolume(TomE.musicVolume);
     }
   }
 
@@ -63,8 +63,8 @@ class CameraBehavior extends Sup.Behavior {
     this.targetScene = scene;
     this.blackscreenTargetOpacity = 1;
     
-    Game.playerBehavior.canMove = false;
-    Game.playerBehavior.hoveredItem = null;
+    TomE.playerBehavior.canMove = false;
+    TomE.playerBehavior.hoveredItem = null;
   }
 
 }

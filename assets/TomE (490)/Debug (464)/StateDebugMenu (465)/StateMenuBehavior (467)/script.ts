@@ -14,7 +14,7 @@ class StateMenuBehavior extends Sup.Behavior {
     
     var idx = 0;
     var found = false;
-    for(var key in Game.state)
+    for(var key in TomE.state)
     {
       if (idx == this.index) {
         found = true;
@@ -25,14 +25,14 @@ class StateMenuBehavior extends Sup.Behavior {
     
     this.stateLen = idx;
     this.varNameActor.textRenderer.setText(this.varName);
-    this.varValueActor.textRenderer.setText(Game.state[this.varName] ? "TRUE" : "FALSE");
-    this.varValue = Game.state[this.varName];
+    this.varValueActor.textRenderer.setText(TomE.state[this.varName] ? "TRUE" : "FALSE");
+    this.varValue = TomE.state[this.varName];
   }
 
   update() {
     var idxChange = false;
     if (Sup.Input.wasKeyJustPressed(GameConfig.closeDebugKey)) {
-      Game.closeMenu();
+      TomE.closeMenu();
     } else if (Sup.Input.wasKeyJustPressed("LEFT")) {
       idxChange = true;
       this.index = (this.index - 1) % this.stateLen;
@@ -42,14 +42,14 @@ class StateMenuBehavior extends Sup.Behavior {
     } else if (Sup.Input.wasKeyJustPressed("RETURN") || Sup.Input.wasKeyJustPressed("SPACE")) {
       this.varValue = !this.varValue;
       this.varValueActor.textRenderer.setText(this.varValue ? "TRUE" : "FALSE");
-      Game.state[this.varName] = this.varValue;
+      TomE.state[this.varName] = this.varValue;
     }
     
     if(idxChange)
     {
       var idx = 0;
       var key = "";
-      for(key in Game.state)
+      for(key in TomE.state)
       {
         if (idx == this.index) {
           this.varName = key;
@@ -59,8 +59,8 @@ class StateMenuBehavior extends Sup.Behavior {
       }
 
       this.varNameActor.textRenderer.setText(this.varName);
-      this.varValueActor.textRenderer.setText(Game.state[this.varName] ? "TRUE" : "FALSE");
-      this.varValue = Game.state[this.varName];
+      this.varValueActor.textRenderer.setText(TomE.state[this.varName] ? "TRUE" : "FALSE");
+      this.varValue = TomE.state[this.varName];
     }
   }
 }

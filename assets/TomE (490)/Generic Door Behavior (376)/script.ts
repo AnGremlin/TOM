@@ -8,12 +8,12 @@ class GenericDoorBehavior extends Sup.Behavior {
   
   update() {
     if (this.actor.spriteRenderer.getAnimation() == "Animation" && ! this.actor.spriteRenderer.isAnimationPlaying()) {
-      Game.cameraBehavior.transitionToScene(this.targetScene);
+      TomE.cameraBehavior.transitionToScene(this.targetScene);
     }
   }
       
   activate() {
-    Game.playerBehavior.canMove = false;
+    TomE.playerBehavior.canMove = false;
     this.actor.spriteRenderer.setAnimation("Animation", false);
     Sup.Audio.playSound("SFX/Opening Door");
   }

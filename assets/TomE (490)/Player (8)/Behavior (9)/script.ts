@@ -14,7 +14,7 @@ class PlayerBehavior extends Sup.Behavior {
   activateDistance = 100;
 
   awake() {
-    Game.playerBehavior = this;
+    TomE.playerBehavior = this;
   }
 
   update() {    
@@ -22,9 +22,9 @@ class PlayerBehavior extends Sup.Behavior {
     let screenSize = Sup.Input.getScreenSize();
 
     mousePosition.x *= 10 / 2 * screenSize.x / screenSize.y;
-    mousePosition.x += Game.cameraBehavior.position.x;
+    mousePosition.x += TomE.cameraBehavior.position.x;
     mousePosition.y *= 10 / 2;
-    mousePosition.y += Game.cameraBehavior.position.y;
+    mousePosition.y += TomE.cameraBehavior.position.y;
 
     this.mousePosition.set(mousePosition.x, mousePosition.y, 0);
 
@@ -44,7 +44,7 @@ class PlayerBehavior extends Sup.Behavior {
     
   interaction() {
     
-    if(Game.menuOpen) {
+    if(TomE.menuOpen) {
       return;
     }
     
@@ -52,7 +52,7 @@ class PlayerBehavior extends Sup.Behavior {
     let closestItem: Sup.Actor = null;
     let minDistance = 1000;
     
-    Game.itemBehaviors.forEach((itemBehavior) => {
+    TomE.itemBehaviors.forEach((itemBehavior) => {
       let diff = this.mousePosition.clone().subtract(itemBehavior.position);
       diff.x -= itemBehavior.hitbox.offsetX;
       diff.y -= itemBehavior.hitbox.offsetY;
@@ -76,16 +76,16 @@ class PlayerBehavior extends Sup.Behavior {
         
       this.hoveredItem = closestItem;
       this.hoveredItem.getBehavior(ItemBehavior).hover(true);
-      new Sup.Audio.SoundPlayer(Game.hoverSound).play();
+      new Sup.Audio.SoundPlayer(TomE.hoverSound).play();
     }
     
-    if (Game.dialogBehavior.closedTimer > 2 && Game.fsdialogBehavior.closedTimer > 2 && !Cutscene.active) {
+    if (TomE.dialogBehavior.closedTimer > 2 && TomE.fsdialogBehavior.closedTimer > 2 && !Cutscene.active) {
       
       if (Sup.Input.wasMouseButtonJustReleased(0) || Sup.Input.wasKeyJustPressed("SPACE")) {
         this.targetItem = this.hoveredItem;
         if (this.targetItem != null) {
           this.activateItem(this.targetItem);
-          new Sup.Audio.SoundPlayer(Game.selectSound).play();
+          new Sup.Audio.SoundPlayer(TomE.selectSound).play();
         }
       }
       
@@ -95,34 +95,34 @@ class PlayerBehavior extends Sup.Behavior {
     if(Sup.Input.isKeyDown("SHIFT")) {
       //loading 
       if(Sup.Input.wasKeyJustPressed("1")) {
-        Game.loadGame("1");
+        TomE.loadGame("1");
       } else if(Sup.Input.wasKeyJustPressed("2")) {
-        Game.loadGame("2");
+        TomE.loadGame("2");
       } else if(Sup.Input.wasKeyJustPressed("3")) {
-        Game.loadGame("3");
+        TomE.loadGame("3");
       } else if(Sup.Input.wasKeyJustPressed("0")) {
-        Game.loadGame("auto");
+        TomE.loadGame("auto");
       } else if(Sup.Input.wasKeyJustPressed("N")) {
-        Game.loadGame("new");
+        TomE.loadGame("new");
       }
     } else {
       //saving
       if(Sup.Input.wasKeyJustPressed("1")) {
-        Game.saveGame("1");
+        TomE.saveGame("1");
       } else if(Sup.Input.wasKeyJustPressed("2")) {
-        Game.saveGame("2");
+        TomE.saveGame("2");
       } else if(Sup.Input.wasKeyJustPressed("3")) {
-        Game.saveGame("3");
+        TomE.saveGame("3");
       } 
       //menus
       else if(GameConfig.stateDebugKey != null &&  Sup.Input.wasKeyJustPressed(GameConfig.stateDebugKey)) {
-        Game.openMenu("StateDebugMenu");
+        TomE.openMenu("StateDebugMenu");
       } else if(GameConfig.sceneDebugKey != null &&  Sup.Input.wasKeyJustPressed(GameConfig.sceneDebugKey)) {
-        Game.openMenu("SceneLoadMenu");
+        TomE.openMenu("SceneLoadMenu");
       } else if(GameConfig.skinDebugKey != null &&  Sup.Input.wasKeyJustPressed(GameConfig.skinDebugKey)) {
-        Game.openMenu("SkinsDebugMenu");
+        TomE.openMenu("SkinsDebugMenu");
       } else if(GameConfig.invDebugKey != null &&  Sup.Input.wasKeyJustPressed(GameConfig.invDebugKey)) {
-        Game.openMenu("InventoryDebugMenu");
+        TomE.openMenu("InventoryDebugMenu");
       } 
     }
   }

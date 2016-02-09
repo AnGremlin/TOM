@@ -12,7 +12,7 @@ class MenuBehavior extends Sup.Behavior {
   music: Sup.Audio.SoundPlayer;
   
   start() {
-    if (Game.TextData === TextDataEn) {
+    if (TomE.TextData === TextDataEn) {
       Sup.getActor("Title Murder").spriteRenderer.setSprite(Sup.get("Game/Menu/Title Murder En", Sup.Sprite));
     }
       
@@ -30,7 +30,7 @@ class MenuBehavior extends Sup.Behavior {
       if (this.timer === 0) {
         let textBehavior = new Sup.Actor("Text").addBehavior(TextBehavior);
         textBehavior.actor.setLocalPosition(0, -1, 6);
-        textBehavior.setText(Game.TextData.Menu);
+        textBehavior.setText(TomE.TextData.Menu);
       }
       
       return;

@@ -18,11 +18,11 @@ class CursorBehavior extends Sup.Behavior {
     
     var newSprite = this.normalSprite;
     
-    if (Game.dialogBehavior != null) {
-      if (Game.dialogBehavior.isVisible || Game.fsdialogBehavior.isVisible || Cutscene.active) {
+    if (TomE.dialogBehavior != null) {
+      if (TomE.dialogBehavior.isVisible || TomE.fsdialogBehavior.isVisible || Cutscene.active) {
         newSprite = this.normalSprite;
-      }else if (Game.playerBehavior.hoveredItem != null) {
-        if (Game.playerBehavior.hoveredItem.getBehavior(ItemBehavior).type === "bubble") {
+      }else if (TomE.playerBehavior.hoveredItem != null) {
+        if (TomE.playerBehavior.hoveredItem.getBehavior(ItemBehavior).type === "bubble") {
           newSprite = this.bubbleSprite;
         } else {
           newSprite = this.interactionSprite;

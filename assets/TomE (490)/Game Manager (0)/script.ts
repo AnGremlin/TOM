@@ -1,4 +1,4 @@
-module Game {
+module TomE {
   export let playerBehavior: PlayerBehavior;
   export let cameraBehavior: CameraBehavior;
   
@@ -34,8 +34,8 @@ module Game {
   export let selectSound: Sup.Sound;
   
   export function initialize() {
-    Game.hoverSound = Sup.get("TomE/SFX/Hover", Sup.Sound);
-    Game.selectSound = Sup.get("TomE/SFX/Select", Sup.Sound);
+    TomE.hoverSound = Sup.get("TomE/SFX/Hover", Sup.Sound);
+    TomE.selectSound = Sup.get("TomE/SFX/Select", Sup.Sound);
   }
   
   export function newGame() {
@@ -45,8 +45,8 @@ module Game {
     }
   
     //load text
-    if (Game.TextData == null) {
-      Game.TextData = TextDataEn;
+    if (TomE.TextData == null) {
+      TomE.TextData = TextDataEn;
     }
     
     //reset state
@@ -73,14 +73,14 @@ module Game {
     Sup.Input.setMouseVisible(false);
     if(GameConfig.menuScene != null) Sup.loadScene(GameConfig.menuScene);
     else if(GameConfig.introScene != null) Sup.loadScene(GameConfig.introScene);
-    else Game.start();
+    else TomE.start();
   }
     
   export function start() {
     Sup.loadScene(Sup.get("Game/HUD", Sup.Scene));
-    Game.playerBehavior = Sup.getActor("Player").getBehavior(PlayerBehavior);
+    TomE.playerBehavior = Sup.getActor("Player").getBehavior(PlayerBehavior);
     
-    for (let item in Game.inventory) {
+    for (let item in TomE.inventory) {
       Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
     }
     
@@ -88,19 +88,19 @@ module Game {
     SceneList.buildList();
     CutsceneList.buildList();
     
-    Game.switchToScene(GameConfig.startScene);
-    Game.saveGame("new");
+    TomE.switchToScene(GameConfig.startScene);
+    TomE.saveGame("new");
   }
     
   export function restoreScene(name: string) {
     Sup.loadScene(Sup.get("Game/HUD", Sup.Scene));
-    Game.playerBehavior = Sup.getActor("Player").getBehavior(PlayerBehavior);
+    TomE.playerBehavior = Sup.getActor("Player").getBehavior(PlayerBehavior);
     
-    for (var item in Game.inventory) {
+    for (var item in TomE.inventory) {
       Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
     }
     
-    Game.switchToScene(name);
+    TomE.switchToScene(name);
   }
   
   export function setBGM(musicName: string) {
@@ -109,30 +109,30 @@ module Game {
     if (newMusic == null) {
       Sup.log("NO MUSIC CALLED: " + musicName)
     } else {
-      if (newMusic !== Game.musicAsset) {
-        if (Game.music != null) {
-          Game.music.stop();
-          Game.music = null;
+      if (newMusic !== TomE.musicAsset) {
+        if (TomE.music != null) {
+          TomE.music.stop();
+          TomE.music = null;
         }
         
-        Game.musicAsset = newMusic;
-        if (Game.musicAsset != null) {
-          Game.music = new Sup.Audio.SoundPlayer(Game.musicAsset, 1.0, { loop: true });
+        TomE.musicAsset = newMusic;
+        if (TomE.musicAsset != null) {
+          TomE.music = new Sup.Audio.SoundPlayer(TomE.musicAsset, 1.0, { loop: true });
           
-          Game.musicVolume = 0;
-          Game.targetMusicVolume = 1;
-          Game.music.setVolume(Game.musicVolume);
+          TomE.musicVolume = 0;
+          TomE.targetMusicVolume = 1;
+          TomE.music.setVolume(TomE.musicVolume);
           
-          Game.music.play();
+          TomE.music.play();
         }
       }
     }
   }
   
   export function switchToScene(sceneName: string) {
-    Game.itemBehaviors.length = 0;
+    TomE.itemBehaviors.length = 0;
     
-    Game.loadedScene = sceneName;
+    TomE.loadedScene = sceneName;
     
     sceneName = SceneList.getScene(sceneName);
     if(sceneName == null) return; //error prints in call above
@@ -147,13 +147,13 @@ module Game {
       setBGM(musicName);
     }
     
-    Game.playerBehavior.position.x = 0;
-    //Game.cameraBehavior.position.x = Game.playerBehavior.position.x;
-    //Game.playerBehavior.position.y = -1.2;
+    TomE.playerBehavior.position.x = 0;
+    //TomE.cameraBehavior.position.x = TomE.playerBehavior.position.x;
+    //TomE.playerBehavior.position.y = -1.2;
     
-    Game.playerBehavior.actor.setLocalPosition(Game.playerBehavior.position);
+    TomE.playerBehavior.actor.setLocalPosition(TomE.playerBehavior.position);
     
-    Game.saveGame("auto");
+    TomE.saveGame("auto");
   }
   
   export function openMenu(name: string) {
@@ -196,17 +196,17 @@ module Game {
   }
   
   export function hasItem(item: string) {
-    return Game.inventory[item];
+    return TomE.inventory[item];
   }
   
   export function getItem(item: string) {
     //Sup.Audio.playSound("SFX/Pick Up");
-    Game.inventory[item] = true;
+    TomE.inventory[item] = true;
     Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(1);
   }
     
   export function useItem(item: string) {
-    Game.inventory[item] = false;
+    TomE.inventory[item] = false;
     Sup.getActor("Inventory").getChild(item).spriteRenderer.setOpacity(0);
   }
   
@@ -227,9 +227,9 @@ module Game {
     var useKeys = [];
     var useVals = [];
     var i = 0;
-    for(var key in Game.perRoomObjectUseStatus) {
+    for(var key in TomE.perRoomObjectUseStatus) {
       useKeys[i] = key;
-      useVals[i] = Game.perRoomObjectUseStatus[key];
+      useVals[i] = TomE.perRoomObjectUseStatus[key];
       i++;
     }
     //unzip skindices
@@ -241,7 +241,7 @@ module Game {
       i++;
     }
     
-    Sup.Storage.setJSON(idx + "_state", Game.state);
+    Sup.Storage.setJSON(idx + "_state", TomE.state);
     
     Sup.Storage.setJSON(idx + "_usedKeys", useKeys);
     Sup.Storage.setJSON(idx + "_usedVals", useVals);
@@ -249,7 +249,7 @@ module Game {
     Sup.Storage.setJSON(idx + "_skinKeys", skinKeys);
     Sup.Storage.setJSON(idx + "_skinVals", skinVals);
     
-    Sup.Storage.setJSON(idx + "_room", Game.loadedScene);
+    Sup.Storage.setJSON(idx + "_room", TomE.loadedScene);
     
     Sup.log("Saved game in slot " + idx);
   }
@@ -263,12 +263,12 @@ module Game {
     }
     
     //first just clear everything
-    Game.newGame();
+    TomE.newGame();
     
     //now load the saved data
-    Game.state = Sup.Storage.getJSON(idx + "_state");
+    TomE.state = Sup.Storage.getJSON(idx + "_state");
     CharacterList.indices = Sup.Storage.getJSON(idx + "_skins");
-    Game.loadedScene = Sup.Storage.getJSON(idx + "_room");
+    TomE.loadedScene = Sup.Storage.getJSON(idx + "_room");
     
     var usedKeys = Sup.Storage.getJSON(idx + "_usedKeys");
     var usedVals = Sup.Storage.getJSON(idx + "_usedVals");
@@ -278,7 +278,7 @@ module Game {
     
     //zip use info
     for (var i = 0; i < usedKeys.length; i++) {
-      Game.perRoomObjectUseStatus[usedKeys[i]] = usedVals[i];
+      TomE.perRoomObjectUseStatus[usedKeys[i]] = usedVals[i];
     }
     
     //zip skindices
@@ -287,10 +287,10 @@ module Game {
     }
     
     //and load the room
-    Game.restoreScene(Game.loadedScene);
+    TomE.restoreScene(TomE.loadedScene);
     
     Sup.log("Loaded game from slot " + idx);
   }
 }
 
-Game.initialize();
+TomE.initialize();

@@ -1,1 +1,1 @@
-Game.newGame();
+TomE.newGame();
