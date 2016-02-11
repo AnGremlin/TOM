@@ -30,7 +30,7 @@ class SceneMenuBehavior extends Sup.Behavior {
       TomE.closeMenu();
     } else if (Sup.Input.wasKeyJustPressed("LEFT")) {
       idxChange = true;
-      this.index = (this.index - 1) % this.stateLen;
+      this.index = (this.index - 1 + this.stateLen) % this.stateLen;
     } else if (Sup.Input.wasKeyJustPressed("RIGHT")) {
       idxChange = true;
       this.index = (this.index + 1) % this.stateLen;

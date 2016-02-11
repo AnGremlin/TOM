@@ -356,7 +356,7 @@
         },
         {
           "name": "varValue",
-          "type": "boolean"
+          "type": "any"
         },
         {
           "name": "index",

@@ -3,7 +3,7 @@ class StateMenuBehavior extends Sup.Behavior {
   varNameActor: Sup.Actor;
   varValueActor: Sup.Actor;
   varName= "";
-  varValue = false;
+  varValue: any;
 
   index = 0;
   stateLen = 0;
@@ -35,11 +35,47 @@ class StateMenuBehavior extends Sup.Behavior {
       TomE.closeMenu();
     } else if (Sup.Input.wasKeyJustPressed("LEFT")) {
       idxChange = true;
-      this.index = (this.index - 1) % this.stateLen;
+      this.index = (this.index - 1 + this.stateLen) % this.stateLen; //adding stateLen stops it from going neg and breaking
     } else if (Sup.Input.wasKeyJustPressed("RIGHT")) {
       idxChange = true;
       this.index = (this.index + 1) % this.stateLen;
-    } else if (Sup.Input.wasKeyJustPressed("RETURN") || Sup.Input.wasKeyJustPressed("SPACE")) {
+    } else if (typeof this.varValue == "string" && (Sup.Input.wasKeyJustPressed("SPACE") || Sup.Input.wasKeyJustPressed("RETURN"))) {
+      var newText = window.prompt("Enter new value:", this.varValue);
+      Sup.log("Prompt returned: " + newText);
+      if(newText != null) {
+        this.varValue = newText;
+        TomE.state[this.varName] = this.varValue;
+        this.varValueActor.textRenderer.setText(this.varValue);
+      } 
+    } else if(Sup.Input.wasKeyJustPressed("UP") || Sup.Input.wasKeyJustPressed("DOWN")) {
+      var change = 0;
+      if(Sup.Input.isKeyDown("SHIFT")) {
+        change = 10;
+      } else if(Sup.Input.isKeyDown("CONTROL")) {
+        change = 0.1;
+      } else if(Sup.Input.isKeyDown("ALT")) {
+        change = 0.01;
+      } else {
+        change = 1;
+      }
+
+      if(Sup.Input.wasKeyJustPressed("UP")) TomE.state[this.varName] += change;
+      else TomE.state[this.varName] -= change;
+
+      this.varValue = TomE.state[this.varName];
+
+      //floating point error is rampant and there's no formatting code
+      //so write some code to truncate and round after hundredths
+      var tStr = String(TomE.state[this.varName]);
+      if(tStr.lastIndexOf('.') != -1) {
+        var dotPos = tStr.lastIndexOf('.');
+        if(tStr.length > dotPos+3) {
+          tStr = tStr.substr(0, dotPos+3);
+        }
+      }
+
+      this.varValueActor.textRenderer.setText(tStr); 
+    } else if (typeof this.varValue == "bool" && Sup.Input.wasKeyJustPressed("RETURN") || Sup.Input.wasKeyJustPressed("SPACE")) {
       this.varValue = !this.varValue;
       this.varValueActor.textRenderer.setText(this.varValue ? "TRUE" : "FALSE");
       TomE.state[this.varName] = this.varValue;
@@ -59,7 +95,15 @@ class StateMenuBehavior extends Sup.Behavior {
       }
 
       this.varNameActor.textRenderer.setText(this.varName);
-      this.varValueActor.textRenderer.setText(TomE.state[this.varName] ? "TRUE" : "FALSE");
+      
+      if (typeof TomE.state[this.varName] == "boolean") {
+        this.varValueActor.textRenderer.setText(TomE.state[this.varName] ? "TRUE" : "FALSE"); 
+      } else if (typeof TomE.state[this.varName] == "string") {
+        this.varValueActor.textRenderer.setText(TomE.state[this.varName]); 
+      } else if (typeof TomE.state[this.varName] == "number") {
+        this.varValueActor.textRenderer.setText(String(TomE.state[this.varName])); 
+      }
+      
       this.varValue = TomE.state[this.varName];
     }
   }

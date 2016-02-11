@@ -57,13 +57,13 @@ class SkinsMenuBehavior extends Sup.Behavior {
       TomE.closeMenu();
     } else if (Sup.Input.wasKeyJustPressed("LEFT")) {
       sidxChange = true;
-      this.skinDex = (this.skinDex - 1) % this.skinLen;
+      this.skinDex = (this.skinDex - 1 + this.skinLen) % this.skinLen;
     } else if (Sup.Input.wasKeyJustPressed("RIGHT")) {
       sidxChange = true;
       this.skinDex = (this.skinDex + 1) % this.skinLen;
     } else if (Sup.Input.wasKeyJustPressed("UP")) {
       cidxChange = true;
-      this.charDex = (this.charDex - 1) % this.charLen;
+      this.charDex = (this.charDex - 1 + this.charLen) % this.charLen;
     } else if (Sup.Input.wasKeyJustPressed("DOWN")) {
       cidxChange = true;
       this.charDex = (this.charDex + 1) % this.charLen;

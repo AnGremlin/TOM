@@ -1,3 +1,5 @@
+declare var window;
+
 module TomE {
   export let playerBehavior: PlayerBehavior;
   export let cameraBehavior: CameraBehavior;

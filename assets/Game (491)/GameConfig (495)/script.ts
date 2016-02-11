@@ -24,6 +24,8 @@ module GameConfig{
     //Science Room
     foreshadowTriggered: false,
     listenTriggered: false,
+    stringTest: "A test string",
+    numtest: 66,
     
   };
   

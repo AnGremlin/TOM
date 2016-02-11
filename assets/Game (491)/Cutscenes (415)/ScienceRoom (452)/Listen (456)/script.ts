@@ -21,6 +21,8 @@ module ScienceRoomWant{
   export var lines =
     [ "ENTER RIGHT Silas",
       "ENTER LEFT RobotTom",
+      "SPEAK Silas I came down here to reward some good behavior.",
+      "SPEAK TomBlank You say nothing, and wait for Silas to continue.",
 
      "END"
     ]

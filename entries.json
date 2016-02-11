@@ -91,14 +91,14 @@
             "type": null,
             "children": [
               {
-                "id": "488",
-                "name": "InvMenuBehavior",
-                "type": "script"
-              },
-              {
                 "id": "489",
                 "name": "Prefab",
                 "type": "scene"
+              },
+              {
+                "id": "488",
+                "name": "InvMenuBehavior",
+                "type": "script"
               }
             ]
           }

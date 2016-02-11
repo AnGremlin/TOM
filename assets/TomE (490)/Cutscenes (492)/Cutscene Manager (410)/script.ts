@@ -187,7 +187,7 @@ module Cutscene {
 
                 speak(face, line);
 
-              } else if (command == "FSD") {
+              } else if (command == "FSD" || command == "FULLSCREENDIALOG") {
 
                 fsd(line);
 
@@ -203,7 +203,7 @@ module Cutscene {
 
                 branch(face, n, line);
 
-              }  else if (command == "LOADIFITEM") {
+              }  else if (command == "BIFITEM" || command == "BRANCHIFITEM") {
 
                 spaceIdx = line.indexOf(' ');
                 var item = line.substr(0,spaceIdx);
@@ -227,6 +227,66 @@ module Cutscene {
 
                 skin(char, line);
 
+              }  else if (command == "SETBOOL" || command == "SETBOOLEAN") {
+
+                spaceIdx = line.indexOf(' ');
+                var varname = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                setbool(varname, line);
+
+              }  else if (command == "SETSTR" || command == "SETSTRING") {
+
+                spaceIdx = line.indexOf(' ');
+                var varname = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                setstr(varname, line);
+
+              }  else if (command == "SETNUM" || command == "SETNUMBER") {
+
+                spaceIdx = line.indexOf(' ');
+                var varname = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                setnum(varname, line);
+
+              }  else if (command == "BIFBOOL" || command == "BRANCHIFBOOLEAN") {
+
+                spaceIdx = line.indexOf(' ');
+                var varname = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+                
+                spaceIdx = line.indexOf(' ');
+                var testval = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                bifbool(varname, testval, line);
+
+              }  else if (command == "BIFNUM" || command == "BRANCHIFNUMBER") {
+
+                spaceIdx = line.indexOf(' ');
+                var varname = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+                
+                spaceIdx = line.indexOf(' ');
+                var testval = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                bifnum(varname, testval, line);
+
+              }  else if (command == "BIFSTR" || command == "BRANCHIFSTRING") {
+
+                spaceIdx = line.indexOf(' ');
+                var varname = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+                
+                spaceIdx = line.indexOf(' ');
+                var testval = line.substr(0,spaceIdx);
+                line = line.substr(spaceIdx+1,line.length);
+
+                bifstr(varname, testval, line);
+
               } else if (command == "EXIT") {
                 exit(line);
 
@@ -236,16 +296,16 @@ module Cutscene {
               } else if (command == "SCENE") {
                 scene(line);
 
-              } else if (command == "SFX") {
+              } else if (command == "SFX" || command == "SOUND") {
                 sfx(line);
 
-              } else if (command == "BGM") {
+              } else if (command == "BGM" || command == "MUSIC") {
                 bgm(line);
 
-              } else if (command == "USE") {
+              } else if (command == "USE" || command == "REMOVE") {
                 use(line);
 
-              } else if (command == "GIVE") {
+              } else if (command == "GIVE"  || command == "GET") {
                 give(line);
 
               } else {
@@ -324,7 +384,7 @@ module Cutscene {
           TomE.fsdialogBehavior.show(textId,null,null);
         }
         /***
-         * Display a fullscreen dialog
+         * Set a character's skin
          * 
          * @method skin
          * @param char {string} The name of the character
@@ -333,6 +393,42 @@ module Cutscene {
          */
         function skin(char: string, skin: string) {
           CharacterList.setSkin(char,skin.trim());
+        }
+        
+        /***
+         * Set a game state variable to a boolean
+         * 
+         * @method setbool
+         * @param varname {string} The name of the variable
+         * @param val {string} ideally "true" or "false" but actually only cares if the first letter is a T/t or not
+         * @private
+         */
+        function setbool(varname: string, val: string) {
+          TomE.state[varname] = (val[0] == "T" || val[0] == "t");
+        }
+        
+        /***
+         * Set a game state variable to a string
+         * 
+         * @method setstr
+         * @param varname {string} The name of the variable
+         * @param val {string} Any string
+         * @private
+         */
+        function setstr(varname: string, val: string) {
+          TomE.state[varname] = val;
+        }
+        
+        /***
+         * Set a game state variable to a number
+         * 
+         * @method setnum
+         * @param varname {string} The name of the variable
+         * @param val {string} Any number
+         * @private
+         */
+        function setnum(varname: string, val: string) {
+          TomE.state[varname] = Number(val);
         }
         
         /***
@@ -444,6 +540,49 @@ module Cutscene {
          */
         function loadifitem(item:string, name: string) {
           if (TomE.hasItem(item)) Cutscene.loadScript(name, fdBehavior);
+        }
+        
+        /***
+         * Load and run another cutscene script IF a state variable is a certain boolean value
+         * Anything after this call is inherently the "else" clause
+         * 
+         * @method bifbool
+         * @param varname {string} Name of the variable to check
+         * @param testVal {string} Value to test the state var against. Considered "true" if starts with T/t
+         * @param branch {string} Name of the script to load
+         * @private
+         */
+        function bifbool(varname:string, testVal: string, branch:string) {
+          if (TomE.state[varname] == (testVal[0] == "T" || testVal[0] == "t")) Cutscene.loadScript(branch, fdBehavior);
+        }
+        
+        /***
+         * Load and run another cutscene script IF a state variable is a certain boolean value
+         * Anything after this call is inherently the "else" clause
+         * 
+         * @method bifbool
+         * @param varname {string} Name of the variable to check
+         * @param testVal {string} Value to test the state var against
+         * @param branch {string} Name of the script to load
+         * @private
+         */
+        function bifstr(varname:string, testVal: string, branch:string) {
+          if (TomE.state[varname] == testVal) Cutscene.loadScript(branch, fdBehavior);
+        }
+        
+        /***
+         * Load and run another cutscene script IF a state variable is a certain boolean value
+         * Anything after this call is inherently the "else" clause
+         * 
+         * @method bifbool
+         * @param varname {string} Name of the variable to check
+         * @param testVal {string} Value to test the state var against
+         * @param branch {string} Name of the script to load
+         * @private
+         */
+        function bifnum(varname:string, testVal: string, branch:string) {
+          //I've seen pretty serious FPE while debuging, so give this a tolerance
+          if (Math.abs(TomE.state[varname] - Number(testVal)) < 0.0001) Cutscene.loadScript(branch, fdBehavior);
         }
         
         /***
