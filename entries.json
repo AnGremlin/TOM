@@ -555,21 +555,6 @@
                 "id": "456",
                 "name": "Listen",
                 "type": "script"
-              },
-              {
-                "id": "458",
-                "name": "WhatDoYouWant",
-                "type": "script"
-              },
-              {
-                "id": "457",
-                "name": "FuckAlone",
-                "type": "script"
-              },
-              {
-                "id": "461",
-                "name": "FuckYou",
-                "type": "script"
               }
             ]
           },

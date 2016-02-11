@@ -22,7 +22,8 @@
                     "alignment": "center",
                     "size": 36,
                     "color": "ff0000",
-                    "verticalAlignment": "bottom"
+                    "verticalAlignment": "bottom",
+                    "formatVersion": 1
                   },
                   "id": "0"
                 }
@@ -60,7 +61,8 @@
                     "alignment": "center",
                     "size": 24,
                     "color": null,
-                    "verticalAlignment": "top"
+                    "verticalAlignment": "top",
+                    "formatVersion": 1
                   },
                   "id": "0"
                 }
@@ -134,7 +136,8 @@
                 "overrideOpacity": true,
                 "opacity": 0.9,
                 "materialType": "basic",
-                "shaderAssetId": null
+                "shaderAssetId": null,
+                "formatVersion": 1
               },
               "id": "0"
             }
@@ -172,7 +175,8 @@
                 "alignment": "center",
                 "size": 36,
                 "color": "A5A5fe",
-                "verticalAlignment": "center"
+                "verticalAlignment": "center",
+                "formatVersion": 1
               },
               "id": "0"
             }

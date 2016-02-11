@@ -1,3 +1,5 @@
+//don't move this from the end of the Cutscenes folder!
+
 module CutsceneListData {
   
   export var scenes = [
@@ -21,6 +23,7 @@ module CutsceneListData {
     ScienceRoomFuckAlone,
     ScienceRoomWant,
     ScienceRoomFuckYou,
+    ScienceRoomHoldTongue,
   ]
         
         
