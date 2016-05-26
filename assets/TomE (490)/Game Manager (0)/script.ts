@@ -19,15 +19,8 @@ module TomE {
   export let loadedScene = "";
   export let menuOpen = false;
         
-  /* IMPORTANT!!!!!!
-   * Do NOT start the player with items! Otherwise saving/loading will be a big mess.
-   * Besides it's good practice to let the player pick stuff up in their room anywho.
-   */
+  //Don't set anything in inventory or state here, they are defaulted to values in /Game/GameConfig
   export var inventory = {};
-  
-  /* IMPORTANT!!!!!!
-   * ALL state variables must default to false! Otherwise saving/loading will be a big mess
-   */
   export var state = {};
   
   export let TextData: any;
@@ -265,11 +258,38 @@ module TomE {
     }
     
     //first just clear everything
-    TomE.newGame();
+     if(Sup.getActor("Scene") != null) {
+      Sup.getActor("Scene").destroy();
+      Sup.log("Destroyed current scene node.")
+    }
+    
+    //stop music
+    if (music != null) {
+      music.stop();
+      Sup.log("Stopped music");
+    }
+    
+    //reset state
+    state = GameConfig.state;
+    
+    //reset inventory
+    inventory = GameConfig.inventory;
+    
+    //reset vars as needed
+    TomE.perRoomObjectUseStatus = [];
+    TomE.itemBehaviors = [];  
+    TomE.music = null;
+    TomE.musicVolume = 0;
+    TomE.targetMusicVolume = 1;
+    TomE.musicAsset = null;
+    TomE.loadedScene = "";
+    
+    CharacterList.buildList();
+    SceneList.buildList();
+    CutsceneList.buildList();
     
     //now load the saved data
     TomE.state = Sup.Storage.getJSON(idx + "_state");
-    CharacterList.indices = Sup.Storage.getJSON(idx + "_skins");
     TomE.loadedScene = Sup.Storage.getJSON(idx + "_room");
     
     var usedKeys = Sup.Storage.getJSON(idx + "_usedKeys");
